@@ -1,8 +1,11 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+
+import Footer, { Menu } from '@/components/Navigation'
+import '../styles/App.scss'
+import type { Metadata } from 'next'
+import { Nunito } from 'next/font/google'
+
+const nunito = Nunito({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <Menu />
+      <body className={nunito.className}>{children}</body>
+
+      <Footer />
+
     </html>
   )
 }
