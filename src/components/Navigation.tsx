@@ -20,18 +20,14 @@ const Footer = () => {
 export const Menu = () => {
     return (
         <header >
-            <nav id="menu">
-                {/* #FIXME I don't have the right paths */}
-                <ul>
-                    <li id="home"><a href="/">Home</a></li>
-                    <li id="projects"><a href="">Projects</a></li>
-                    <li id="contact"><a href=""> Get in touch</a></li>
-                </ul>
+            <nav>
+                <a href="/">Home</a>
+                <a href="#Projects">Projects</a>
+                <button className="button Secondary"><a href=""> Contact</a></button>
             </nav>
         </header >
 
     )
 }
-
 
 export default Footer

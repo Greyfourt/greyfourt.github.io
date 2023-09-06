@@ -1,17 +1,80 @@
-import Image from 'next/image'
 import '../styles/App.scss'
 
 
 export default function Home() {
+
+  const projects = [
+    {
+      title: "La Commanderie des Templiers",
+      date: "2023",
+      tag: "Website",
+      image: "/articles/WebsiteLCDT.png",
+    },
+    {
+      title: "Plants App",
+      date: "2023",
+      tag: "Mobile App",
+      image: "/articles/AppPlants.png",
+    },
+    {
+      title: "Crochet by Nazli & Louis",
+      date: "2023",
+      tag: "Mobile App",
+      image: "/articles/AppCrochet.png",
+    },
+    {
+      title: "La Mare à Toto",
+      date: "2022",
+      tag: "Website",
+      image: "/articles/WebsiteLMAT.png",
+    },
+    {
+      title: "Bookipe",
+      date: "2022",
+      tag: "Mobile App",
+      image: "/articles/AppBookipe.png",
+    },
+    {
+      title: "Valensi Patrimoine",
+      date: "2021",
+      tag: "Website",
+      image: "/articles/WebsiteValensi.png",
+    },
+    {
+      title: "Valensi Patrimoine",
+      date: "2021",
+      tag: "Graphics",
+      image: "/articles/GraphicValensi.png",
+    },
+    {
+      title: "Valensi Patrimoine",
+      date: "2021",
+      tag: "Logo",
+      image: "/articles/LogoValensi.png",
+    },
+    {
+      title: "Contacts App",
+      date: "2021",
+      tag: "Web App",
+      image: "/articles/AppContacts.png",
+    },
+    {
+      title: "ODB Rénovation",
+      date: "2020",
+      tag: "Graphics",
+      image: "/articles/GraphicODB.png",
+    }
+  ]
+
+
   return (
     <>
       <div className="bodyContainer" id="wrapper">
-
         <div id="main">
           <div className="inner">
             <div className="headerContainer">
               <div>
-                <span className="image headerImage"><img src="/public/illustration.png" alt="" /></span>
+                <span className="image headerImage"><img src="/illustration.png" alt="" /></span>
               </div>
               <div className="headerDescription">
                 <h1>Hello, C'est Nazlı</h1>
@@ -20,168 +83,48 @@ export default function Home() {
               </div>
             </div>
 
-            <section className="CTAContainer">
+            <div className="CTAContainer">
               <h3>Mon objectif est de créer des expériences utilisateurs incroyables en alliant ma passion pour
                 le design et ma connaissance technique. </h3>
               <p>J’aime faire des petites illustrations aussi temps en temps :)</p>
               <button className="button"> <a href="https://greyfourt.github.io/CV_Alternance_Nazli.pdf" download="CV_Alternance_Nazli" target="_blank" rel="nofollow"></a>
                 Download my CV
               </button>
+            </div>
 
-            </section>
+            <div className="tiles" id="Projects" >
+              {
+                projects.map((project, index) => {
+                  return (
+
+                    <article className={"projectItem " + project.tag.replaceAll(' ', '')} key={index}>
+                      <div className="tags">
+                        <p className="icon solid fa-circle"></p>
+                        <p>{project.tag}</p>
+                      </div>
+
+                      <a className="image">
+                        <img src={project.image} alt=""/>
+                      </a>
+                      <div className="titleDate">
+                        <p>{project.title}</p>
+                        <p>{project.date}</p>
+                      </div>
+                    </article>
+
+                  )
+                })
+              }
+            </div>
 
 
-            <section className="tiles" id="Projects">
-              <article className="projectItem website" >
-                <div className="tags website">
-                  <p className="icon solid fa-circle"></p>
-                  <p>Website</p>
-                </div>
-
-                <a className="image">
-                  <img src="/public/articles/WebsiteLCDT.png" alt="" />
-                </a>
-                <div className="titleDate">
-                  <p>La Commanderie des Templiers</p>
-                  <p>2023</p>
-                </div>
-              </article>
-
-              <article className="projectItem" id="mobileApp">
-                <div className="tags">
-                  <p className="icon solid fa-circle"></p>
-                  <p>Mobile App</p>
-                </div>
-                <a href="generic.html" className="image">
-                  <img src="/public/articles/AppPlants.png" alt="" />
-                </a>
-                <div className="titleDate">
-                  <p>Plants App</p>
-                  <p>2023</p>
-                </div>
-              </article>
-
-              <article className="projectItem" id="mobileApp">
-                <div className="tags">
-                  <p className="icon solid fa-circle"></p>
-                  <p>Mobile App</p>
-                </div>
-                <a href="generic.html" className="image">
-                  <img src="/public/articles/AppCrochet.png" alt="" />
-                </a>
-                <div className="titleDate">
-                  <p>Crochet by Nazli & Louis</p>
-                  <p>2023</p>
-                </div>
-              </article>
-
-              <article className="projectItem" id="website">
-                <div className="tags">
-                  <p className="icon solid fa-circle"></p>
-                  <p>Website</p>
-                </div>
-                <a href="generic.html" className="image">
-                  <img src="/public/articles/WebsiteLMAT.png" alt="" />
-                </a>
-                <div className="titleDate">
-                  <p>La Mare à Toto</p>
-                  <p>2022</p>
-                </div>
-              </article>
-
-              <article className="projectItem" id="mobileApp">
-                <div className="tags">
-                  <p className="icon solid fa-circle"></p>
-                  <p>Mobile App</p>
-                </div>
-                <a href="generic.html" className="image">
-                  <img src="/public/articles/AppBookipe.png" alt="" />
-                </a>
-
-                <div className="titleDate">
-                  <p>Bookipe</p>
-                  <p>2022</p>
-                </div>
-              </article>
-
-              <article className="projectItem" id="website">
-                <div className="tags">
-                  <p className="icon solid fa-circle"></p>
-                  <p>Website</p>
-                </div>
-                <a href="generic.html" className="image">
-                  <img src="/public/articles/WebsiteValensi.png" alt="" />
-                </a>
-                <div className="titleDate">
-                  <p>Valensi Patrimoine</p>
-                  <p>2021</p>
-                </div>
-              </article>
-
-              <article className="projectItem" id="graphics">
-                <div className="tags">
-                  <p className="icon solid fa-circle"></p>
-                  <p>Graphics</p>
-                </div>
-                <a href="generic.html" className="image">
-                  <img src="/public/articles/GraphicValensi.png" alt="" />
-                </a>
-                <div className="titleDate">
-                  <p>Valensi Patrimoine</p>
-                  <p>2021</p>
-                </div>
-              </article>
-
-              <article className="projectItem" id="logo">
-                <div className="tags">
-                  <p className="icon solid fa-circle"></p>
-                  <p>Logo</p>
-                </div>
-                <a href="generic.html" className="image">
-                  <img src="/public/articles/LogoValensi.png" alt="" />
-                </a>
-                <div className="titleDate">
-                  <p>Valensi Patrimoine</p>
-                  <p>2021</p>
-                </div>
-              </article>
-
-              <article className="projectItem" id="webApp">
-                <div className="tags">
-                  <p className="icon solid fa-circle"></p>
-                  <p>Web App</p>
-                </div>
-                <a href="generic.html" className="image">
-                  <img src="/public/articles/AppContacts.png" alt="" />
-                </a>
-                <div className="titleDate">
-                  <p>Contacts App</p>
-                  <p>2021</p>
-                </div>
-              </article>
-
-              <article className="projectItem" id="graphics">
-                <div className="tags">
-                  <p className="icon solid fa-circle"></p>
-                  <p>Graphics</p>
-                </div>
-                <a href="generic.html" className="image">
-                  <img src="/public/articles/GraphicODB.png" alt="" />
-                </a>
-                <div className="titleDate">
-                  <p>ODB Rénovation</p>
-                  <p>2020</p>
-                </div>
-              </article>
-            </section>
-
-            <section className="CTAContainer" id="Contact">
+            <div className="CTAContainer" id="Contact">
               <h3>Nouveau idée, nouvelle projet ?</h3>
               <p>Même autour d'un café, sur Lyon</p>
               <button className="button">
                 <a href="mailto:nazliozcubukcuoglu@gmail.com">Discutons !</a>
               </button>
-            </section>
+            </div>
           </div>
         </div>
       </div>
