@@ -4,3 +4,14 @@
     justify-content: $justify-content;
     align-items: $align-items;
 }
+
+@mixin icon($color: $color-white-100) {
+    &.filled {
+        fill: $color;
+    }
+
+    &.outlined {
+        stroke: $color;
+        fill: transparent;
+    }
+}
