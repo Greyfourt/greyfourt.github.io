@@ -1,6 +1,7 @@
-// import React from 'react';
+'use client'
 
 import Icon from "./Icons"
+import { usePathname } from "next/navigation";
 
 
 const Footer = () => {
@@ -24,18 +25,22 @@ const Footer = () => {
     )
 }
 
-
-
 export const Menu = () => {
+
+    const currentRoute = usePathname()
+
+    const menuItem = () => {
+
+    }
+
     return (
         <header >
             <nav>
-                <a href="/">Home</a>
-                <a href="/projects">Projects</a>
-                <button className="button Secondary"><a href=""> Contact</a></button>
+                <a href="/" className={currentRoute === "/" ? "selected" : ""}>Home</a>
+                <a href="/projects" className={currentRoute === "/" ? "selected" : ""}>Projects</a>
+                <button className={`button Secondary ${currentRoute === "/" ? "selected" : ""}`}><a href=""> Contact</a></button>
             </nav>
         </header >
-
     )
 }
 

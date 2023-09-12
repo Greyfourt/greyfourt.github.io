@@ -4,9 +4,9 @@ import { type } from "os";
 import Icon from "./Icons";
 import React, { useEffect, useState } from "react";
 
-const Projects = ({ isProject }: { isProject?: boolean}) => {
+const Projects = ({ isProject }: { isProject?: boolean }) => {
 
-    const Project = [
+    const Projects = [
         {
             title: "La Commanderie des Templiers",
             date: "2023",
@@ -69,70 +69,104 @@ const Projects = ({ isProject }: { isProject?: boolean}) => {
         }
     ]
 
-    const [PageName, SetPageName] = useState("")
+    const latestProjects = Projects.filter((Project, index) => index < 3)
 
-    const filteredProjects = Project.filter((Project, index) => index < 3)
+    const [currentTag, setCurrentTag] = useState("")
+
 
     return (
-        <div className="tiles">
-            {
-                (isProject === true) ?
-                    (
-                        <>
-                            {Project.map((Project, index) => {
-
-                                return (
-                                    <article className={"projectItem " + Project.tag.replaceAll(' ', '')} key={index}>
-                                        <div className="tags">
-                                            <div className='icon'><Icon
-                                                type="round"
-                                            /></div>
-                                            <p>{Project.tag}</p>
-                                        </div>
-
-                                        <a className="image">
-                                            <img src={Project.image} alt="" />
-                                        </a>
-                                        <div className="titleDate">
-                                            <p>{Project.title}</p>
-                                            <p>{Project.date}</p>
-                                        </div>
-                                    </article>
-                                )
-
-                            })}
-                        </>
-                    )
-                    :
-                    (
-                        <>
-                            {
-                                filteredProjects.map((filteredProjects, index) => {
+        <div>
+            <div className="filters">
+                <p className="filterTitle">Filter</p>
+                <div className="filter">
+                    {
+                        [...Array.from(new Set(Projects.map((Project) => {
+                            return Project.tag
+                        })))].map((Tag, index) => {
+                            return (
+                                <button 
+                                className={Tag.replaceAll(' ', '') + ' tag'} 
+                                onClick={() => setCurrentTag(Tag)} 
+                                key={index}
+                                >
+                                    <div className='icon'>
+                                        <Icon type="round"/>
+                                    </div>
                                     
-                                    return (
-                                        <article className={"projectItem " + filteredProjects.tag.replaceAll(' ', '')} key={index}>
-                                            <div className="tags">
-                                                <div className='icon'><Icon
-                                                    type="round"
-                                                /></div>
-                                                <p>{filteredProjects.tag}</p>
-                                            </div>
-    
-                                            <a className="image">
-                                                <img src={filteredProjects.image} alt="" />
-                                            </a>
-                                            <div className="titleDate">
-                                                <p>{filteredProjects.title}</p>
-                                                <p>{filteredProjects.date}</p>
-                                            </div>
-                                        </article>
-                                    )
-                            })
-                            }
-                        </>
+                                    <p>{Tag}</p>
+                                </button>
+                            )
+                        })
+                    }
+                </div>
+            </div>
 
-                    )
-            }
+            <div className="tiles">
+                {
+                    (isProject === true) ?
+                        (
+                            <>
+                                {
+                                    Projects.filter((Project) => {
+                                        if (currentTag === "") return true;
+
+                                        return (Project.tag) === (currentTag)
+                                    }
+                                    ).map((Project, index) => {
+
+                                        return (
+                                            <article className={"projectItem " + Project.tag.replaceAll(' ', '')} key={index}>
+                                                <div className="tag">
+                                                    <div className='icon'><Icon
+                                                        type="round"
+                                                    /></div>
+                                                    <p>{Project.tag}</p>
+                                                </div>
+
+                                                <a className="image">
+                                                    <img src={Project.image} alt="" />
+                                                </a>
+                                                <div className="titleDate">
+                                                    <p>{Project.title}</p>
+                                                    <p>{Project.date}</p>
+                                                </div>
+                                            </article>
+                                        )
+
+                                    })}
+                            </>
+                        )
+                        :
+                        (
+                            <>
+                                {
+                                    latestProjects.map((latestProject, index) => {
+
+                                        return (
+                                            <article className={"projectItem " + latestProject.tag.replaceAll(' ', '')} key={index}>
+                                                <div className="tag">
+                                                    <div className='icon'><Icon
+                                                        type="round"
+                                                    /></div>
+                                                    <p>{latestProject.tag}</p>
+                                                </div>
+
+                                                <a className="image">
+                                                    <img src={latestProject.image} alt="" />
+                                                </a>
+                                                <div className="titleDate">
+                                                    <p>{latestProject.title}</p>
+                                                    <p>{latestProject.date}</p>
+                                                </div>
+                                            </article>
+                                        )
+                                    })
+                                }
+                            </>
+
+                        )
+                }
+            </div>
         </div>
     );
 }

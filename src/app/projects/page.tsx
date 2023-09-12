@@ -10,10 +10,10 @@ const ProjectsPage = () => {
      
     return (
         <>
-            <div className="title">
+            <div className="headerContainer">
                 <h1>Projects</h1>
             </div>
-            <div className="tiles" >
+            <div className="projectsWrapper" >
 
                 <Projects 
                 isProject/>

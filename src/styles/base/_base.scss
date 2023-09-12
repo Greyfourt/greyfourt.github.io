@@ -81,10 +81,10 @@ svg {
 	}
 
 	&.Secondary {
-		background: $color-white-20;
+		background: $color-white-100;
 
 		& a {
-			color: $color-white-100;
+			color: $color-main;
 		}
 
 		&:hover {
@@ -127,6 +127,7 @@ input[type="reset"] {
 	flex-wrap: wrap;
 	position: relative;
 	padding: 1.25em;
+	width: 100%;
 
 	& .projectItem {
 		@include flex(column, space-evenly, flex-start);
@@ -134,7 +135,7 @@ input[type="reset"] {
 		width: calc(33.33333% - 2.5em);
 		margin: 1.25rem;
 		// gap: 1.5rem;
-		height: 400px ;
+		height: 400px;
 
 
 		>.image {
@@ -189,56 +190,6 @@ input[type="reset"] {
 			}
 		}
 
-		& .tags {
-			@include flex(row, center, center);
-			padding: 0.25rem 0.75rem;
-			background-color: $color-tags;
-			border-radius: 0.5rem;
-			color: $color-button-text;
-			gap: 0.5rem;
-			width: fit-content;
-
-			& p {
-				margin: 0;
-				padding: 0em;
-			}
-
-			& svg {
-				height: 0.75em;
-				width: 0.75em;
-			}
-		}
-
-		&.Website .tags:hover {
-			background-color: $color-yellow-20;
-			color: $color-yellow-100;
-			cursor: pointer;
-		}
-
-		&.MobileApp .tags:hover {
-			background-color: $color-pink-20;
-			color: $color-pink-100;
-			cursor: pointer;
-		}
-
-		&.Graphics .tags:hover {
-			background-color: $color-orange-20;
-			color: $color-orange-100;
-			cursor: pointer;
-		}
-
-		&.Logo .tags:hover {
-			background-color: $color-blue-20;
-			color: $color-blue-100;
-			cursor: pointer;
-		}
-
-		&.WebApp .tags:hover {
-			background-color: $color-green-20;
-			color: $color-green-100;
-			cursor: pointer;
-		}
-
 		& .titleDate {
 			@include flex(row, space-between, center);
 			width: 100%;
@@ -247,11 +198,77 @@ input[type="reset"] {
 	}
 }
 
+.tag {
+	@include flex(row, center, center);
+	padding: 0.25rem 0.75rem;
+	background-color: $color-tag;
+	border-radius: 0.5rem;
+	color: $color-button-text;
+	gap: 0.5rem;
+	width: fit-content;
+	cursor: pointer;
+
+	& p {
+		margin: 0;
+		padding: 0em;
+	}
+
+	& svg {
+		height: 0.75em;
+		width: 0.75em;
+	}
+}
+
+.Website .tag:hover {
+	background-color: $color-yellow-20;
+	color: $color-yellow-100;
+	cursor: pointer;
+}
+
+.MobileApp .tag:hover {
+	background-color: $color-pink-20;
+	color: $color-pink-100;
+	cursor: pointer;
+}
+
+.Graphics .tag:hover {
+	background-color: $color-orange-20;
+	color: $color-orange-100;
+	cursor: pointer;
+}
+
+.Logo .tag:hover {
+	background-color: $color-blue-20;
+	color: $color-blue-100;
+	cursor: pointer;
+}
+
+.WebApp .tag:hover {
+	background-color: $color-green-20;
+	color: $color-green-100;
+	cursor: pointer;
+}
+
+.filters {
+	@include flex(row, center, center);
+	gap: 1rem;
+	padding: 1rem 0;
+	border-bottom: solid 1px $color-main;
+
+	& .filter {
+		@include flex(row, center, center);
+		gap: 0.5rem;
+		padding: 0.5rem 1rem;
+	}
+}
+
 .headerContainer {
 	@include flex(row, center, center);
 	gap: 4em;
 	height: 100%;
 	padding: 4rem 2rem;
+	gap: 3rem;
+	border-bottom: solid 1px $color-main;
 
 	& .headerImage {
 		height: 60%;
@@ -260,6 +277,7 @@ input[type="reset"] {
 	& .headerDescription {
 		@include flex(column, center, flex-start);
 		width: 24em;
+		gap: 1.5rem;
 
 		& .highlight {
 			background-color: $color-orange-20;
