@@ -73,26 +73,29 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
 
     const [currentTag, setCurrentTag] = useState("")
 
+    const [isSelected, setIsSelected] = useState("false")
+
 
     return (
-        <div>
-            <div className="filters">
+        <div className="projectsWrapper">
+            <div className="filtersContainer">
                 <p className="filterTitle">Filter</p>
-                <div className="filter">
+                <div className="filters">
                     {
                         [...Array.from(new Set(Projects.map((Project) => {
                             return Project.tag
                         })))].map((Tag, index) => {
+                            
                             return (
-                                <button 
-                                className={Tag.replaceAll(' ', '') + ' tag'} 
-                                onClick={() => setCurrentTag(Tag)} 
-                                key={index}
+                                <button
+                                    className={Tag.replaceAll(' ', '') + ' tag'}
+                                    onClick={() => { setCurrentTag(Tag), setIsSelected('true') }}
+                                    key={index}
                                 >
                                     <div className='icon'>
-                                        <Icon type="round"/>
+                                        <Icon type="round" />
                                     </div>
-                                    
+
                                     <p>{Tag}</p>
                                 </button>
                             )

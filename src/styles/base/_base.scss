@@ -28,7 +28,7 @@ body {
 
 // Navigation Bar
 nav {
-	@include flex(row, center, center);
+	@include flex(row, center, space-evenly);
 	position: fixed;
 	right: 0;
 	top: 2em;
@@ -36,19 +36,29 @@ nav {
 	background-color: $color-main;
 	border-radius: 64px 0 0 64px;
 	padding: 1em;
-	width: 500px;
+	min-width: 500px;
 
-	a {
+	& .menuItem {
 		position: relative;
 		height: 3em;
 		line-height: 3em;
-		padding: 0 1.5em;
+		padding: 0 1em;
 		border: 0;
 		font-size: 0.8em;
 		font-weight: 700;
 		letter-spacing: 0.35em;
 		text-transform: uppercase;
-		color: $color-white-100;
+		color: $color-white-100 !important;
+
+		&.active {
+			border-radius: 0;
+			border-bottom: solid 2px $color-white-100;
+
+			& a {
+				text-decoration: underline;
+				color: $color-white-100;
+			}
+		}
 	}
 
 }
@@ -74,10 +84,6 @@ svg {
 		& a {
 			color: $color-white-100;
 		}
-
-		&:hover {
-			opacity: 0.8;
-		}
 	}
 
 	&.Secondary {
@@ -86,19 +92,24 @@ svg {
 		& a {
 			color: $color-main;
 		}
+	}
+
+	&.Transparent {
+		background: transparent;
+
+		& a {
+			color: $color-white-100;
+		}
 
 		&:hover {
-			opacity: 0.8;
+			background: $color-white-20;
 		}
 	}
 
 	&:disabled {
 		opacity: 0.5;
 		pointer-events: none;
-
 	}
-
-
 
 }
 
@@ -115,12 +126,13 @@ input[type="reset"] {
 	outline: inherit;
 }
 
+.projects {
+	@include flex(column, center, center);
+	gap: 1rem;
+}
 
 .tiles {
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
+	@include flex();
 	-moz-flex-wrap: wrap;
 	-webkit-flex-wrap: wrap;
 	-ms-flex-wrap: wrap;
@@ -198,6 +210,19 @@ input[type="reset"] {
 	}
 }
 
+.filtersContainer {
+	@include flex(row, center, center);
+	gap: 1rem;
+	padding: 1rem 0;
+	border-bottom: solid 1px $color-main;
+
+	& .filters {
+		@include flex(row, center, center);
+		gap: 0.5rem;
+		padding: 0.5rem 1rem;
+	}
+}
+
 .tag {
 	@include flex(row, center, center);
 	padding: 0.25rem 0.75rem;
@@ -219,47 +244,40 @@ input[type="reset"] {
 	}
 }
 
-.Website .tag:hover {
+.Website .tag:hover,
+.Website .tag:active {
 	background-color: $color-yellow-20;
 	color: $color-yellow-100;
 	cursor: pointer;
 }
 
-.MobileApp .tag:hover {
+.MobileApp .tag:hover,
+.MobileApp .tag:active {
 	background-color: $color-pink-20;
 	color: $color-pink-100;
 	cursor: pointer;
 }
 
-.Graphics .tag:hover {
+.Graphics .tag:hover,
+.Graphics .tag:active {
 	background-color: $color-orange-20;
 	color: $color-orange-100;
 	cursor: pointer;
 }
 
-.Logo .tag:hover {
+.Logo .tag:hover,
+.Logo .tag:active {
 	background-color: $color-blue-20;
 	color: $color-blue-100;
 	cursor: pointer;
 }
 
-.WebApp .tag:hover {
+
+.WebApp .tag:hover,
+.WebApp .tag:active {
 	background-color: $color-green-20;
 	color: $color-green-100;
 	cursor: pointer;
-}
-
-.filters {
-	@include flex(row, center, center);
-	gap: 1rem;
-	padding: 1rem 0;
-	border-bottom: solid 1px $color-main;
-
-	& .filter {
-		@include flex(row, center, center);
-		gap: 0.5rem;
-		padding: 0.5rem 1rem;
-	}
 }
 
 .headerContainer {
@@ -321,13 +339,6 @@ footer {
 		gap: 1rem;
 	}
 }
-
-
-
-#Projects {
-	padding-top: 32px;
-}
-
 
 @media only screen and (min-width: 1280px) {
 	body {
@@ -450,22 +461,48 @@ footer {
 
 	body {
 		min-width: 320px;
+
 	}
 
 	h1 {
 		font-size: 1.75em;
 	}
 
-	.tiles {
-		margin: 0;
+	.projectsWrapper {
+		@include flex(column, center, center);
+		width: 100%;
 
-		.projectItem {
+		& .filtersContainer {
+			@include flex(column, center, center);
+			width: 100%;
+
+			& .filters {
+				@include flex(row, center, center);
+				width: 100%;
+				flex-wrap: wrap;
+			}
+		}
+
+		& .tiles .projectItem {
 			width: 100%;
 			margin: 1.25em 0 0 0;
 		}
+
+	}
+
+	.CTAContainer {
+		padding: 2rem 1rem;
 	}
 
 	nav {
-		width: 100%;
+		@include flex(row, center, center);
+		min-width: 300px;
+		padding: 1em 1.5em;
+		gap: 0.5em;
+
+		& .menuItem {
+			font-size: 0.75em;
+			padding: 0 0.5em;
+		}
 	}
 }

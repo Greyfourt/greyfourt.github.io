@@ -6,18 +6,17 @@ $color-white-20: rgba(255, 255, 255, 0.20);
 
 
 $color-yellow-100: rgba(218, 255, 125);
-$color-yellow-20: rgba(255, 255, 125, 0.20);
-$color-blue-100: rgba(137, 210, 220);
-$color-blue-20: rgba(137, 210, 220, 0.20);
-$color-pink-100: rgba(220, 137, 187, 1);
-$color-pink-20: rgba(220, 137, 187, 0.20);
-$color-green-100: rgba(137, 220, 187, 1);
-$color-green-20: rgba(137, 220, 187, 0.20);
+$color-yellow-20: rgba(255, 255, 125, 0.30);
+$color-blue-100: rgb(0, 225, 255);
+$color-blue-20: rgba(0, 225, 255, 0.30);
+$color-pink-100: rgb(213, 23, 137);
+$color-pink-20: rgba(213, 23, 137, 0.30);
+$color-green-100: rgb(137, 220, 141);
+$color-green-20: rgba(137, 220, 141, 0.30);
 $color-orange-100: rgba(255, 125, 125, 1);
-$color-orange-20: rgba(255, 125, 125, 0.20);
+$color-orange-20: rgba(255, 125, 125, 0.30);
 
 $color-text: $color-white-100;
 $color-button: $color-main;
 $color-button-text: $color-white-100 !important;
 $color-tag: rgba(80, 139, 152, 0.30);
-

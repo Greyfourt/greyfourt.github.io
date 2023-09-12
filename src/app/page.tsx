@@ -29,14 +29,15 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="tiles" id="Projects" >
-          <Projects />
+        <div className='projects CTAContainer'>
+        
+            <Projects />
+
           <button className="button Secondary">
             <a href="/projects">Voir plus</a>
             <Icon type="arrowRight" />
           </button>
         </div>
-
 
         <div className="CTAContainer" id="Contact">
           <h3>Nouveau idée, nouvelle projet ?</h3>

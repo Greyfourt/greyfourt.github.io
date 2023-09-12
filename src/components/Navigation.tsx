@@ -36,9 +36,9 @@ export const Menu = () => {
     return (
         <header >
             <nav>
-                <a href="/" className={currentRoute === "/" ? "selected" : ""}>Home</a>
-                <a href="/projects" className={currentRoute === "/" ? "selected" : ""}>Projects</a>
-                <button className={`button Secondary ${currentRoute === "/" ? "selected" : ""}`}><a href=""> Contact</a></button>
+                <a href="/" className={'menuItem ' + (currentRoute === "/" ? "active" : "")}>Home</a>
+                <a href="/projects" className={'menuItem ' + (currentRoute === "/projects" ? "active" : "")}>Projects</a>
+                <a className="menuItem " href="mailto:nazliozcubukcuoglu@gmail.com"> Contact</a>
             </nav>
         </header >
     )
