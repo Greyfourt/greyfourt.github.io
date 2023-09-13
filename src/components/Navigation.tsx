@@ -38,7 +38,7 @@ export const Menu = () => {
             <nav>
                 <a href="/" className={'menuItem ' + (currentRoute === "/" ? "active" : "")}>Home</a>
                 <a href="/projects" className={'menuItem ' + (currentRoute === "/projects" ? "active" : "")}>Projects</a>
-                <a className="menuItem " href="mailto:nazliozcubukcuoglu@gmail.com"> Contact</a>
+                <a className="menuItem contactButton " href="mailto:nazliozcubukcuoglu@gmail.com"> Contact</a>
             </nav>
         </header >
     )

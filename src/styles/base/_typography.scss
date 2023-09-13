@@ -55,19 +55,15 @@ h4 {
     padding: 0;
 }
 
-
-// @media (max-width: $breakpoint-mobile) {
-//     p {
-//         font-size: 13px;
-//         line-height: 15px;
-//     }
-//     h4 {
-//         line-height: 20px;
-//     }
-// }
-
 a {
     font-style: normal;
     text-decoration: none;
     color: $color-main;
+}
+
+
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.75em;
+    }
 }
