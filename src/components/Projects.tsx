@@ -17,7 +17,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
             title: "Plants App",
             date: "2023",
             tag: "Mobile App",
-            image: "/articles/AppPlants.png",
+            image: "/articles/AppFloof.png",
         },
         {
             title: "Crochet by Nazli & Louis",
