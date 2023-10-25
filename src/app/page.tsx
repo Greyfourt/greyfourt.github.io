@@ -24,7 +24,7 @@ export default function Home() {
           <h3>Mon objectif est de créer des expériences utilisateurs incroyables en alliant ma passion pour
             le design et ma connaissance technique.</h3>
           <p>J’aime faire des petites illustrations aussi temps en temps :)</p>
-          <button className="button Primary"> <a href="https://greyfourt.github.io/CV-English-Nazli.pdf" download="CV_Alternance_Nazli" target="_blank" rel="nofollow">
+          <button className="button Primary"> <a href="https://greyfourt.github.io/CV_English_Nazli.pdf" download="CV_Alternance_Nazli" target="_blank" rel="nofollow">
             Download my CV</a>
           </button>
         </div>
