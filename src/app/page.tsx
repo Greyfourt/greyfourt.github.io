@@ -16,7 +16,10 @@ export default function Home() {
           <div className="headerDescription">
             <h1>Hello, C'est Nazlı</h1>
             <p>UX/UI Designer avec un background en informatique.</p>
-            <div className="highlight"><p>Portfolio WORK IN PROGRESS</p></div>
+            <div className="highlight">
+              <p>Portfolio WORK IN PROGRESS</p>
+              <p>a version in english is on its way too ;)</p>
+              </div>
           </div>
         </div>
 
