@@ -7,13 +7,7 @@ import React, { useEffect, useState } from "react";
 const Projects = ({ isProject }: { isProject?: boolean }) => {
 
     const Projects = [
-        // {
-        //     title: "MNOPé Management",
-        //     date: "2023",
-        //     tag: "Website",
-        //     image: "/articles/WebsiteMNOPE.png",
-        //     link: "https://www.mnope-management.com/"
-        // },
+
         {
             title: "TEB Health",
             date: "2023",
@@ -55,7 +49,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
         {
             title: "Knotbook App",
             date: "2023",
-            tag: "Mobile App",
+            tag: "Logo",
             image: "/articles/LogoKnotbook.png",
         },
         {
@@ -112,47 +106,53 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
 
 
     return (
+
         <div className="projectsWrapper">
-            <div className="filtersContainer">
-                <p className="filterTitle">Filter</p>
-                <div className="filters">
-                    <button
-                        className="tag"
-                        onClick={() => { setCurrentTag(""), setIsSelected('false') }}
-                    >
-                        <div className='icon'>
-                            <Icon type="round" />
-                        </div>
-                        <p>All</p>
-                    </button>
+            {
+                (isProject === true) ?
+                    (
+                        <>
+                            <div className="filtersContainer">
+                                <p className="filterTitle">Filter</p>
+                                <div className="filters">
 
-                    {
-                        [...Array.from(new Set(Projects.map((Project) => {
-                            return Project.tag
-                        })))].map((Tag, index) => {
+                                    <button
+                                        className="tag"
+                                        onClick={() => { setCurrentTag(""), setIsSelected('false') }}
+                                    >
+                                        <div className='icon'>
+                                            <Icon type="round" />
+                                        </div>
+                                        <p>All</p>
+                                    </button>
 
-                            return (
-                                <button
-                                    className={Tag.replaceAll(' ', '') + ' tag'}
-                                    onClick={() => { setCurrentTag(Tag), setIsSelected('true') }}
-                                    key={index}
-                                >
-                                    <div className='icon'>
-                                        <Icon type="round" />
-                                    </div>
-                                    <p>{Tag}</p>
-                                </button>
-                            )
-                        })
-                    }
-                </div>
-            </div>
+                                    {
+                                        [...Array.from(new Set(Projects.map((Project) => {
+                                            return Project.tag
+                                        })))].map((Tag, index) => {
 
-            <div className="tiles">
-                {
-                    (isProject === true) ?
-                        (
-                            <>
+                                            return (
+                                                <button
+                                                    className={Tag.replaceAll(' ', '') + ' tag'}
+                                                    onClick={() => { setCurrentTag(Tag), setIsSelected('true') }}
+                                                    key={index}
+                                                >
+                                                    <div className='icon'>
+                                                        <Icon type="round" />
+                                                    </div>
+                                                    <p>{Tag}</p>
+                                                </button>
+                                            )
+                                        }
+                                        )}
+
+
+                                </div>
+
+                            </div>
+
+                            <div className="tiles">
+
                                 {
                                     Projects.filter((Project) => {
                                         if (currentTag === "") return true;
@@ -181,11 +181,17 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
                                         )
 
                                     })}
-                            </>
-                        )
-                        :
-                        (
-                            <>
+
+                            </div>
+                        </>
+                    ) :
+                    (
+                        <>
+
+                            <h2>My Latest Projects</h2>
+
+                            <div className="tiles">
+
                                 {
                                     latestProjects.map((latestProject, index) => {
 
@@ -209,13 +215,19 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
                                         )
                                     })
                                 }
-                            </>
 
-                        )
-                }
-            </div>
+                            </div>
+                        </>
+                    )
+            }
         </div>
-    );
-}
+    )
+
+
+};
+
+
+
+
 
 export default Projects;

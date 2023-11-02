@@ -2,16 +2,14 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  output: "export",
+  output: "standalone",
 
-  // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
-  // trailingSlash: true,
+  // #TODO: Uncomment this when i18n is ready
 
-  // Optional: Prevent automatic `/me` -> `/me/`, instead preserve `href`
-  // skipTrailingSlashRedirect: true,
-
-  // Optional: Change the output directory `out` -> `dist`
-  // distDir: 'dist',
+  // i18n: {
+  //   locales: ["en-US", "fr"],
+  //   defaultLocale: "en-US",
+  // },
 };
 
 module.exports = nextConfig;

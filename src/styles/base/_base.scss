@@ -157,11 +157,10 @@ input[type="reset"] {
 
     .image {
       @include flex(column, center, center);
-      width: 380px;
-      height: 300px;
+      width: 100%;
 
       img {
-        width: 380px;
+        width: 100%;
       }
     }
 
@@ -305,15 +304,6 @@ footer {
   body {
     font-size: 12pt;
   }
-
-  .tiles {
-    margin: -1.25em 0 0 -1.25em;
-
-    .projectItem {
-      width: calc(33.33333% - 1.25em);
-      margin: 1.25em 0 0 1.25em;
-    }
-  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -323,6 +313,7 @@ footer {
 
   body {
     min-width: 320px;
+    padding: 1em 1.5em;
   }
 
   .projectsWrapper {

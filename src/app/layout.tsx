@@ -9,7 +9,8 @@ const nunito = Nunito({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "Nazlı's Portfolio",
-  description: "Mon objectif est de créer des expériences utilisateurs incroyables en alliant ma passion pour le design et ma connaissance technique.",
+  description: "I have a passion for web and working towards reducing the friction behind the cursor. I use my background in development to create digital experiences that people love.",
+
   manifest: '/manifest.json',
 }
 
