@@ -156,8 +156,9 @@ input[type="reset"] {
     height: 400px;
 
     .image {
+      @include flex(column, center, center);
       width: 380px;
-	  height: 300px;
+      height: 300px;
 
       img {
         width: 380px;
