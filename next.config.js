@@ -2,7 +2,7 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  output: "standalone",
+  output: "export",
 
   // #TODO: Uncomment this when i18n is ready
 
