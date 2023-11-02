@@ -7,11 +7,26 @@ import React, { useEffect, useState } from "react";
 const Projects = ({ isProject }: { isProject?: boolean }) => {
 
     const Projects = [
+        // {
+        //     title: "MNOPé Management",
+        //     date: "2023",
+        //     tag: "Website",
+        //     image: "/articles/WebsiteMNOPE.png",
+        //     link: "https://www.mnope-management.com/"
+        // },
+        {
+            title: "TEB Health",
+            date: "2023",
+            tag: "Website",
+            image: "/articles/WebsiteTEB.png",
+            link: "https://www.teb-health.com/"
+        },
         {
             title: "La Commanderie des Templiers",
             date: "2023",
             tag: "Website",
             image: "/articles/WebsiteLCDT.png",
+            link: "https://www.lacommanderiedestempliers.com/"
         },
         {
             title: "Plants App",
@@ -30,6 +45,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
             date: "2022",
             tag: "Website",
             image: "/articles/WebsiteLMAT.png",
+            link: "https://lamareatoto.fr/"
         },
         {
             title: "Bookipe",
@@ -42,6 +58,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
             date: "2021",
             tag: "Website",
             image: "/articles/WebsiteValensi.png",
+            link: "https://valensi-patrimoine.fr/"
         },
         {
             title: "Valensi Patrimoine",
@@ -126,7 +143,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
                                                     <p>{Project.tag}</p>
                                                 </div>
 
-                                                <a className="image">
+                                                <a className="image" href={Project.link}>
                                                     <img src={Project.image} alt="" />
                                                 </a>
                                                 <div className="titleDate">
