@@ -22,6 +22,12 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
             link: "https://www.teb-health.com/"
         },
         {
+            title: "TEB Health",
+            date: "2023",
+            tag: "Logo",
+            image: "/articles/LogoTEB.png",
+        },
+        {
             title: "La Commanderie des Templiers",
             date: "2023",
             tag: "Website",
@@ -112,7 +118,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
                                     <div className='icon'>
                                         <Icon type="round" />
                                     </div>
-
+                                    <p>All</p>
                                     <p>{Tag}</p>
                                 </button>
                             )
@@ -143,7 +149,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
                                                     <p>{Project.tag}</p>
                                                 </div>
 
-                                                <a className="image" href={Project.link}>
+                                                <a className="image" href={Project.link} target="_blank" >
                                                     <img src={Project.image} alt="" />
                                                 </a>
                                                 <div className="titleDate">
