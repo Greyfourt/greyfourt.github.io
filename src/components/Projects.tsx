@@ -7,7 +7,12 @@ import React, { useEffect, useState } from "react";
 const Projects = ({ isProject }: { isProject?: boolean }) => {
 
     const Projects = [
-
+        {
+            title: "Harfang Therapeutics",
+            date: "2023",
+            tag: "Logo",
+            image: "/articles/LogoHT.png",
+        },
         {
             title: "TEB Health",
             date: "2023",
