@@ -35,16 +35,28 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
             link: "https://www.lacommanderiedestempliers.com/"
         },
         {
-            title: "Plants App",
+            title: "Floof App",
             date: "2023",
             tag: "Mobile App",
             image: "/articles/AppFloof.png",
         },
         {
-            title: "Crochet by Nazli & Louis",
+            title: "Floof App",
+            date: "2023",
+            tag: "Logo",
+            image: "/articles/LogoFloof.png",
+        },
+        {
+            title: "Knotbook App",
             date: "2023",
             tag: "Mobile App",
-            image: "/articles/AppCrochet.png",
+            image: "/articles/AppKnotbook.png",
+        },
+        {
+            title: "Knotbook App",
+            date: "2023",
+            tag: "Mobile App",
+            image: "/articles/LogoKnotbook.png",
         },
         {
             title: "La Mare à Toto",
@@ -104,11 +116,21 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
             <div className="filtersContainer">
                 <p className="filterTitle">Filter</p>
                 <div className="filters">
+                    <button
+                        className="tag"
+                        onClick={() => { setCurrentTag(""), setIsSelected('false') }}
+                    >
+                        <div className='icon'>
+                            <Icon type="round" />
+                        </div>
+                        <p>All</p>
+                    </button>
+
                     {
                         [...Array.from(new Set(Projects.map((Project) => {
                             return Project.tag
                         })))].map((Tag, index) => {
-                            
+
                             return (
                                 <button
                                     className={Tag.replaceAll(' ', '') + ' tag'}
@@ -118,7 +140,6 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
                                     <div className='icon'>
                                         <Icon type="round" />
                                     </div>
-                                    <p>All</p>
                                     <p>{Tag}</p>
                                 </button>
                             )
