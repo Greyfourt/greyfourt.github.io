@@ -1,8 +1,0 @@
-{
-  "name": "Greyfourt's Portfolio",
-  "short_name": "Portfolio",
-  "display": "standalone",
-  "orientation": "portrait",
-  "scope": "/",
-  "start_url": "/"
-}

@@ -18,12 +18,6 @@ body {
   &:after {
     box-sizing: inherit;
   }
-
-  + {
-    .tiles {
-      margin-top: 2em;
-    }
-  }
 }
 
 // Navigation Bar
@@ -39,7 +33,7 @@ nav {
   padding: 1em;
   gap: 1em;
 
-  & .menuItem {
+  & .navItem {
     position: relative;
     height: 3em;
     line-height: 3em;
@@ -132,41 +126,53 @@ input[type="reset"] {
   outline: inherit;
 }
 
-.projects {
+.projectsWrapper {
   @include flex(column, center, center);
-  gap: 1rem;
-}
-
-.tiles {
-  @include flex();
-  -moz-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  padding: 1.25em;
   width: 100%;
 
-  & .projectItem {
-    @include flex(column, space-evenly, flex-start);
+& .projetsHeader {
+    @include flex(column, center, center);
+    width: 100%;
+    padding: 1.25em;
+    border-bottom: solid 1px $color-main;
+
+    & h2 {
+      margin: 0;
+      padding: 0;
+    }
+}
+
+  & .tiles {
+    @include flex();
+    -moz-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     position: relative;
-    width: calc(33.33333% - 2.5em);
-    margin: 1.25rem;
-    // gap: 1.5rem;
-    height: 400px;
+    padding: 1.25em;
+    width: 100%;
 
-    .image {
-      @include flex(column, center, center);
-      width: 100%;
+    & .projectItem {
+      @include flex(column, space-evenly, flex-start);
+      position: relative;
+      width: calc(33.33333% - 2.5em);
+      margin: 1.25rem;
+      // gap: 1.5rem;
+      height: 400px;
 
-      img {
+      .image {
+        @include flex(column, center, center);
+        width: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      & .titleDate {
+        @include flex(row, space-between, center);
         width: 100%;
       }
-    }
-
-    & .titleDate {
-      @include flex(row, space-between, center);
-      width: 100%;
     }
   }
 }
@@ -206,35 +212,35 @@ input[type="reset"] {
 }
 
 .Website .tag:hover,
-.Website .tag:active {
+.Website .tag.active {
   background-color: $color-yellow-20;
   color: $color-yellow-100;
   cursor: pointer;
 }
 
 .MobileApp .tag:hover,
-.MobileApp .tag:active {
+.MobileApp .tag.active {
   background-color: $color-pink-20;
   color: $color-pink-100;
   cursor: pointer;
 }
 
 .Graphics .tag:hover,
-.Graphics .tag:active {
+.Graphics .tag.active {
   background-color: $color-orange-20;
   color: $color-orange-100;
   cursor: pointer;
 }
 
 .Logo .tag:hover,
-.Logo .tag:active {
+.Logo .tag.active {
   background-color: $color-blue-20;
   color: $color-blue-100;
   cursor: pointer;
 }
 
 .WebApp .tag:hover,
-.WebApp .tag:active {
+.WebApp .tag.active {
   background-color: $color-green-20;
   color: $color-green-100;
   cursor: pointer;
@@ -278,8 +284,11 @@ input[type="reset"] {
   border-top: solid 1px $color-main;
   border-bottom: solid 1px $color-main;
 
-  & h3 {
+  & h3,
+  h2,
+  p {
     text-align: center;
+    padding: 0 2px;
   }
 }
 

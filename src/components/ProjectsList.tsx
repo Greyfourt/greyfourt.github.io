@@ -111,5 +111,28 @@ const ProjectsList = [
     }
 ]
 
+const TagsList = [
+  {
+    tag: "Logo",
+  },
+  {
+    tag: "Graphics",
+  },
+  {
+    tag: "WebApp",
+  },
+  {
+    tag: "MobileApp",
+  },
+  {
+    tag: "Website",
+  },
+  {
+    tag: "All",
+  },
+];
+
+export { TagsList };
+
 
 export default ProjectsList;

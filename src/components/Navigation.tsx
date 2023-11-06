@@ -29,18 +29,16 @@ export const Menu = () => {
 
     const currentRoute = usePathname()
 
-    const menuItem = () => {
+    const navItem = () => {
 
     }
 
     return (
-        <header >
-            <nav>
-                <a href="/" className={'menuItem ' + (currentRoute === "/" ? "active" : "")}>Home</a>
-                <a href="/projects" className={'menuItem ' + (currentRoute === "/projects" ? "active" : "")}>Projects</a>
-                <a className="menuItem contactButton " href="mailto:nazliozcubukcuoglu@gmail.com"> Contact</a>
-            </nav>
-        </header >
+        <nav >
+                <a href="/" className={'navItem ' + (currentRoute === "/" ? "active" : "")}>Home</a>
+                <a href="/projects" className={'navItem ' + (currentRoute === "/projects" ? "active" : "")}>Projects</a>
+                <a className="navItem contactButton " href="mailto:nazliozcubukcuoglu@gmail.com"> Contact</a>
+        </nav >
     )
 }
 
