@@ -1,4 +1,5 @@
-import ProjectsList from '../projectsList';
+import ProjectsList from "@/components/ProjectsList";
+
 
 const ProjectPage = () => {
 
