@@ -100,7 +100,10 @@ const ProjectsList = [
   },
 ];
 
-const TagsList = [
+const Tags = [
+  {
+    tag: "All",
+  },
   {
     tag: "Logo",
   },
@@ -108,20 +111,16 @@ const TagsList = [
     tag: "Graphics",
   },
   {
-    tag: "WebApp",
+    tag: "Web App",
   },
   {
-    tag: "MobileApp",
+    tag: "Mobile App",
   },
   {
     tag: "Website",
   },
-  {
-    tag: "All",
-  },
 ];
 
-export { TagsList };
-
+export { Tags };
 
 export default ProjectsList;

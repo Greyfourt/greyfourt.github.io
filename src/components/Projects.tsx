@@ -7,14 +7,10 @@ import Tags from "./Filters";
 import Filters from "./Filters";
 import Tag from "./Tag";
 
-interface TagsProps {
-  tag: string;
-}
-
 const Projects = ({ isProject }: { isProject?: boolean }) => {
   let Projects = ProjectsList;
 
-  const [currentTag, setCurrentTag] = useState("");
+  const [currentTag, setCurrentTag] = useState("All");
 
   if (isProject != true) {
     Projects = Projects.filter((Project, index) => index < 3);
@@ -24,7 +20,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
     <div className="projectsWrapper">
       <div className="projectsHeader">
         {isProject === true ? (
-          <Filters />
+          <Filters currentTag={currentTag} setCurrentTag={setCurrentTag} />
         ) : (
           <div>
             <h2>My Projects</h2>
@@ -35,39 +31,33 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
 
       <div className="tiles">
         {Projects.filter((Project) => {
-          if (currentTag === "") return true;
-          console.log(Project.tag);
-          console.log(currentTag);
-
+          if (currentTag === "All") return true;
           return Project.tag === currentTag;
         }).map((Project, index) => {
           return (
-            <article
+            <a
+              href={
+                Project.hasCaseStudy === true
+                  ? `/projects/casestudy/${Project.projectURL}`
+                  : Project.link
+              }
+              target={Project.hasCaseStudy === true ? "" : "_blank"}
               className={"projectItem " + Project.tag.replaceAll(" ", "")}
               key={index}
             >
-              <Tag tag={Project.tag} />
+              <Tag
+                tag={Project.tag}
+                // key=""
+                currentTag={currentTag}
+                setCurrentTag={setCurrentTag}
+              />
 
-              <a
-                className="image"
-                href={
-                  Project.hasCaseStudy === true
-                    ? `/projects/casestudy/${Project.projectURL}`
-                    : Project.link
-                }
-                target={
-                  Project.hasCaseStudy === true
-                    ? ""
-                    : "_blank"
-                }
-              >
-                <img src={Project.image} alt="" />
-              </a>
+              <img className="image" src={Project.image} alt="" />
               <div className="titleDate">
                 <p>{Project.title}</p>
                 <p>{Project.date}</p>
               </div>
-            </article>
+            </a>
           );
         })}
       </div>

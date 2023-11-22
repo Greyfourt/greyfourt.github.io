@@ -1,32 +1,31 @@
-'use client'
-
-import { useState } from "react";
 import Icon from "./Icons";
-import { TagsList } from "./ProjectsList";
+import { Tags } from "./ProjectsList";
 
 interface TagProps {
   tag: string;
+  key?: number | string;
+  currentTag: string;
+  setCurrentTag: (tag: string) => void;
 }
 
-const Tag = ({ tag }: TagProps) => {
-  const [isSelected, setIsSelected] = useState("false");
-  const [currentTag, setCurrentTag] = useState("");
+const Tag = ({ tag, key, currentTag, setCurrentTag }: TagProps) => {
 
   return (
-    <>
-        <div
-          className={"tag" + (isSelected === "true" ? " active" : "")}
-          onClick={() => {
-            setCurrentTag(tag), setIsSelected("true");
-          }}
-        >
-          <div className="icon">
-            <Icon type="round" />
-          </div>
+    <button
+      className={
+        `${tag}` + " tag" + ((tag === currentTag) ? " active" : "")
+      }
+      key={key}
+      onClick={() => {
+        setCurrentTag(tag);
+      }}
+    >
+      <div className="icon">
+        <Icon type="round" />
+      </div>
 
-          <p>{tag}</p>
-        </div>
-    </>
+      <p>{tag}</p>
+    </button>
   );
 };
 
