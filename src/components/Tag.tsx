@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from "react";
 import Icon from "./Icons";
 import { TagsList } from "./ProjectsList";

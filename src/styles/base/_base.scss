@@ -130,7 +130,7 @@ input[type="reset"] {
   @include flex(column, center, center);
   width: 100%;
 
-& .projetsHeader {
+  & .projetsHeader {
     @include flex(column, center, center);
     width: 100%;
     padding: 1.25em;
@@ -140,7 +140,7 @@ input[type="reset"] {
       margin: 0;
       padding: 0;
     }
-}
+  }
 
   & .tiles {
     @include flex();
@@ -274,6 +274,30 @@ input[type="reset"] {
         padding: 0;
       }
     }
+  }
+}
+
+.casestudyHeaderContainer {
+  @include flex(column, center, center);
+  padding: 4rem 2rem;
+  gap: 1rem;
+}
+
+.casestudyContentContainer {
+  @include flex(column, center, center);
+  padding: 4rem 2rem;
+  gap: 1rem;
+
+  & h3,
+  h2,
+  p {
+    // text-align: center;
+    padding: 0 2px;
+  }
+
+  & .casestudyStepsContent {
+    @include flex(column, center, center);
+    gap: 1rem;
   }
 }
 

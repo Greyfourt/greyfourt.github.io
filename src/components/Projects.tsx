@@ -20,7 +20,6 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
     Projects = Projects.filter((Project, index) => index < 3);
   }
 
-
   return (
     <div className="projectsWrapper">
       <div className="projectsHeader">
@@ -41,7 +40,6 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
           console.log(currentTag);
 
           return Project.tag === currentTag;
-     
         }).map((Project, index) => {
           return (
             <article
@@ -50,7 +48,15 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
             >
               <Tag tag={Project.tag} />
 
-              <a className="image" href={Project.link} target="_blank">
+              <a
+                className="image"
+                href={
+                  Project.hasCaseStudy === true
+                    ? `/projects/casestudy/${Project.projectURL}`
+                    : Project.link
+                }
+                target="_blank"
+              >
                 <img src={Project.image} alt="" />
               </a>
               <div className="titleDate">
