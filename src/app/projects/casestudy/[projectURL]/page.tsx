@@ -24,9 +24,14 @@ const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
     );
   } else {
     throw new Error("Cannot find case study.");
-    return null;
+    return (
+      <>
+        <div>
+          <h2>Cannot find case study.</h2>
+        </div>
+      </>
+    );
   }
 };
-
 
 export default ProjectPage;
