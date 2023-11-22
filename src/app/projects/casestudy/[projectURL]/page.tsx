@@ -24,6 +24,7 @@ const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
     );
   } else {
     throw new Error("Cannot find case study.");
+    return null;
   }
 };
 
