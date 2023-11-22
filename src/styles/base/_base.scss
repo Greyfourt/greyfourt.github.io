@@ -161,8 +161,10 @@ input[type="reset"] {
       height: 400px;
 
       .image {
-        @include flex(column, center, center);
+        @include flex(column, flex-start, center);
         width: 100%;
+        height: 300px;
+        overflow: hidden;
 
         img {
           width: 100%;
@@ -333,9 +335,16 @@ footer {
   }
 }
 
-@media only screen and (min-width: 480px) and (max-width: 1280px) {
+@media only screen and (min-width: 481px) and (max-width: 1200px) {
   body {
     font-size: 12pt;
+  }
+
+  .tiles .projectItem {
+    // width: calc(50% - 2.5em);
+    .image {
+      height: unset !important;
+    }
   }
 }
 
@@ -367,6 +376,17 @@ footer {
     & .tiles .projectItem {
       width: 100%;
       margin: 1.25em 0 0 0;
+
+      & .image {
+        @include flex(column, center, center);
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+
+        & img {
+          width: 100%;
+        }
+      }
     }
   }
 
