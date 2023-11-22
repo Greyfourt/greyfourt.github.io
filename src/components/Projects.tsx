@@ -20,6 +20,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
     Projects = Projects.filter((Project, index) => index < 3);
   }
 
+
   return (
     <div className="projectsWrapper">
       <div className="projectsHeader">
