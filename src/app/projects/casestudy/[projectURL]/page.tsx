@@ -1,5 +1,3 @@
-// 'use client'
-
 import ProjectsList from "@/components/ProjectsList";
 import Tag from "@/components/Tag";
 
@@ -23,7 +21,7 @@ const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
       </>
     );
   } else {
-    throw new Error("Cannot find case study.");
+    // throw new Error("Cannot find case study.");
     return (
       <>
         <div>
