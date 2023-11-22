@@ -38,26 +38,12 @@ const ProjectsList = [
     projectURL: "Floof",
   },
   {
-    title: "Floof App",
-    date: "2023",
-    tag: "Logo",
-    image: "/articles/LogoFloof.png",
-    hasCaseStudy: false,
-  },
-  {
     title: "Knotbook App",
     date: "2023",
     tag: "Mobile App",
     image: "/articles/AppKnotbook.png",
     hasCaseStudy: true,
     projectURL: "Knotbook",
-  },
-  {
-    title: "Knotbook App",
-    date: "2023",
-    tag: "Logo",
-    image: "/articles/LogoKnotbook.png",
-    hasCaseStudy: false,
   },
   {
     title: "La Mare à Toto",

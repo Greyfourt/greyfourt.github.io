@@ -55,7 +55,11 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
                     ? `/projects/casestudy/${Project.projectURL}`
                     : Project.link
                 }
-                target="_blank"
+                target={
+                  Project.hasCaseStudy === true
+                    ? ""
+                    : "_blank"
+                }
               >
                 <img src={Project.image} alt="" />
               </a>
