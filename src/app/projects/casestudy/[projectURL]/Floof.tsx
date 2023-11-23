@@ -171,7 +171,7 @@ const Floof = () => {
               designs from the basic - minimally styled MVPs to more studied
               designs.
             </p>
-            <div className="casestudyContentRow">
+            <div className="outcomeRow">
               <div className="image">
                 <img src="/images/Outcome-Floof-1.png" alt="Outcome" />
               </div>

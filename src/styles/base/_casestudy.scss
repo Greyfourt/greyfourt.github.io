@@ -123,18 +123,19 @@
 
         }
 
-        &.outcomeRow {
+        & .outcomeRow {
             @include flex(row, center, center);
             gap: 3rem;
             width: 100%;
             flex-wrap: wrap;
-            
+
             & .image {
-                @include flex(column, center, center);
-                width: 50%;
+                // @include flex(column, center, center);
+                // width: 50%;
+                // width: 300px;
 
                 & img {
-                    width: 300px;
+                    width: 240px;
                 }
             }
         }
@@ -145,4 +146,11 @@
         @include flex(column, center, center);
         gap: 1rem;
     }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1200px) {
+    .casestudyContentWrapper {
+        padding: 2rem 4rem;
+    }
+
 }
