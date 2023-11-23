@@ -4,7 +4,7 @@ import { Tags } from "./ProjectsList";
 interface TagProps {
   tag: string;
   index?: number | string;
-  currentTag: string;
+  currentTag?: string;
   setCurrentTag: (tag: string) => void;
 }
 

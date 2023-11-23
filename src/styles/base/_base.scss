@@ -337,29 +337,7 @@ button.CaseStudy.tag.active {
   }
 }
 
-.casestudyHeaderContainer {
-  @include flex(column, center, center);
-  padding: 4rem 2rem;
-  gap: 1rem;
-}
 
-.casestudyContentContainer {
-  @include flex(column, center, center);
-  padding: 4rem 2rem;
-  gap: 1rem;
-
-  & h3,
-  h2,
-  p {
-    // text-align: center;
-    padding: 0 2px;
-  }
-
-  & .casestudyStepsContent {
-    @include flex(column, center, center);
-    gap: 1rem;
-  }
-}
 
 .CTAContainer {
   @include flex(column, center, center);
