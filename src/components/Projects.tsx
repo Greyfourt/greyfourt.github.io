@@ -48,7 +48,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
                   />
                 </div>
 
-                {Project.link || Project.projectURL ? (
+                {Project.link || Project.hasCaseStudy === true ? (
                   <a
                     className="navLink"
                     href={
