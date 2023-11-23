@@ -39,12 +39,37 @@ export const Menu = () => {
     }
 
     return (
-        <nav >
-                <a href="/" className={'navItem ' + (currentRoute === "/" ? "active" : "")}>Home</a>
-                <a href="/projects" className={'navItem ' + (currentRoute === "/projects" ? "active" : "")}>Projects</a>
-                <a className="navItem contactButton " href="mailto:nazliozcubukcuoglu@gmail.com"> Contact</a>
-        </nav >
-    )
+      <nav>
+        <a
+          href="/"
+          className={"navItem " + (currentRoute === "/" ? "active" : "")}
+        >
+          Home
+        </a>
+        <a
+          href="/projects"
+          className={
+            "navItem " + (currentRoute === "/projects" ? "active" : "")
+          }
+        >
+          Projects
+        </a>
+        <a
+          // href="/Resume"
+          className="navItem "
+          href="https://greyfourt.github.io/CV_English_Nazli.pdf"
+        >
+          Resume
+        </a>
+        <a
+          className="navItem"
+          href="mailto:nazliozcubukcuoglu@gmail.com"
+        >
+          {" "}
+          Contact
+        </a>
+      </nav>
+    );
 }
 
 export default Footer

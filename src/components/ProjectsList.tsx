@@ -88,7 +88,7 @@ const ProjectsList = [
     date: "2021",
     tag: "Web App",
     image: "/articles/AppContacts.png",
-    hasCaseStudy: true,
+    hasCaseStudy: false,
     projectURL: "Contacts",
   },
   {

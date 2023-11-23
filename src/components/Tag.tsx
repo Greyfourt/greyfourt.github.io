@@ -3,21 +3,21 @@ import { Tags } from "./ProjectsList";
 
 interface TagProps {
   tag: string;
-  key?: number | string;
+  index?: number | string;
   currentTag: string;
   setCurrentTag: (tag: string) => void;
 }
 
-const Tag = ({ tag, key, currentTag, setCurrentTag }: TagProps) => {
+const Tag = ({ tag, index, currentTag, setCurrentTag }: TagProps) => {
 
   return (
     <button
       className={
-        `${tag}` + " tag" + ((tag === currentTag) ? " active" : "")
+        `${tag.replace(" ","")}` + " tag" + ((tag === currentTag) ? " active" : "")
       }
-      key={key}
+      key={index}
       onClick={() => {
-        setCurrentTag(tag);
+        setCurrentTag(tag); 
       }}
     >
       <div className="icon">

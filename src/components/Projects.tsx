@@ -35,29 +35,43 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
           return Project.tag === currentTag;
         }).map((Project, index) => {
           return (
-            <a
-              href={
-                Project.hasCaseStudy === true
-                  ? `/projects/casestudy/${Project.projectURL}`
-                  : Project.link
-              }
-              target={Project.hasCaseStudy === true ? "" : "_blank"}
+            <div
               className={"projectItem " + Project.tag.replaceAll(" ", "")}
               key={index}
             >
-              <Tag
-                tag={Project.tag}
-                // key=""
-                currentTag={currentTag}
-                setCurrentTag={setCurrentTag}
-              />
+              <div className="projectHeader">
+                <div className="tagWrapper">
+                  <Tag
+                    tag={Project.tag}
+                    currentTag={currentTag}
+                    setCurrentTag={setCurrentTag}
+                  />
+                </div>
+
+                {Project.link || Project.projectURL ? (
+                  <a
+                    className="navLink"
+                    href={
+                      Project.hasCaseStudy === true
+                        ? `/projects/casestudy/${Project.projectURL}`
+                        : Project.link
+                    }
+                    target={Project.hasCaseStudy === true ? "" : "_blank"}
+                  >
+                    {Project.link ? "Visit" : "Read Case Study"}
+                    <Icon type="arrowRight" />
+                  </a>
+                ) : (
+                  ""
+                )}
+              </div>
 
               <img className="image" src={Project.image} alt="" />
               <div className="titleDate">
                 <p>{Project.title}</p>
                 <p>{Project.date}</p>
               </div>
-            </a>
+            </div>
           );
         })}
       </div>

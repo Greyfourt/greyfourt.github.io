@@ -165,8 +165,41 @@ input[type="reset"] {
       padding: 18px;
 
       &:hover {
-        border: solid 1px $color-secondary;
+        // border: solid 1px $color-secondary;
+
+        & .navLink {
+          background-color: $color-button;
+          color: $color-text;
+
+          & .icon {
+            fill: $color-button-text;
+          }
+        }
+
       }
+
+      & .projectHeader {
+        @include flex(row, space-between, center);
+        width: 100%;
+
+        & .tagWrapper {
+          @include flex(row, flex-start, center);
+          gap: 0.5rem;
+          flex-wrap: wrap;
+        }
+
+        & .navLink {
+          @include flex(row, center, center);
+          gap: 0.5rem;
+          text-decoration: none;
+          color: $color-button-text;
+          cursor: pointer;
+          border-radius: 32px;
+          padding: .25em .5em .25em 1em;
+        }
+      }
+
+
     }
 
 
@@ -223,46 +256,51 @@ input[type="reset"] {
   }
 }
 
-// .Website .tag:hover,
-// .Website .tag.active {
-//   background-color: $color-yellow-20;
-//   color: $color-yellow-100;
-//   cursor: pointer;
-// }
+.Website .tag:hover,
+.Website .tag.active,
+button.Website.tag.active {
+  background-color: $color-yellow-20;
+  color: $color-yellow-100;
+  cursor: pointer;
+}
 
-// .MobileApp .tag:hover,
-// .MobileApp .tag.active {
-//   background-color: $color-pink-20;
-//   color: $color-pink-100;
-//   cursor: pointer;
-// }
+.MobileApp .tag:hover,
+.MobileApp .tag.active,
+button.MobileApp.tag.active {
+  background-color: $color-pink-20;
+  color: $color-pink-100;
+  cursor: pointer;
+}
 
-// .Graphics .tag:hover,
-// .Graphics .tag.active {
-//   background-color: $color-orange-20;
-//   color: $color-orange-100;
-//   cursor: pointer;
-// }
+.Graphics .tag:hover,
+.Graphics .tag.active,
+button.Graphics.tag.active {
+  background-color: $color-orange-20;
+  color: $color-orange-100;
+  cursor: pointer;
+}
 
-// .Logo .tag:hover,
-// .Logo .tag.active {
-//   background-color: $color-blue-20;
-//   color: $color-blue-100;
-//   cursor: pointer;
-// }
+.Logo .tag:hover,
+.Logo .tag.active,
+button.Logo.tag.active {
+  background-color: $color-blue-20;
+  color: $color-blue-100;
+  cursor: pointer;
+}
 
-// .WebApp .tag:hover,
-// .WebApp .tag.active {
-//   background-color: $color-green-20;
-//   color: $color-green-100;
-//   cursor: pointer;
-// }
+.WebApp .tag:hover,
+.WebApp .tag.active,
+button.WebApp.tag.active {
+  background-color: $color-green-20;
+  color: $color-green-100;
+  cursor: pointer;
+}
 
-.tag:hover,
-.tag.active {
-  background-color: $color-secondary;
+.CaseStudy .tag:hover,
+.CaseStudy .tag.active,
+button.CaseStudy.tag.active {
+  background-color: $color-tag;
   color: $color-button-text;
-  cursor: pointer
 }
 
 .headerContainer {
