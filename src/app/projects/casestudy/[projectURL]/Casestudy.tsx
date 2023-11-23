@@ -1,5 +1,5 @@
 import Floof from "./Floof";
-import Knotbook from "../Knotbook";
+import Knotbook from "./Knotbook";
 
 const Casestudy = ({ projectName }: { projectName?: string }) => {
   if (projectName === "Floof") {
