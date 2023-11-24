@@ -1,6 +1,5 @@
 'use client'
 
-import Icon from '@/components/Icons'
 import Projects from '@/components/Projects';
 
 

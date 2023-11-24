@@ -1,6 +1,6 @@
 import ProjectsList from "@/components/ProjectsList";
 import Tag from "@/components/Tag";
-import Casestudy from "./Casestudy";
+import CaseStudy from "@/components/CaseStudy";
 
 const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
   const projectURL: string = params.projectURL;
@@ -11,7 +11,11 @@ const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
 
   const hasCaseStudies = Project ? Project.hasCaseStudy : false;
 
-  if (hasCaseStudies === true) {
+  if (!Project) {
+    throw new Error("Cannot find project.");
+  }
+
+  if (hasCaseStudies === true && Project.projectCaseStudy) {
     return (
       <>
         <div className="casestudyHeaderContainer">
@@ -20,7 +24,10 @@ const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
           {/* <Tag tag={Project?.tag} /> */}
         </div>
         <div className="casestudyContentWrapper">
-          <Casestudy projectName={projectURL} />
+          <CaseStudy
+            projectName={projectURL}
+            caseStudy={Project.projectCaseStudy}
+          />
         </div>
       </>
     );
