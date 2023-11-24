@@ -53,7 +53,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
                     className="navLink"
                     href={
                       Project.hasCaseStudy === true
-                        ? `/projects/casestudy/${Project.projectURL}`
+                        ? `/projects/${Project.projectURL}`
                         : Project.link
                     }
                     target={Project.hasCaseStudy === true ? "" : "_blank"}
