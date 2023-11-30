@@ -10,7 +10,7 @@ const ProjectsPage = () => {
     return (
         <>
             <div className="headerContainer">
-                <h1>Projects</h1>
+                <h1>Most recent projects</h1>
             </div>
             <Projects
                 isProject />
