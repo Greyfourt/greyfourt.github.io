@@ -11,10 +11,6 @@ const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
 
   const hasCaseStudies = Project ? Project.hasCaseStudy : false;
 
-  // if (!Project) {
-  //   throw new Error("Cannot find project.");
-  // }
-
   if (hasCaseStudies === true && Project && Project.projectCaseStudy) {
     return (
       <>
