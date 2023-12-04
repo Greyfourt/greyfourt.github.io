@@ -170,7 +170,7 @@ const ProjectsList = [
     date: "2022",
     tag: "Mobile App",
     image: "/articles/AppBookipe.png",
-    hasCaseStudy: true,
+    hasCaseStudy: false,
     projectURL: "bookipe",
   },
   {

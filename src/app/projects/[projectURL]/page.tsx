@@ -3,9 +3,19 @@ import Tag from "@/components/Tag";
 import CaseStudy from "@/components/CaseStudy";
 
 export async function generateStaticParams() {
-  return [{ projectURL: "floof" }, { projectURL: "knotbook" }];
+  // let out = [{ projectURL: "floof" }, { projectURL: "knotbook" }];
+
+  let out = ProjectsList
+  .filter((project) => project.hasCaseStudy === true)
+  .map((project) => {
+    return {
+      projectURL: project.projectURL || "",
+    };
+  });
+
+  return out;
 }
- 
+
 const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
   const projectURL: string = params.projectURL;
 

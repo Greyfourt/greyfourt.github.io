@@ -34,7 +34,7 @@ const CaseStudy = ({
         <div className="casestudyContentRow problem">
           <div className="image">
             <img
-              src={"/images/Problem-" + `${projectName}` + ".png"}
+              src={"/images/Problem-" + `${projectName.toUpperCase()}` + ".png"}
               alt="users"
             />
           </div>
@@ -133,7 +133,7 @@ const CaseStudy = ({
             <h3>4 - Outcome</h3>
             <p>{caseStudy.outComeDescription}</p>
             <div className="outcomeRow">
-              {...caseStudy.outComeImages.map((image,index) => (
+              {...caseStudy.outComeImages.map((image, index) => (
                 <div className="image" key={index}>
                   <img src={image} alt="Outcome" />
                 </div>
