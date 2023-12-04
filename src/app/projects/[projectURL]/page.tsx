@@ -2,6 +2,10 @@ import ProjectsList from "@/components/ProjectsList";
 import Tag from "@/components/Tag";
 import CaseStudy from "@/components/CaseStudy";
 
+export async function generateStaticParams() {
+  return [{ projectURL: "floof" }, { projectURL: "knotbook" }];
+}
+ 
 const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
   const projectURL: string = params.projectURL;
 
@@ -10,10 +14,6 @@ const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
   });
 
   const hasCaseStudies = Project ? Project.hasCaseStudy : false;
-
-  // if (!Project) {
-  //   throw new Error("Cannot find project.");
-  // }
 
   if (hasCaseStudies === true && Project && Project.projectCaseStudy) {
     return (

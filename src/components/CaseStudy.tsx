@@ -61,9 +61,10 @@ const CaseStudy = ({
                   <p>Current Logo</p>
                 </div>
                 <div className="brandingItem">
-                  {...caseStudy.brandCurrentLogo.map((logo) => (
+                  {...caseStudy.brandCurrentLogo.map((logo, index) => (
                     <img
                       src={logo}
+                      key={index}
                       className="currentLogo"
                       alt="current logo"
                     />
@@ -75,9 +76,10 @@ const CaseStudy = ({
                   <p>Propositions</p>
                 </div>
                 <div className="brandingItem proposalLogos">
-                  {...caseStudy.brandPropositions.map((logo) => (
+                  {...caseStudy.brandPropositions.map((logo, index) => (
                     <img
                       src={logo}
+                      key={index}
                       className="proposalLogo"
                       alt="proposal logo with text"
                     />
@@ -104,8 +106,8 @@ const CaseStudy = ({
                   <p>Colors</p>
                 </div>
                 <div className="brandingItem">
-                  {...caseStudy.brandColors.map((color) => (
-                    <div className="colors">
+                  {...caseStudy.brandColors.map((color, index) => (
+                    <div className="colors" key={index}>
                       <div
                         className="colorBox"
                         style={{
@@ -113,7 +115,7 @@ const CaseStudy = ({
                         }}
                       ></div>
                       <p>{color.name}</p>
-                      <p> {color.hex}</p>
+                      <p>{color.hex}</p>
                     </div>
                   ))}
                 </div>
@@ -122,22 +124,17 @@ const CaseStudy = ({
           </div>
           <div className="casestudyContentColumn userJourneys">
             <h3>3 - User Journeys</h3>
-            <p>
-              {caseStudy.userJourneyDescription}
-            </p>
+            <p>{caseStudy.userJourneyDescription}</p>
             <div className="image">
               <img src={caseStudy.userJourneyImage} alt="userjourneys" />
             </div>
           </div>
           <div className="casestudyContentColumn Outcome">
             <h3>4 - Outcome</h3>
-            <p>
-              {caseStudy.outComeDescription}
-            </p>
+            <p>{caseStudy.outComeDescription}</p>
             <div className="outcomeRow">
-
-              {...caseStudy.outComeImages.map((image) => (
-                <div className="image">
+              {...caseStudy.outComeImages.map((image,index) => (
+                <div className="image" key={index}>
                   <img src={image} alt="Outcome" />
                 </div>
               ))}

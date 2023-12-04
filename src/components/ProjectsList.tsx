@@ -35,7 +35,7 @@ const ProjectsList = [
     tag: "Mobile App",
     image: "/articles/AppFloof.png",
     hasCaseStudy: true,
-    projectURL: "Floof",
+    projectURL: "floof",
     projectCaseStudy: {
       problemImage: "/images/Problem-Floof.png",
       problemDescriptions: [
@@ -99,7 +99,7 @@ const ProjectsList = [
     tag: "Mobile App",
     image: "/articles/AppKnotbook.png",
     hasCaseStudy: true,
-    projectURL: "Knotbook",
+    projectURL: "knotbook",
     projectCaseStudy: {
       problemImage: "/images/Problem-Knotbook.png",
       problemDescriptions: [
@@ -171,7 +171,7 @@ const ProjectsList = [
     tag: "Mobile App",
     image: "/articles/AppBookipe.png",
     hasCaseStudy: true,
-    projectURL: "Bookipe",
+    projectURL: "bookipe",
   },
   {
     title: "Valensi Patrimoine",
@@ -201,7 +201,7 @@ const ProjectsList = [
     tag: "Web App",
     image: "/articles/AppContacts.png",
     hasCaseStudy: false,
-    projectURL: "Contacts",
+    projectURL: "contacts",
   },
   {
     title: "ODB Rénovation",
