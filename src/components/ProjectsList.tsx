@@ -7,6 +7,14 @@ const ProjectsList = [
     hasCaseStudy: false,
   },
   {
+    title: "Epic Stories Teambuilding",
+    date: "2023",
+    tag: "Website",
+    image: "/articles/WebsiteEST.png",
+    link: "https://epicstoriesteambuilding.com/",
+    hasCaseStudy: false,
+  },
+  {
     title: "TEB Health",
     date: "2023",
     tag: "Website",
@@ -111,9 +119,7 @@ const ProjectsList = [
         "Swarmed the internet, tested and played around many applications.",
       brandDescription:
         "We wanted to create an environment that users will not have a lot of distractions while keeping the cozy side.",
-      brandCurrentLogo: [
-        "/images/Logo-Knotbook.png",
-      ],
+      brandCurrentLogo: ["/images/Logo-Knotbook.png"],
       brandPropositions: [
         "/images/Proposal-Knotbook.png",
         "/images/Proposal-Knotbook-2.png",

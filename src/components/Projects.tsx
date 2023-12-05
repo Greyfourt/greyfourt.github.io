@@ -58,7 +58,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
                     }
                     target={Project.hasCaseStudy === true ? "" : "_blank"}
                   >
-                    {Project.link ? "Visit" : "Read Case Study"}
+                    {Project.link ? "Visit" : "Case Study"}
                     <Icon type="arrowRight" />
                   </a>
                 ) : (

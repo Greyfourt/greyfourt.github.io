@@ -310,11 +310,16 @@ button.CaseStudy.tag.active {
   padding: 4rem 2rem;
   gap: 3rem;
 
+  @media only screen and (max-width: 1200px) {
+    gap: 1rem;
+  }
+
   & .headerImage {
     @include flex(row, center, center);
 
     & img {
-      height: 60%;
+      height: 100%;
+      width: 100%;
     }
   }
 
@@ -322,6 +327,16 @@ button.CaseStudy.tag.active {
     @include flex(column, center, flex-start);
     width: 24em;
     gap: 1.5rem;
+
+    @media only screen and (max-width: 1200px) {
+      gap: 0.5rem;
+      align-items: center;
+      margin: 0 0 0 -2rem;
+
+      & h1, p {
+        text-align: center;
+      }
+    }
 
     & .highlight {
       background-color: $color-orange-20;
