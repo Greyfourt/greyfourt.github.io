@@ -85,6 +85,10 @@ svg {
     & a {
       color: $color-white-100;
     }
+
+    &:hover {
+      background: $color-secondary;
+    }
   }
 
   &.Secondary {
@@ -92,6 +96,10 @@ svg {
 
     & a {
       color: $color-main;
+    }
+
+    &:hover {
+      background: $color-main;
     }
   }
 
@@ -333,7 +341,8 @@ button.CaseStudy.tag.active {
       align-items: center;
       margin: 0 0 0 -2rem;
 
-      & h1, p {
+      & h1,
+      p {
         text-align: center;
       }
     }
@@ -358,8 +367,6 @@ button.CaseStudy.tag.active {
   @include flex(column, center, center);
   padding: 4rem 2rem;
   gap: 1rem;
-  border-top: solid 1px $color-main;
-  border-bottom: solid 1px $color-main;
 
   & h3,
   h2,
