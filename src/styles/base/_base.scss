@@ -130,6 +130,7 @@ input[type="reset"] {
     @include flex(row, center, center);
     width: 100%;
     padding: 1.25em;
+    margin-top: 70px;
     gap: 1.25em;
 
     & h2 {
@@ -336,6 +337,7 @@ button.CaseStudy.tag.active {
   padding: 4rem 2rem;
   gap: 2rem;
 
+
   & .CTADescriptions {
     @include flex(column, center, flex-start);
     gap: 1.5rem;
@@ -345,6 +347,21 @@ button.CaseStudy.tag.active {
   & .CTAImage {
     @include flex(row, center, center);
     width: 50%;
+  }
+
+  @media only screen and (max-width: 480px) {
+    @include flex(column, center, center);
+
+    & .CTAImage {
+      width: 100%;
+    }
+
+    & .CTADescriptions {
+      width: 100%;
+      padding: 1em;
+      background-color: $color-background;
+      margin-top: -90px
+    }
   }
 }
 
