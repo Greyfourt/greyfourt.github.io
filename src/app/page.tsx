@@ -8,7 +8,9 @@ export default function Home() {
       <div className="bodyContainer" id="wrapper">
         <div className="headerDescription">
           <h1>Hello, It's Nazlı Özçubukçuoğlu</h1>
-          <h3>Web & Product Designer</h3>
+          <h3>
+            <mark>Web & Product Designer</mark>
+          </h3>
           <p>Transforming ideas into intuitive and immersive experiences.</p>
           <p>And sketching some illustrations time to time!</p>
           <button className="button Primary">
@@ -23,8 +25,8 @@ export default function Home() {
           </div>
           <div className="CTADescriptions">
             <h2 className="CTAtitle">
-              I'm a web and product designer who is passionate about
-              understanding user needs.
+              I'm a web and product designer{" "}
+              <mark>who is passionate about understanding user needs.</mark>
             </h2>
             <p>
               I create intuitive experiences that guide people seamlessly
@@ -35,8 +37,8 @@ export default function Home() {
               that users find enjoyable to use.
             </p>
             <p>
-              And I'm well-versed in technical concepts, ensuring that my
-              designs flow seamlessly into functional products.
+              And I'm <mark>well-versed in technical concepts</mark>, ensuring
+              that my designs flow seamlessly into functional products.
             </p>
             <p>
               I'm currently working as a Web & Product Designer with{" "}

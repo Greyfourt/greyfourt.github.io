@@ -61,6 +61,12 @@ a {
     color: $color-secondary;
 }
 
+mark {
+    background-color: $color-secondary-30;
+    border-radius: 4px;
+    // padding: 0 1em;
+    color: $color-white-100;
+}
 
 @media only screen and (max-width: 480px) {
     h1 {

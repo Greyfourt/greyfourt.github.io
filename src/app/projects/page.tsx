@@ -1,24 +1,15 @@
-'use client'
+"use client";
 
-import Projects from '@/components/Projects';
-
+import Projects from "@/components/Projects";
 
 const ProjectsPage = () => {
+  let isProject = true;
 
-    let isProject = true
+  return (
+    <>
+      <Projects isProject />
+    </>
+  );
+};
 
-    return (
-        <>
-            <div className="headerContainer">
-                <h1>Most recent projects</h1>
-            </div>
-            <Projects
-                isProject />
-
-        </>
-    )
-}
-
-export default ProjectsPage
-
-
+export default ProjectsPage;

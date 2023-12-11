@@ -18,18 +18,18 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
 
   return (
     <div className="projectsWrapper">
-      <div className="projectsHeader">
-        {isProject === true ? (
+      {isProject === true ? (
+        <div className="projectsHeader">
           <Filters currentTag={currentTag} setCurrentTag={setCurrentTag} />
-        ) : (
-          <div className="projectsHeader">
-            <h2>Some of my projects</h2>
-            <button className="button Primary">
-              <a href="/projects">See all</a>
-            </button>
-          </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="projectsHeader">
+          <h2>Some of my projects</h2>
+          <button className="button Primary">
+            <a href="/projects">See all</a>
+          </button>
+        </div>
+      )}
 
       <div className="tiles">
         {Projects.filter((Project) => {
