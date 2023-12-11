@@ -22,10 +22,10 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
         {isProject === true ? (
           <Filters currentTag={currentTag} setCurrentTag={setCurrentTag} />
         ) : (
-          <div className="CTAContainerRow">
+          <div className="projectsHeader">
             <h2>Some of my projects</h2>
-            <button className="button Secondary">
-              <a href="/projects">See all my projects</a>
+            <button className="button Primary">
+              <a href="/projects">See all</a>
             </button>
           </div>
         )}

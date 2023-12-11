@@ -91,18 +91,6 @@ svg {
     }
   }
 
-  &.Secondary {
-    background: $color-white-100;
-
-    & a {
-      color: $color-main;
-    }
-
-    &:hover {
-      background: $color-main;
-    }
-  }
-
   &.Transparent {
     background: transparent;
 
@@ -139,9 +127,10 @@ input[type="reset"] {
   width: 100%;
 
   & .projectsHeader {
-    @include flex(column, center, center);
+    @include flex(row, center, center);
     width: 100%;
     padding: 1.25em;
+    gap: 1.25em;
 
     & h2 {
       margin: 0;

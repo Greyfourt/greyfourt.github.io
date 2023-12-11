@@ -1,3 +1,4 @@
+import Icon from "@/components/Icons";
 import "../styles/App.scss";
 import Projects from "@/components/Projects";
 
@@ -11,7 +12,8 @@ export default function Home() {
           <p>Transforming ideas into intuitive and immersive experiences.</p>
           <p>And sketching some illustrations time to time!</p>
           <button className="button Primary">
-            <a href="/projects/floof">Check out my latest case study</a>
+            <a href="/projects/floof">Check the latest case study</a>
+            <Icon type="arrowRight" />
           </button>
         </div>
 
@@ -53,9 +55,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="projects CTAContainerColumn">
-          <Projects />
-        </div>
+        <Projects />
 
         <div className="CTAContainerColumn" id="Contact">
           <h2>Got an idea? Let's discuss!</h2>
