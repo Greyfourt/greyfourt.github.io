@@ -138,11 +138,10 @@ input[type="reset"] {
   @include flex(column, center, center);
   width: 100%;
 
-  & .projetsHeader {
+  & .projectsHeader {
     @include flex(column, center, center);
     width: 100%;
     padding: 1.25em;
-    border-bottom: solid 1px $color-main;
 
     & h2 {
       margin: 0;
@@ -333,7 +332,7 @@ button.CaseStudy.tag.active {
 
   & .headerDescription {
     @include flex(column, center, flex-start);
-    width: 24em;
+    width: 60%;
     gap: 1.5rem;
 
     @media only screen and (max-width: 1200px) {
@@ -366,13 +365,12 @@ button.CaseStudy.tag.active {
 .CTAContainer {
   @include flex(column, center, center);
   padding: 4rem 2rem;
-  gap: 1rem;
+  gap: 2rem;
 
-  & h3,
-  h2,
-  p {
-    text-align: center;
-    padding: 0 2px;
+  & div {
+    @include flex(column, center, flex-start);
+    gap: 1.5rem;
+    width: fit-content;
   }
 }
 

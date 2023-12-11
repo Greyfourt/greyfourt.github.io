@@ -23,8 +23,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
           <Filters currentTag={currentTag} setCurrentTag={setCurrentTag} />
         ) : (
           <div>
-            <h2>My Projects</h2>
-            <p>Here are some of my projects.</p>
+            <h2>Some of my projects</h2>
           </div>
         )}
       </div>
