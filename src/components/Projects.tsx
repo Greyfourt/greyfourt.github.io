@@ -52,7 +52,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
 
                 {Project.link || Project.hasCaseStudy === true ? (
                   <a
-                    className="navLink button.Transparent"
+                    className="navLink button Transparent"
                     href={
                       Project.hasCaseStudy === true
                         ? `/projects/${Project.projectURL}`
