@@ -313,15 +313,11 @@ button.CaseStudy.tag.active {
   padding: 4em 2em;
   width: 100%;
 
-  @media only screen and (max-width: 1200px) {
-    gap: 0.5rem;
-    align-items: center;
-
-    & h1,
-    p {
-      text-align: center;
-    }
+  & h1,
+  p {
+    text-align: center;
   }
+
 
   .headerName {
     font-size: 2rem;
