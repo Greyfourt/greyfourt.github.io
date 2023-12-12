@@ -22,7 +22,7 @@ body {
 
 // Navigation Bar
 nav {
-  @include flex(row, center, space-evenly);
+  @include flex(row, center, center);
   position: fixed;
   right: 0;
   top: 0;
@@ -34,6 +34,7 @@ nav {
   gap: 1em;
 
   & .navItem {
+    @include flex(row, center, center);
     position: relative;
     height: 3em;
     line-height: 3em;
@@ -80,14 +81,16 @@ svg {
   cursor: pointer;
 
   &.Primary {
-    background: $color-main;
+    background: $color-button;
 
-    & a {
-      color: $color-white-100;
+    & a,
+    & svg {
+      color: $color-button-text;
+      fill: $color-button-text;
     }
 
     &:hover {
-      background: $color-secondary;
+      background: $color-main;
     }
   }
 
@@ -95,11 +98,15 @@ svg {
     background: transparent;
 
     & a {
-      color: $color-white-100;
+      color: $color-white-100 !important;
     }
 
     &:hover {
       background: $color-white-20;
+
+      & a {
+        color: $color-button-text;
+      }
     }
   }
 
@@ -165,14 +172,13 @@ input[type="reset"] {
         // border: solid 1px $color-secondary;
 
         & .navLink {
-          background-color: $color-button;
-          color: $color-text;
+          background-color: $color-main;
+          color: $color-button-text;
 
           & .icon {
             fill: $color-button-text;
           }
         }
-
       }
 
       & .projectHeader {
@@ -187,9 +193,9 @@ input[type="reset"] {
 
         & .navLink {
           @include flex(row, center, center);
-          gap: 0.5rem;
+          // gap: 0.5rem;
           text-decoration: none;
-          color: $color-button-text;
+          color: $color-white-100;
           cursor: pointer;
           border-radius: 32px;
           padding: .25em .5em .25em 1em;
@@ -305,16 +311,21 @@ button.CaseStudy.tag.active {
   @include flex(column, center, center);
   gap: 1.5rem;
   padding: 4em 2em;
+  width: 100%;
 
   @media only screen and (max-width: 1200px) {
     gap: 0.5rem;
     align-items: center;
-    margin: 0 0 0 -2rem;
 
     & h1,
     p {
       text-align: center;
     }
+  }
+
+  .headerName {
+    font-size: 2rem;
+    margin-bottom: 0.5eCTAContainerRowm;
   }
 
   & .highlight {
@@ -332,10 +343,45 @@ button.CaseStudy.tag.active {
 
 }
 
+.locationRow {
+  @include flex(row, center, center);
+  gap: 1rem;
+
+  & p {
+    margin: 0;
+    padding: 0;
+  }
+
+  & svg {
+    height: 1.5em;
+    width: 1.5em;
+  }
+
+  & .locationItem {
+    @include flex(row, center, center);
+    gap: 0.5rem;
+
+    & p {
+      margin: 0;
+      padding: 0;
+    }
+
+    & svg {
+      height: 1.5em;
+      width: 1.5em;
+    }
+  }
+}
+
 .CTAContainerRow {
   @include flex(row, center, center);
   padding: 4rem 2rem;
   gap: 2rem;
+
+  @media only screen and (max-width: 1200px) {
+    padding: 0px;
+  }
+
 
 
   & .CTADescriptions {
@@ -369,6 +415,10 @@ button.CaseStudy.tag.active {
   @include flex(column, center, center);
   padding: 4rem 2rem;
   gap: 2rem;
+
+  @media only screen and (max-width: 1200px) {
+    padding: 2em 0em;
+  }
 }
 
 footer {

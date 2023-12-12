@@ -1,13 +1,14 @@
 import Icon from "@/components/Icons";
 import "../styles/App.scss";
 import Projects from "@/components/Projects";
+import Tag from "@/components/Tag";
 
 export default function Home() {
   return (
     <>
       <div className="bodyContainer" id="wrapper">
         <div className="headerDescription">
-          <h1>Hello, It's Nazlı Özçubukçuoğlu</h1>
+          <h1 className="headerName">Nazlı Özçubukçuoğlu</h1>
           <h3>
             <mark>Web & Product Designer</mark>
           </h3>
@@ -60,10 +61,29 @@ export default function Home() {
         <Projects />
 
         <div className="CTAContainerColumn" id="Contact">
-          <h2>Got an idea? Let's discuss!</h2>
-          <h4>Even around a coffee, if you're in Lyon/Turin</h4>
+          <h2>
+            <mark> Got an idea? </mark>
+          </h2>
+          <div className="locationRow">
+            <h4>Even around a coffee in</h4>
+            <div className="locationItem">
+              <Icon type="location" />
+              <h4>Lyon, France</h4>
+            </div>
+            <div className="locationItem">
+              <Icon type="location" />
+              <h4>Turin, Italy</h4>
+            </div>
+          </div>
+          <div className="locationRow">
+            <h4>Or remotely</h4>
+            <div className="locationItem">
+              <Icon type="world" />
+              <h4>Anywhere</h4>
+            </div>
+          </div>
           <button className="button Primary">
-            <a href="mailto:nazliozcubukcuoglu@gmail.com">Send me a mail</a>
+            <a href="mailto:nazliozcubukcuoglu@gmail.com">Let's discuss!</a>
           </button>
         </div>
       </div>

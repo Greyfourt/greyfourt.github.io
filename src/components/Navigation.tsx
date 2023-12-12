@@ -8,11 +8,13 @@ const Footer = () => {
     return (
       <footer>
         <div className="contactIcons">
-          <a href="https://greyfourt.github.io/CV_English_Nazli.pdf" download="CV_English_Nazli" target="_blank" rel="nofollow">
+          <a
+            href="https://greyfourt.github.io/CV_English_Nazli.pdf"
+            download="CV_English_Nazli"
+            target="_blank"
+            rel="nofollow"
+          >
             <Icon type="doc" />
-          </a>
-          <a href="https://dewwwe.com/">
-            <Icon type="link" />
           </a>
           <a href="tel:+330769201157">
             <Icon type="phone" />
@@ -25,7 +27,7 @@ const Footer = () => {
             <Icon type="linkedin" />
           </a>
         </div>
-        <p>&copy; 2023. made by Nazli with ♥</p>
+        <p>with ♥ by Nazli &copy; 2023</p>
       </footer>
     );
 }
@@ -58,15 +60,13 @@ export const Menu = () => {
           // href="/Resume"
           className="navItem "
           href="https://greyfourt.github.io/CV_English_Nazli.pdf"
+          target="_blank"
+          rel="nofollow"
         >
-          Resume
+          <Icon type="doc" />
         </a>
-        <a
-          className="navItem"
-          href="mailto:nazliozcubukcuoglu@gmail.com"
-        >
-          {" "}
-          Contact
+        <a className="navItem" href="mailto:nazliozcubukcuoglu@gmail.com">
+          <Icon type="mail"/>
         </a>
       </nav>
     );

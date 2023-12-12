@@ -9,21 +9,18 @@ interface TagProps {
 }
 
 const Tag = ({ tag, index, currentTag, setCurrentTag }: TagProps) => {
-
   return (
     <button
       className={
-        `${tag.replace(" ","")}` + " tag" + ((tag === currentTag) ? " active" : "")
+        `${tag.replace(" ", "")}` +
+        " tag" +
+        (tag === currentTag ? " active" : "")
       }
       key={index}
       onClick={() => {
-        setCurrentTag(tag); 
+        setCurrentTag(tag);
       }}
     >
-      <div className="icon">
-        <Icon type="round" />
-      </div>
-
       <p>{tag}</p>
     </button>
   );
