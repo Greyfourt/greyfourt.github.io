@@ -1,7 +1,32 @@
+@media only screen and (max-width: 480px) {
+  html {
+    min-width: 320px;
+  }
+}
+
 // Body
 body {
   background-color: $color-background;
   padding: 6em 3em;
+
+  @media only screen and (min-width: 481px) and (max-width: 1200px) {
+    font-size: 12pt;
+  }
+
+  @media only screen and (max-width: 480px) {
+    @include flex(column, center, center);
+    min-width: 320px;
+    padding: 1em 1.5em;
+  }
+}
+
+// Landing Page
+@media only screen and (max-width: 480px) {
+  .bodyContainer {
+    @include flex(column, center, center);
+    width: 100%;
+    padding: 0;
+  }
 }
 
 @-ms-viewport {
@@ -32,6 +57,20 @@ nav {
   width: 100%;
   padding: 1em;
   gap: 1em;
+
+  @media only screen and (max-width: 480px) {
+    @include flex(row, center, center);
+    gap: 0.5em;
+    width: unset !important;
+    width: 100%;
+    right: unset !important;
+
+    & .navItem {
+      font-size: 0.75em;
+      padding: 0 0.5em;
+      width: 100%;
+    }
+  }
 
   & .navItem {
     @include flex(row, center, center);
@@ -129,9 +168,16 @@ input[type="reset"] {
   outline: inherit;
 }
 
+
 .projectsWrapper {
   @include flex(column, center, center);
   width: 100%;
+
+  @media only screen and (max-width: 480px) {
+    @include flex(column, center, center);
+    width: 100%;
+  }
+
 
   & .projectsHeader {
     @include flex(row, center, center);
@@ -153,7 +199,7 @@ input[type="reset"] {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     position: relative;
-    padding: 1.25em;
+    padding: 1em;
     width: 100%;
     gap: 0.5em;
 
@@ -168,9 +214,31 @@ input[type="reset"] {
       border-radius: 8px;
       padding: 18px;
 
-      &:hover {
-        // border: solid 1px $color-secondary;
+      @media only screen and (max-width: 480px) {
+        width: 100%;
+        margin: 1.25em 0 0 0;
 
+        & .image {
+          @include flex(column, center, center);
+          width: 100%;
+          height: auto;
+          overflow: hidden;
+
+          & img {
+            width: 100%;
+          }
+        }
+      }
+
+      @media only screen and (min-width: 481px) and (max-width: 1200px) {
+        width: calc(50% - 9em);
+
+        & .image {
+          height: unset !important;
+        }
+      }
+
+      &:hover {
         & .navLink {
           background-color: $color-main;
           color: $color-button-text;
@@ -229,12 +297,23 @@ input[type="reset"] {
   @include flex(row, center, center);
   gap: 1rem;
   padding: 1rem 0;
-  // border-bottom: solid 1px $color-main;
+
+  @media only screen and (max-width: 480px) {
+    @include flex(column, center, center);
+    width: 100%;
+  }
 
   & .filters {
     @include flex(row, center, center);
     gap: 0.5rem;
     padding: 0.5rem 1rem;
+
+    @media only screen and (max-width: 480px) {
+      @include flex(column, center, center);
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
   }
 }
 
@@ -321,7 +400,7 @@ button.CaseStudy.tag.active {
 
   .headerName {
     font-size: 2rem;
-    margin-bottom: 0.5eCTAContainerRowm;
+    margin-bottom: 0.5em;
   }
 
   & .highlight {
@@ -342,6 +421,10 @@ button.CaseStudy.tag.active {
 .locationRow {
   @include flex(row, center, center);
   gap: 1rem;
+
+  @media only screen and (max-width: 1200px) {
+    @include flex(column, center, center);
+  }
 
   & p {
     margin: 0;
@@ -377,8 +460,6 @@ button.CaseStudy.tag.active {
   @media only screen and (max-width: 1200px) {
     padding: 0px;
   }
-
-
 
   & .CTADescriptions {
     @include flex(column, center, flex-start);
@@ -431,89 +512,5 @@ footer {
   & .contactIcons {
     @include flex(row, center, center);
     gap: 1rem;
-  }
-}
-
-@media only screen and (min-width: 481px) and (max-width: 1200px) {
-  body {
-    font-size: 12pt;
-  }
-
-  .tiles .projectItem {
-
-    width: calc(50% - 9em) !important;
-
-    .image {
-      height: unset !important;
-    }
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  html {
-    min-width: 320px;
-  }
-
-  body {
-    @include flex(column, center, center);
-    min-width: 320px;
-    padding: 1em 1.5em;
-  }
-
-  .bodyContainer {
-    @include flex(column, center, center);
-    width: 100%;
-    padding: 0;
-  }
-
-  .projectsWrapper {
-    @include flex(column, center, center);
-    width: 100%;
-
-    & .filtersContainer {
-      @include flex(column, center, center);
-      width: 100%;
-
-      & .filters {
-        @include flex(row, center, center);
-        width: 100%;
-        flex-wrap: wrap;
-      }
-    }
-
-    & .tiles .projectItem {
-      width: 100%;
-      margin: 1.25em 0 0 0;
-
-
-      & .image {
-        @include flex(column, center, center);
-        width: 100%;
-        height: auto;
-        overflow: hidden;
-
-        & img {
-          width: 100%;
-        }
-      }
-    }
-
-  }
-
-  .CTAContainer {
-    padding: 2rem 1rem;
-  }
-
-  nav {
-    @include flex(row, center, center);
-    gap: 0.5em;
-    width: unset !important;
-    right: unset !important;
-
-    & .navItem {
-      font-size: 0.75em;
-      padding: 0 0.5em;
-      width: 100%;
-    }
   }
 }

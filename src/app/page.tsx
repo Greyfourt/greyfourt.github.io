@@ -62,10 +62,10 @@ export default function Home() {
 
         <div className="CTAContainerColumn" id="Contact">
           <h2>
-            <mark> Got an idea? </mark>
+            <mark>How can I be of help?</mark>
           </h2>
           <div className="locationRow">
-            <h4>Even around a coffee in</h4>
+            <h4>Around a coffee in</h4>
             <div className="locationItem">
               <Icon type="location" />
               <h4>Lyon, France</h4>
@@ -76,10 +76,10 @@ export default function Home() {
             </div>
           </div>
           <div className="locationRow">
-            <h4>Or remotely</h4>
+            <h4>Or</h4>
             <div className="locationItem">
               <Icon type="world" />
-              <h4>Anywhere</h4>
+              <h4>Remotely</h4>
             </div>
           </div>
           <button className="button Primary">
