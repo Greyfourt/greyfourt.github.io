@@ -27,7 +27,7 @@ export default function Home() {
           <div className="CTADescriptions">
             <h2 className="CTAtitle">
               I'm a web and product designer{" "}
-              <mark>who is passionate about understanding user needs.</mark>
+              <mark>passionate about understanding user needs.</mark>
             </h2>
             <p>
               I create intuitive experiences that guide people seamlessly
