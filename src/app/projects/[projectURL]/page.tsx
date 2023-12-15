@@ -27,7 +27,7 @@ const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
 
   if (hasCaseStudies === true && Project && Project.projectCaseStudy) {
     return (
-      <>
+      <div className="bodyContainer">
         <div className="casestudyHeaderContainer">
           <h1>{Project?.title}</h1>
           <h3>{Project?.date} - Case Study</h3>
@@ -38,15 +38,15 @@ const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
             caseStudy={Project.projectCaseStudy}
           />
         </div>
-      </>
+      </div>
     );
   } else {
     return (
-      <>
+      <div className="bodyContainer">
         <div>
           <h2>Cannot find case study.</h2>
         </div>
-      </>
+      </div>
     );
   }
 };

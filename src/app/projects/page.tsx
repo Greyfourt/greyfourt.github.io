@@ -6,9 +6,9 @@ const ProjectsPage = () => {
   let isProject = true;
 
   return (
-    <>
+    <div className="bodyContainer">
       <Projects isProject />
-    </>
+    </div>
   );
 };
 
