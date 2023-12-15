@@ -132,16 +132,16 @@ const ProjectsList = [
       },
       brandColors: [
         {
-          name: "Green",
-          hex: "#355644",
+          name: "Orange",
+          hex: "#FF6B35",
         },
         {
-          name: "Accent",
-          hex: "#AFC97E",
+          name: "Secondary",
+          hex: "#9AA884",
         },
         {
           name: "Black",
-          hex: "#3C3B3B",
+          hex: "#252728",
         },
         {
           name: "White",
