@@ -34,7 +34,7 @@ const CaseStudy = ({
         <div className="casestudyContentRow problem">
           <div className="image">
             <img
-              src={"/images/Problem-" + `${projectName.toUpperCase()}` + ".png"}
+              src={"/images/Problem-" + `${projectName.charAt(0).toUpperCase() + projectName.slice(1)}` + ".png"}
               alt="users"
             />
           </div>

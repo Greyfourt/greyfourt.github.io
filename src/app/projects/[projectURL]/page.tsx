@@ -31,7 +31,6 @@ const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
         <div className="casestudyHeaderContainer">
           <h1>{Project?.title}</h1>
           <h3>{Project?.date} - Case Study</h3>
-          {/* <Tag tag={Project?.tag} /> */}
         </div>
         <div className="casestudyContentWrapper">
           <CaseStudy
