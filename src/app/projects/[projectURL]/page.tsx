@@ -31,10 +31,11 @@ const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
         <div className="casestudyHeaderContainer">
           <div className="caseStudyMeta">
             <p className="foot">{Project?.projectCaseStudy.caseStudyDate} </p>
-            <p className="foot"><mark>{Project?.projectCaseStudy.caseStudyState}</mark> </p>
+
           </div>
-          <h1>{Project?.title}</h1>
-          <h3>{Project?.date} - Case Study</h3>
+          <h1>{Project?.title} • {Project?.date}</h1>
+          <p className="foot">Case study <mark>{Project?.projectCaseStudy.caseStudyState} </mark> </p>
+          <p className="foot">Published on {Project?.projectCaseStudy.caseStudyDate}</p>
 
         </div>
         <div className="casestudyContentWrapper">

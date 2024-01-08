@@ -16,7 +16,7 @@ type CaseStudyType = {
   }[];
   userJourneyDescription: string;
   userJourneyImage: string;
-  outComeDescription: string;
+  outComeDescriptions: string[];
   outComeImages: string[];
 };
 
@@ -131,7 +131,9 @@ const CaseStudy = ({
           </div>
           <div className="casestudyContentColumn Outcome">
             <h3>4 - Outcome</h3>
-            <p>{caseStudy.outComeDescription}</p>
+            {caseStudy.outComeDescriptions.map((outComeDescription, index) => (
+              <p key={index}>{outComeDescription}</p>
+            ))}
             <div className="outcomeRow">
               {...caseStudy.outComeImages.map((image, index) => (
                 <div className="image" key={index}>
