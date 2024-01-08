@@ -20,31 +20,28 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="CTAContainerRow">
-          <div className="CTAImage">
+        <div className="ctaContainerRow">
+          <div className="ctaImage">
             <img src="/illustration.png" alt="" />
           </div>
-          <div className="CTADescriptions">
-            <h2 className="CTAtitle">
-              I'm a web and product designer
-              <mark>passionate about understanding user needs.</mark>
+          <div className="ctaText">
+
+            <h2 className="ctatitle">
+              I'm passionate about <mark>understanding users needs.</mark>
             </h2>
-            <p>
-              I create intuitive experiences that guide people seamlessly
-              towards their goals.
-            </p>
-            <p>
-              I have a knack for transforming ideas into engaging interfaces
-              that users find enjoyable to use.
-            </p>
-            <p>
-              And I'm <mark>well-versed in technical concepts</mark>, ensuring
-              that my designs flow seamlessly into functional products.
-            </p>
-            <p>
-              I'm currently working as a Web & Product Designer with{" "}
-              <a href="https://dewwwe.com/">dewwwe</a>, based in Lyon.
-            </p>
+            <div className="ctaDescriptions">
+              <p>
+                I create intuitive experiences that guide people seamlessly
+                towards their goals.
+              </p>
+              <p>
+                And I'm <mark>well-versed in technical concepts</mark>, ensuring
+                that my designs flow seamlessly into functional products.
+              </p>
+              <p>
+                I'm currently working as a Web & Product Designer with <a href="https://dewwwe.com/">dewwwe</a>, based in Lyon.
+              </p>
+            </div>
             <button className="button Primary">
               <a
                 href="https://greyfourt.github.io/CV_English_Nazli.pdf"
@@ -60,7 +57,7 @@ export default function Home() {
 
         <Projects />
 
-        <div className="CTAContainerColumn" id="Contact">
+        <div className="ctaContainerColumn" id="Contact">
           <h2>
             <mark>How can I be of help?</mark>
           </h2>

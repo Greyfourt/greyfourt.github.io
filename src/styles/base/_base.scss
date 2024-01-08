@@ -24,7 +24,7 @@ body {
 .bodyContainer {
   @include flex(column, center, center);
 
-  & > * {
+  &>* {
     max-width: 1200px;
   }
 
@@ -394,7 +394,7 @@ button.CaseStudy.tag.active {
 
 .headerDescription {
   @include flex(column, center, center);
-  gap: 1.5rem;
+  gap: .5rem;
   padding: 4em 2em;
   width: 100%;
 
@@ -458,7 +458,7 @@ button.CaseStudy.tag.active {
   }
 }
 
-.CTAContainerRow {
+.ctaContainerRow {
   @include flex(row, center, center);
   padding: 4rem 2rem;
   gap: 2rem;
@@ -467,13 +467,17 @@ button.CaseStudy.tag.active {
     padding: 0px;
   }
 
-  & .CTADescriptions {
+  & .ctaText {
     @include flex(column, center, flex-start);
     gap: 1.5rem;
-    width: 50%;
+
+    & .ctaDescriptions {
+      @include flex(column, center, flex-start);
+      width: 100%;
+    }
   }
 
-  & .CTAImage {
+  & .ctaImage {
     @include flex(row, center, center);
     width: 50%;
   }
@@ -481,20 +485,22 @@ button.CaseStudy.tag.active {
   @media only screen and (max-width: 480px) {
     @include flex(column, center, center);
 
-    & .CTAImage {
+    & .ctaImage {
       width: 100%;
     }
 
-    & .CTADescriptions {
-      width: 100%;
-      padding: 1em;
-      background-color: $color-background;
-      margin-top: -90px
+    & .ctaText {
+      & .ctaDescriptions {
+        width: 100%;
+        padding: 1em;
+        background-color: $color-background;
+        // margin-top: -90px
+      }
     }
   }
 }
 
-.CTAContainerColumn {
+.ctaContainerColumn {
   @include flex(column, center, center);
   padding: 4rem 2rem;
   gap: 2rem;
