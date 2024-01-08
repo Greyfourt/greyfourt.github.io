@@ -2,6 +2,12 @@
     @include flex(column, center, center);
     padding: 4rem 2rem;
     gap: 1rem;
+    width: 100%;
+
+    & .caseStudyMeta {
+        @include flex(column, flex-start, flex-start);
+        width: 100%;
+    }
 }
 
 .casestudyContentWrapper {

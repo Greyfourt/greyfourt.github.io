@@ -17,6 +17,7 @@ p {
     line-height: 18px;
     margin: 0;
     padding: 0;
+    letter-spacing: 0.005em;
 }
 
 h1 {
@@ -35,6 +36,8 @@ h2 {
     line-height: 42px;
     margin: 0;
     padding: 0;
+    letter-spacing: 0.05em;
+
 }
 
 h3 {
@@ -44,6 +47,7 @@ h3 {
     line-height: 35px;
     margin: 0;
     padding: 0;
+    letter-spacing: 0.1em;
 }
 
 h4 {
@@ -53,6 +57,17 @@ h4 {
     line-height: 28px;
     margin: 0;
     padding: 0;
+    letter-spacing: 0.1em;
+}
+
+p.foot {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.2em;
 }
 
 a {

@@ -5,6 +5,7 @@ const ProjectsList = [
     tag: "Logo",
     image: "/articles/LogoHT.png",
     hasCaseStudy: false,
+    isSelected: true,
   },
   {
     title: "Epic Stories Teambuilding",
@@ -13,6 +14,8 @@ const ProjectsList = [
     image: "/articles/WebsiteEST.png",
     link: "https://epicstoriesteambuilding.com/",
     hasCaseStudy: false,
+    isSelected: false,
+
   },
   {
     title: "TEB Health",
@@ -21,6 +24,8 @@ const ProjectsList = [
     image: "/articles/WebsiteTEB.png",
     link: "https://www.teb-health.com/",
     hasCaseStudy: false,
+    isSelected: false,
+
   },
   {
     title: "TEB Health",
@@ -28,6 +33,8 @@ const ProjectsList = [
     tag: "Logo",
     image: "/articles/LogoTEB.png",
     hasCaseStudy: false,
+    isSelected: false,
+
   },
   {
     title: "La Commanderie des Templiers",
@@ -36,6 +43,8 @@ const ProjectsList = [
     image: "/articles/WebsiteLCDT.png",
     link: "https://www.lacommanderiedestempliers.com/",
     hasCaseStudy: false,
+    isSelected: false,
+
   },
   {
     title: "Floof App",
@@ -43,8 +52,11 @@ const ProjectsList = [
     tag: "Mobile App",
     image: "/articles/AppFloof.png",
     hasCaseStudy: true,
+    isSelected: true,
     projectURL: "floof",
     projectCaseStudy: {
+      caseStudyState: "To be updated - In progress",
+      caseStudyDate: "October 2023",
       problemImage: "/images/Problem-Floof.png",
       problemDescriptions: [
         "We have many pets and plants in the house that we like to take care of. But also life gets busy and things slip out of mind. We do not want to forget our little friends - or as we call them floofs.",
@@ -107,8 +119,11 @@ const ProjectsList = [
     tag: "Mobile App",
     image: "/articles/AppKnotbook.png",
     hasCaseStudy: true,
+    isSelected: true,
     projectURL: "knotbook",
     projectCaseStudy: {
+      caseStudyDate: "October 2023",
+      caseStudyState: "Done",
       problemImage: "/images/Problem-Knotbook.png",
       problemDescriptions: [
         "As crochet lovers, we are always in research of new and exciting patterns. But sometimes, we come upon some terms or acronyms that we do not recognise quickly.",
@@ -170,6 +185,8 @@ const ProjectsList = [
     image: "/articles/WebsiteLMAT.png",
     link: "https://lamareatoto.fr/",
     hasCaseStudy: false,
+    isSelected: false,
+
   },
   {
     title: "Bookipe",
@@ -177,6 +194,7 @@ const ProjectsList = [
     tag: "Mobile App",
     image: "/articles/AppBookipe.png",
     hasCaseStudy: false,
+    isSelected: false,
     projectURL: "bookipe",
   },
   {
@@ -186,6 +204,8 @@ const ProjectsList = [
     image: "/articles/WebsiteValensi.png",
     link: "https://valensi-patrimoine.fr/",
     hasCaseStudy: false,
+    isSelected: false,
+
   },
   {
     title: "Valensi Patrimoine",
@@ -193,12 +213,14 @@ const ProjectsList = [
     tag: "Graphics",
     image: "/articles/GraphicValensi.png",
     hasCaseStudy: false,
+    isSelected: false,
   },
   {
     title: "Valensi Patrimoine",
     date: "2021",
     tag: "Logo",
     image: "/articles/LogoValensi.png",
+    isSelected: false,
     hasCaseStudy: false,
   },
   {
@@ -207,6 +229,7 @@ const ProjectsList = [
     tag: "Web App",
     image: "/articles/AppContacts.png",
     hasCaseStudy: false,
+    isSelected: false,
     projectURL: "contacts",
   },
   {
@@ -214,6 +237,7 @@ const ProjectsList = [
     date: "2020",
     tag: "Graphics",
     image: "/articles/GraphicODB.png",
+    isSelected: false,
     hasCaseStudy: false,
   },
 ];

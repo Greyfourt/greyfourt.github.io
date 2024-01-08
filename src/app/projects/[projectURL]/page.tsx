@@ -6,12 +6,12 @@ export async function generateStaticParams() {
   // let out = [{ projectURL: "floof" }, { projectURL: "knotbook" }];
 
   let out = ProjectsList
-  .filter((project) => project.hasCaseStudy === true)
-  .map((project) => {
-    return {
-      projectURL: project.projectURL || "",
-    };
-  });
+    .filter((project) => project.hasCaseStudy === true)
+    .map((project) => {
+      return {
+        projectURL: project.projectURL || "",
+      };
+    });
 
   return out;
 }
@@ -29,8 +29,13 @@ const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
     return (
       <div className="bodyContainer">
         <div className="casestudyHeaderContainer">
+          <div className="caseStudyMeta">
+            <p className="foot">{Project?.projectCaseStudy.caseStudyDate} </p>
+            <p className="foot"><mark>{Project?.projectCaseStudy.caseStudyState}</mark> </p>
+          </div>
           <h1>{Project?.title}</h1>
           <h3>{Project?.date} - Case Study</h3>
+
         </div>
         <div className="casestudyContentWrapper">
           <CaseStudy

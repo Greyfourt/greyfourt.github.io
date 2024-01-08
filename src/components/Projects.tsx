@@ -3,7 +3,6 @@
 import Icon from "./Icons";
 import React, { useEffect, useState } from "react";
 import ProjectsList from "./ProjectsList";
-import Tags from "./Filters";
 import Filters from "./Filters";
 import Tag from "./Tag";
 
@@ -13,7 +12,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
   const [currentTag, setCurrentTag] = useState("All");
 
   if (isProject != true) {
-    Projects = Projects.filter((Project, index) => index < 3);
+    Projects = Projects.filter(project => project.isSelected === true);
   }
 
   return (
@@ -24,7 +23,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
         </div>
       ) : (
         <div className="projectsHeader">
-          <h2>My Projects</h2>
+          <h2>Take a look at my work</h2>
           <button className="button Primary">
             <a href="/projects">See all</a>
           </button>
