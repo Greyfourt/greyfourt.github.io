@@ -29,10 +29,6 @@ const ProjectPage = async ({ params }: { params: { projectURL: string } }) => {
     return (
       <div className="bodyContainer">
         <div className="casestudyHeaderContainer">
-          <div className="caseStudyMeta">
-            <p className="foot">{Project?.projectCaseStudy.caseStudyDate} </p>
-
-          </div>
           <h1>{Project?.title} • {Project?.date}</h1>
           <p className="foot">Case study <mark>{Project?.projectCaseStudy.caseStudyState} </mark> </p>
           <p className="foot">Published on {Project?.projectCaseStudy.caseStudyDate}</p>
