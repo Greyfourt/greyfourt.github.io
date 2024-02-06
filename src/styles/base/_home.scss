@@ -1,0 +1,81 @@
+.landingHeader {
+    @include flex(column, center, center);
+    gap: 1.5rem;
+    padding: 4em 2em;
+    width: 100%;
+
+    & p {
+        text-align: center;
+    }
+}
+
+
+.about {
+    @include flex(row, center, center);
+    gap: 3rem;
+
+    & .aboutImage {
+        @include flex(column, center, flex-start);
+
+        @media only screen and (max-width: 1200px) {
+            transform: scaleX(-1);
+        }
+    }
+
+    & .aboutTextCol {
+        @include flex(column, center, flex-start);
+        gap: 1.5rem;
+
+        @media only screen and (max-width: 1200px) {
+            margin-left: -9rem;
+            padding: 2rem;
+            background-color: $color-background;
+            z-index: 100;
+            border-radius: 2rem;
+        }
+
+        & .aboutText {
+            @include flex(column, center, flex-start);
+            gap: 1.5rem;
+        }
+    }
+}
+
+.contact {
+    @include flex(column, center, center);
+    gap: 2rem;
+
+    @media only screen and (max-width: 1200px) {
+        padding: 1em 0;
+    }
+
+    & .contactRow {
+        @include flex(row, center, center);
+        gap: 1rem;
+
+        @media only screen and (max-width: 1200px) {
+            @include flex(column, center, center);
+        }
+
+        & .locationRow {
+            @include flex(row, center, center);
+            gap: 12px;
+
+        }
+
+        & .location {
+            @include flex(row, center, center);
+            gap: 0.5rem;
+
+            & svg {
+                height: 1.5em;
+                width: 1.5em;
+                fill: $color-main;
+            }
+
+            h4 {
+                color: $color-main;
+            }
+        }
+    }
+}

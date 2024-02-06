@@ -23,10 +23,10 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
         </div>
       ) : (
         <div className="projectsHeader">
-          <h2>Take a look at my work</h2>
-          <button className="button Primary">
+            <h2>Highlights</h2>
+          {/* <button className="button Transparent"> */}
             <a href="/projects">See all</a>
-          </button>
+          {/* </button> */}
         </div>
       )}
 
