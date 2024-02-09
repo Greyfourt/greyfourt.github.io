@@ -34,20 +34,20 @@ export default function Home() {
             </p>
             <p>My experience spans startups and agencies, where I craft <mark>user-centric solutions for mobile apps, SaaS products, websites, and branding.</mark></p>
             <p>
-              I'm currently working with <a href="https://dewwwe.com/">dewwwe</a> as a <mark>Product & Web Designer based in Lyon</mark>.
+              I'm currently working with <a href="https://dewwwe.com/">dewwwe</a> as a <mark>Product & Web Designer</mark> based in Lyon.
             </p>
             <p>I love side projects and discussing over new ideas. And sketching some illustrations too time to time!</p>
           </div>
 
           {/* <button className="button Transparent"> */}
-            <a
-              href="https://greyfourt.github.io/CV_English_Nazli.pdf"
-              download="CV_English_Nazli"
-              target="_blank"
-              rel="nofollow"
-            >
-              Download my CV
-            </a>
+          <a
+            href="https://greyfourt.github.io/CV_English_Nazli.pdf"
+            download="CV_English_Nazli"
+            target="_blank"
+            rel="nofollow"
+          >
+            Download my CV
+          </a>
           {/* </button> */}
         </div>
       </div>
@@ -56,11 +56,11 @@ export default function Home() {
 
       <div className="contact">
         <h2>
-          <mark>How can I be of help?</mark>
+          How can I be of help? <mark>Let's talk!</mark>
         </h2>
 
         <div className="contactRow">
-          <h4>Let's talk around a coffee in</h4>
+          <h4>Around a coffee in</h4>
           <div className="locationRow">
             <div className="location">
               <Icon type="location" />
