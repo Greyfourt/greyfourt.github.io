@@ -4,7 +4,6 @@ import Footer, { Menu } from '@/components/Navigation'
 import '../styles/App.scss'
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
-import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const nunito = Nunito({ subsets: ['latin'] })
 
@@ -23,10 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunito.className}>
-        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
-          <GoogleAnalytics ga_id=
-            {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
-        ) : null}
         <Menu />
         {children}
         <Footer />

@@ -1,7 +1,8 @@
+
 import Icon from "@/components/Icons";
 import "../styles/App.scss";
 import Projects from "@/components/Projects";
-import Tag from "@/components/Tag";
+
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
           <mark>Web & Product Designer</mark>
         </h3>
         <p>Transforming ideas into intuitive and immersive experiences.</p>
+
         <button className="button Primary">
           <a href="/projects/floof">Check the latest case study</a>
           <Icon type="arrowRight" />
@@ -30,7 +32,6 @@ export default function Home() {
           <div className="aboutText">
             <p>
               <mark>My journey to design wasn't linear,</mark> from Engineering to UI/UX Design, I've always pursued my creative instincts.
-              Now, I leverage technical expertise and artistic vision to craft user-centric solutions for various projects.
             </p>
             <p>My experience spans startups and agencies, where I craft <mark>user-centric solutions for mobile apps, SaaS products, websites, and branding.</mark></p>
             <p>
@@ -39,7 +40,6 @@ export default function Home() {
             <p>I love side projects and discussing over new ideas. And sketching some illustrations too time to time!</p>
           </div>
 
-          {/* <button className="button Transparent"> */}
           <a
             href="https://greyfourt.github.io/CV_English_Nazli.pdf"
             download="CV_English_Nazli"
@@ -48,7 +48,6 @@ export default function Home() {
           >
             Download my CV
           </a>
-          {/* </button> */}
         </div>
       </div>
 

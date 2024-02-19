@@ -12,7 +12,6 @@
         @include flex(row, center, center);
         width: 100%;
         padding: 1.25em;
-        margin-top: 70px;
         gap: 1.25em;
 
         & h2 {
@@ -30,22 +29,21 @@
         position: relative;
         padding: 1em;
         width: 100%;
-        // gap: 0.5em;
+        gap: .5rem;
 
         & .projectItem {
             @include flex(column, space-evenly, flex-start);
             position: relative;
-            margin: 1.25rem;
-            width: calc(25%);
+            width: calc(30%);
             background-color: $color-tile-background;
             border: solid 1px $color-tile-border;
-            gap: .75rem;
-            border-radius: 8px;
-            padding: 18px;
+            border-radius: 0.5rem;
+            padding: 1em;
+            gap: 1.2rem;
 
             @media only screen and (max-width: 480px) {
                 width: 100%;
-                margin: 1.25em 0 0 0;
+                margin: 1.25rem 0 0 0;
 
                 & .image {
                     @include flex(column, center, center);

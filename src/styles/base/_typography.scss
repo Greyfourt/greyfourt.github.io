@@ -60,6 +60,10 @@ a {
     letter-spacing: 0.01em;
 }
 
+a:hover {
+    color: $color-main;
+}
+
 mark {
     background-color: $color-main-30;
     border-radius: 4px;

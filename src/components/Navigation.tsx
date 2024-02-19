@@ -1,5 +1,6 @@
 'use client'
 
+import { WebsiteCarbonBadge } from "react-websitecarbon-badge";
 import Icon from "./Icons"
 import { usePathname } from "next/navigation";
 
@@ -11,7 +12,7 @@ const Footer = () => {
           <a
             href="https://greyfourt.github.io/CV_English_Nazli.pdf"
             download="CV_English_Nazli"
-            target="_blank"
+            target="_blank" 
             rel="nofollow"
           >
             <Icon type="doc" />
@@ -27,6 +28,7 @@ const Footer = () => {
             <Icon type="linkedin" />
           </a>
         </div>
+        {/* <WebsiteCarbonBadge url="greyfourt.github.io" dark={true} /> */}
         <p>with ♥ by Nazli &copy; 2023</p>
       </footer>
     );
@@ -57,7 +59,6 @@ export const Menu = () => {
           Projects
         </a>
         <a
-          // href="/Resume"
           className="navItem "
           href="https://greyfourt.github.io/CV_English_Nazli.pdf"
           target="_blank"
