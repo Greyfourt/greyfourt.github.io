@@ -4,6 +4,8 @@ import Footer, { Menu } from '@/components/Navigation'
 import '../styles/App.scss'
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
+import Matomo from '@/utils/matomo'
+
 
 const nunito = Nunito({ subsets: ['latin'] })
 
