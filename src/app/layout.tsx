@@ -23,6 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Matomo />
+      </head>
       <body className={nunito.className}>
         <Menu />
         {children}
