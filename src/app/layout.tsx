@@ -12,8 +12,10 @@ const nunito = Nunito({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: "Nazlı's Portfolio",
   description: "I have a passion for web and working towards reducing the friction behind the cursor. I use my background in development to create digital experiences that people love.",
-
   manifest: '/manifest.json',
+  verification: {
+    google :'J7DzULl5L0EO25TXMl72GYdA542OstLqFlCPRmO3lPA'
+  }
 }
 
 export default function RootLayout({
