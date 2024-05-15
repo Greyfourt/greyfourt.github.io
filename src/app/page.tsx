@@ -54,10 +54,10 @@ export default function Home() {
       <Projects />
 
       <div className="contact">
-        <h2>
-          How can I be of help? <mark>Let's talk!</mark>
-        </h2>
-
+        <div>
+          <h3>How can I be of help?</h3>
+          <h2> <mark>Let's talk!</mark></h2>
+        </div>
         <div className="contactRow">
           <h4>Around a coffee in</h4>
           <div className="locationRow">

@@ -48,6 +48,10 @@
         padding: 1em 0;
     }
 
+    & h2 {
+        text-align: center;
+    }
+
     & .contactRow {
         @include flex(row, center, center);
         gap: 1rem;
