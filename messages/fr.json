@@ -1,10 +1,30 @@
 {
   "Home": {
-    "headerDesc": "Transformer les idées en expériences intuitives.",
-    "check-the-latest-case-study": "Consultez la dernière étude de cas",
-    "aboutText":{
-      "one": ""
+    "role": "<mark>Designer Web & Produit</mark>",
+    "headerDesc": "Transformer des idées en expériences intuitives et immersives.",
+    "checkLatestCase": "Découvrir la dernière étude de cas",
+    "letsDiscuss": "Discutons !",
+    "aboutText": {
+      "title": "Je suis passionnée par la <mark>compréhension des besoins des utilisateurs.</mark>",
+      "one": "<mark>Mon parcours vers le design n'a pas été linéaire,</mark> de l'ingénierie au design UI/UX, j'ai toujours suivi mes instincts créatifs.",
+      "two": "Mon expérience s'étend des startups aux agences, où je crée des <mark>solutions centrées sur l'utilisateur pour les applications mobiles, les produits SaaS, les sites web et l'identité visuelle.</mark>",
+      "three": "Je travaille actuellement avec dewwwe en tant que Designer Produit & Web basée à Lyon.",
+      "four": "J'adore les projets personnels et discuter de nouvelles idées. Et dessiner des illustrations de temps en temps !"
     },
-    "lets-discuss": "Discutons-en !"
+    "downloadCV": "Télécharger mon CV",
+    "contact": {
+      "help": "Comment puis-je vous aider ?",
+      "letsTalk": "<mark>Parlons-en !</mark>",
+      "inPerson": "Autour d'un café à",
+      "locations": {
+        "lyon": "Lyon, France",
+        "turin": "Turin, Italie",
+        "or": "à ou"
+      },
+      "remote": {
+        "title": "Pas tout près ?",
+        "option": "À distance"
+      }
+    }
   }
 }

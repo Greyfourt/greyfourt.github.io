@@ -3,24 +3,26 @@ import Icon from "@/components/Icons";
 import "../styles/App.scss";
 import Projects from "@/components/Projects";
 
-import {useTranslations} from 'next-intl';
- 
+import { useTranslations } from 'next-intl';
+
 
 export default function Home() {
   const trad = useTranslations('Home');
+
+  const tradRich = (key: string) => trad.rich(key, {
+    dewwweSite: (chunks) => <a href="https://dewwwe.com">{chunks}</a>,
+    mark: (chunks) => <mark>{chunks}</mark>,
+  })
 
   return (
 
     <div className="bodyContainer">
       <div className="landingHeader">
-        <h1>Nazlı Özçubukçuoğlu</h1>
-        <h3>
-          <mark>Web & Product Designer</mark>
-        </h3>
+        <h1>{trad('name')}</h1>
+        <h3>{tradRich('role')}</h3>
         <p>{trad('headerDesc')}</p>
-
         <button className="button Primary">
-          <a href="/projects/floof">Check the latest case study</a>
+          <a href="/projects/floof">{trad('checkLatestCase')}</a>
           <Icon type="arrowRight" />
         </button>
       </div>
@@ -30,24 +32,12 @@ export default function Home() {
           <img src="/illustration.png" alt="" />
         </div>
         <div className="aboutTextCol">
-          <h2>
-            I'm passionate about <mark>understanding users needs.</mark>
-          </h2>
+          <h2>{tradRich('aboutText.title')}</h2>
           <div className="aboutText">
-            <p>
-              <mark>My journey to design wasn't linear,</mark> from Engineering to UI/UX Design, I've always pursued my creative instincts.
-              
-            </p>
-            <p>
-            {trad.rich('aboutText.one', {
-              mark: (chunks) => <mark>{chunks}</mark>
-            })}
-            </p>
-            <p>My experience spans startups and agencies, where I craft <mark>user-centric solutions for mobile apps, SaaS products, websites, and branding.</mark></p>
-            <p>
-              I'm currently working with <a href="https://dewwwe.com/">dewwwe</a> as a <mark>Product & Web Designer</mark> based in Lyon.
-            </p>
-            <p>I love side projects and discussing over new ideas. And sketching some illustrations too time to time!</p>
+            <p>{tradRich('aboutText.one')}</p>
+            <p>{tradRich('aboutText.two')}</p>
+            <p>{tradRich('aboutText.three')}</p>
+            <p>{tradRich('aboutText.four')}</p>
           </div>
 
           <a
@@ -56,7 +46,7 @@ export default function Home() {
             target="_blank"
             rel="nofollow"
           >
-            Download my CV
+            {trad('downloadCV')}
           </a>
         </div>
       </div>
@@ -65,34 +55,34 @@ export default function Home() {
 
       <div className="contact">
         <div>
-          <h3>How can I be of help?</h3>
-          <h2> <mark>Let's talk!</mark></h2>
+          <h3>{trad('contact.help')}</h3>
+          <h2>{tradRich('contact.letsTalk')}</h2>
         </div>
         <div className="contactRow">
-          <h4>Around a coffee in</h4>
+          <h4>{trad('contact.inPerson')}</h4>
           <div className="locationRow">
             <div className="location">
               <Icon type="location" />
-              <h4>Lyon, France</h4>
+              <h4>{trad('contact.locations.lyon')}</h4>
             </div>
-            <h4> or </h4>
+            <h4>{trad('contact.locations.or')}</h4>
             <div className="location">
               <Icon type="location" />
-              <h4>Turin, Italy</h4>
+              <h4>{trad('contact.locations.turin')}</h4>
             </div>
           </div>
         </div>
 
         <div className="contactRow">
-          <h4>Not so close?</h4>
+          <h4>{trad('contact.remote.title')}</h4>
           <div className="location">
             <Icon type="world" />
-            <h4>Remotely</h4>
+            <h4>{trad('contact.remote.option')}</h4>
           </div>
         </div>
 
         <button className="button Primary">
-          <a href="mailto:nazliozcubukcuoglu@gmail.com">Let's discuss!</a>
+          <a href="mailto:nazliozcubukcuoglu@gmail.com">{trad('letsDiscuss')}</a>
         </button>
       </div>
     </div>

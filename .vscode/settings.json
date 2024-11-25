@@ -21,7 +21,11 @@
     "peacock.color": "#215732",
     "i18n-ally.localesPaths": [
         "src/i18n",
-        "src/messages"
+        "src/messages",
+        "messages"
     ],
-    "i18n-ally.keystyle": "nested"
+    "i18n-ally.keystyle": "nested",
+    "i18n-ally.extract.ignored": [
+        "Nazlı Özçubukçuoğlu"
+    ]
 }
