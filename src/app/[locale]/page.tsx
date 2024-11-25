@@ -3,8 +3,12 @@ import Icon from "@/components/Icons";
 import "../styles/App.scss";
 import Projects from "@/components/Projects";
 
+import {useTranslations} from 'next-intl';
+ 
 
 export default function Home() {
+  const trad = useTranslations('Home');
+
   return (
 
     <div className="bodyContainer">
@@ -13,7 +17,7 @@ export default function Home() {
         <h3>
           <mark>Web & Product Designer</mark>
         </h3>
-        <p>Transforming ideas into intuitive and immersive experiences.</p>
+        <p>{trad('headerDesc')}</p>
 
         <button className="button Primary">
           <a href="/projects/floof">Check the latest case study</a>
@@ -32,6 +36,12 @@ export default function Home() {
           <div className="aboutText">
             <p>
               <mark>My journey to design wasn't linear,</mark> from Engineering to UI/UX Design, I've always pursued my creative instincts.
+              
+            </p>
+            <p>
+            {trad.rich('aboutText.one', {
+              mark: (chunks) => <mark>{chunks}</mark>
+            })}
             </p>
             <p>My experience spans startups and agencies, where I craft <mark>user-centric solutions for mobile apps, SaaS products, websites, and branding.</mark></p>
             <p>
