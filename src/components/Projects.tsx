@@ -5,9 +5,69 @@ import React, { useEffect, useState } from "react";
 import ProjectsList from "./ProjectsList";
 import Filters from "./Filters";
 import Tag from "./Tag";
+import { useMessages, useTranslations } from "next-intl";
+
+type Project = {
+  title: string,
+  date: string,
+  tag: string,
+  image: string,
+  link?: string,
+  projectURL?: string,
+  isSelected: boolean,
+  hasCaseStudy: boolean,
+  projectCaseStudy?: CaseStudy,
+}
+
+type CaseStudy = {
+  caseStudyState: string,
+  caseStudyDate: string,
+  problemImage: string,
+  problemDescriptions: string[],
+  researchDescription: string,
+  brandDescription: string,
+  brandCurrentLogo: string[],
+  brandPropositions: string[],
+  brandTypography: {
+    fontName: string,
+  },
+  brandColors: {
+    name: string,
+    hex: string,
+  }[],
+  userJourneyDescription: string,
+  userJourneyImage: string,
+  outComeDescriptions: string[],
+  outComeImages: string[],
+}
 
 const Projects = ({ isProject }: { isProject?: boolean }) => {
-  let Projects = ProjectsList;
+
+  const t = useTranslations();
+
+  const messages = useMessages();
+  const keys = Object.keys(messages.ProjectsList);
+
+  console.log({ messages })
+
+  const tRich = (key: string) => t.rich(key, {
+    dewwweSite: (chunks) => <a href="https://dewwwe.com">{chunks}</a>,
+    mark: (chunks) => <mark>{chunks}</mark>,
+  })
+
+
+  // let Projects = ProjectsList;
+  let Projects: Project[] | null = null
+  if (messages.ProjectsList && typeof messages.ProjectsList !== "object") {
+    Projects = messages.ProjectsList as unknown as Project[];
+  }
+
+  console.log({ Projects })
+  console.log(typeof Projects)
+
+  if (Projects === null || Projects.length == 0) {
+    return null
+  }
 
   const [currentTag, setCurrentTag] = useState("All");
 
@@ -23,10 +83,8 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
         </div>
       ) : (
         <div className="projectsHeader">
-            <h2>Highlights</h2>
-          {/* <button className="button Transparent"> */}
-            <a href="/projects">See all</a>
-          {/* </button> */}
+          <h2>{t('Projects.highlights')}</h2>
+          <a href="/projects">{t('Projects.see-all')}</a>
         </div>
       )}
 
@@ -59,7 +117,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
                     }
                     target={Project.hasCaseStudy === true ? "" : "_blank"}
                   >
-                    {Project.link ? "Visit" : "Case Study"}
+                    {Project.link ? t('visit') : t('case-study')}
                     <Icon type="arrowRight" />
                   </a>
                 ) : (

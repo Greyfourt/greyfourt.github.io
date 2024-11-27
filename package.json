@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.10.1",
     "@socialgouv/matomo-next": "^1.9.0",
     "@types/node": "20.11.16",
     "@types/react": "18.2.53",

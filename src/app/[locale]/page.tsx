@@ -1,28 +1,35 @@
+"use client"
 
 import Icon from "@/components/Icons";
-import "../styles/App.scss";
 import Projects from "@/components/Projects";
+import "../styles/App.scss";
 
 import { useTranslations } from 'next-intl';
+import { useState } from "react";
+// import ConfettiBackground from "@/components/ConfettiBackground";
 
 
 export default function Home() {
-  const trad = useTranslations('Home');
+  const t = useTranslations('Home');
 
-  const tradRich = (key: string) => trad.rich(key, {
+  const tRich = (key: string) => t.rich(key, {
     dewwweSite: (chunks) => <a href="https://dewwwe.com">{chunks}</a>,
     mark: (chunks) => <mark>{chunks}</mark>,
   })
 
-  return (
 
+  return (
     <div className="bodyContainer">
+
       <div className="landingHeader">
-        <h1>{trad('name')}</h1>
-        <h3>{tradRich('role')}</h3>
-        <p>{trad('headerDesc')}</p>
-        <button className="button Primary">
-          <a href="/projects/floof">{trad('checkLatestCase')}</a>
+        <h1>Nazlı Özçubukçuoğlu</h1>
+        <h3>{tRich('role')}</h3>
+        <p>{t('headerDesc')}</p>
+        <button
+          className="button Primary"
+      
+        >
+          <a href="/projects/floof">{t('checkLatestCase')}</a>
           <Icon type="arrowRight" />
         </button>
       </div>
@@ -32,12 +39,12 @@ export default function Home() {
           <img src="/illustration.png" alt="" />
         </div>
         <div className="aboutTextCol">
-          <h2>{tradRich('aboutText.title')}</h2>
+          <h2>{tRich('aboutText.title')}</h2>
           <div className="aboutText">
-            <p>{tradRich('aboutText.one')}</p>
-            <p>{tradRich('aboutText.two')}</p>
-            <p>{tradRich('aboutText.three')}</p>
-            <p>{tradRich('aboutText.four')}</p>
+            <p>{tRich('aboutText.one')}</p>
+            <p>{tRich('aboutText.two')}</p>
+            <p>{tRich('aboutText.three')}</p>
+            <p>{tRich('aboutText.four')}</p>
           </div>
 
           <a
@@ -46,7 +53,7 @@ export default function Home() {
             target="_blank"
             rel="nofollow"
           >
-            {trad('downloadCV')}
+            {t('downloadCV')}
           </a>
         </div>
       </div>
@@ -55,34 +62,34 @@ export default function Home() {
 
       <div className="contact">
         <div>
-          <h3>{trad('contact.help')}</h3>
-          <h2>{tradRich('contact.letsTalk')}</h2>
+          <h3>{t('contact.help')}</h3>
+          <h2>{tRich('contact.letsTalk')}</h2>
         </div>
         <div className="contactRow">
-          <h4>{trad('contact.inPerson')}</h4>
+          <h4>{t('contact.inPerson')}</h4>
           <div className="locationRow">
             <div className="location">
               <Icon type="location" />
-              <h4>{trad('contact.locations.lyon')}</h4>
+              <h4>{t('contact.locations.lyon')}</h4>
             </div>
-            <h4>{trad('contact.locations.or')}</h4>
+            <h4>{t('contact.locations.or')}</h4>
             <div className="location">
               <Icon type="location" />
-              <h4>{trad('contact.locations.turin')}</h4>
+              <h4>{t('contact.locations.turin')}</h4>
             </div>
           </div>
         </div>
 
         <div className="contactRow">
-          <h4>{trad('contact.remote.title')}</h4>
+          <h4>{t('contact.remote.title')}</h4>
           <div className="location">
             <Icon type="world" />
-            <h4>{trad('contact.remote.option')}</h4>
+            <h4>{t('contact.remote.option')}</h4>
           </div>
         </div>
 
         <button className="button Primary">
-          <a href="mailto:nazliozcubukcuoglu@gmail.com">{trad('letsDiscuss')}</a>
+          <a href="mailto:nazliozcubukcuoglu@gmail.com">{t('letsDiscuss')}</a>
         </button>
       </div>
     </div>
