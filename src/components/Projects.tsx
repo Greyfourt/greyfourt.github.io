@@ -55,10 +55,11 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
     mark: (chunks) => <mark>{chunks}</mark>,
   })
 
+  console.log(typeof messages)
 
   // let Projects = ProjectsList;
   let Projects: Project[] | null = null
-  if (messages.ProjectsList && typeof messages.ProjectsList !== "object") {
+  if (messages.ProjectsList ) {
     Projects = messages.ProjectsList as unknown as Project[];
   }
 
