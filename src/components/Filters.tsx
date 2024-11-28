@@ -1,34 +1,30 @@
-import { useState } from "react";
-import { Tags } from "./ProjectsList";
-import Tag from "./Tag";
-import Icon from "./Icons";
+import { useTranslations } from "next-intl";
+import Tag from "@/components/Tag";
+import { TagType } from '@/constants';
+import { Dispatch, SetStateAction } from 'react';
 
-const Filters = ({
-  currentTag,
-  setCurrentTag,
-}: {
-  currentTag: string;
-  setCurrentTag: (tag: string) => void;
-}) => {
-  // const [currentTag, setCurrentTag] = useState("");
-  // const [isSelected, setIsSelected] = useState("false");
 
+type FiltersProps = {
+  selected: TagType | null;
+  onSelect: Dispatch<SetStateAction<TagType | null>>;
+};
+
+
+const Filters = ({ selected, onSelect }: FiltersProps) => {
+  const t = useTranslations();
+ 
   return (
-    <div className="filtersContainer">
-      <div className="filters">
-        {Tags.map((tag, index) => {
-          return (
-            <Tag
-              tag={tag.tag}
-              key={index}
-              currentTag={currentTag}
-              setCurrentTag={setCurrentTag}
-            />
-          );
-        })}
-      </div>
+    <div className="filters">
+      {Object.entries(t('global.tags')).map(([key, label]) => (
+        <Tag
+        key={key}
+        tag={key as TagType}
+        selected={selected}
+        onSelect={onSelect}
+      />
+      ))}
     </div>
   );
-};
+ }
 
 export default Filters;

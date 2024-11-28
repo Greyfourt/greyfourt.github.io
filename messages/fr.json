@@ -1,39 +1,92 @@
 {
-  "Home": {
-    "role": "<mark>Designer Web & Produit</mark>",
-    "headerDesc": "Transformer des idées en expériences intuitives et immersives.",
-    "checkLatestCase": "Découvrez mon dernière case study",
-    "letsDiscuss": "Discutons !",
-    "aboutText": {
-      "title": "Je suis passionnée par la <mark>compréhension des besoins des utilisateurs.</mark>",
-      "one": "<mark>Mon parcours vers le design n'a pas été linéaire,</mark> de l'ingénierie au design UI/UX, j'ai toujours suivi mes instincts créatifs.",
+  "global": {
+    "visit": "Visiter",
+    "caseStudy": "Étude de cas",
+    "published": "Publié le",
+    "tags": {
+      "all": "Tout",
+      "logo": "Logo",
+      "website": "Site web",
+      "mobileApp": "Appli mobile",
+      "webApp": "Appli web",
+      "graphics": "Graphisme"
+    }
+  },
+  "home": {
+    "header": {
+      "role": "Designer Web & Produit",
+      "description": "Transformer des idées en expériences intuitives et immersives.",
+      "cta": {
+        "checkLatestCase": "Découvrez ma dernière étude de cas",
+        "letsDiscuss": "Discutons !",
+        "downloadCV": "Télécharger mon CV"
+      }
+    },
+    "about": {
+      "title": "Je suis passionné par la compréhension des besoins des utilisateurs.",
+      "biography": {
+        "one": "<mark>Mon parcours vers le design n'a pas été linéaire,</mark> de l'ingénierie au design UI/UX, j'ai toujours suivi mes instincts créatifs.",
       "two": "Mon expérience s'étend des startups aux agences, où je crée des <mark>solutions centrées sur l'utilisateur pour les applications mobiles, les produits SaaS, les sites web et l'identité visuelle.</mark>",
       "three": "Je travaille actuellement avec dewwwe en tant que Designer Produit & Web basée à Lyon.",
       "four": "J'ai pas mal de projets personnels aussi, j'adore discuter de nouvelles idées. Et faire des illustrations de temps en temps !"
+      }
     },
-    "downloadCV": "Télécharger mon CV",
     "contact": {
       "help": "Comment puis-je vous aider ?",
       "letsTalk": "<mark>Parlons-en !</mark>",
-      "inPerson": "Autour d'un café à",
       "locations": {
-        "lyon": "Lyon, France",
-        "turin": "Turin, Italie",
-        "or": "ou à "
-      },
-      "remote": {
-        "title": "Pas tout près ?",
-        "option": "À distance"
+        "inPerson": "Autour d'un café ",
+        "places": {
+          "lyon": "à Lyon, France",
+          "or": "ou",
+          "turin": "à Turin, Italie"
+        },
+        "remote": {
+          "title": "Pas si proche ?",
+          "option": "À distance"
+        }
       }
     }
   },
-  "Projects": {
-    "highlights": "Quelques projets récents",
-    "see-all": "Voir tout"
+  "projects": {
+    "section": {
+      "highlights": "Points forts",
+      "seeAll": "Voir tout"
+    },
+    "caseStudyStructure": {
+      "states": {
+        "upToDate": "à jour",
+        "done": "terminé"
+      },
+      "sections": {
+        "problemIdea": "Problème & Idée",
+        "steps": "Étapes",
+        "research": {
+          "title": "1 - Recherche"
+        },
+        "brandIdentity": {
+          "title": "2 - Identité de marque",
+          "subsections": {
+            "currentLogo": "Logo actuel",
+            "proposals": "Propositions",
+            "fonts": "Polices",
+            "colors": "Couleurs",
+            "pangram": "Portez ce vieux whisky au juge blond qui fume."
+          }
+        },
+        "userJourneys": {
+          "title": "3 - Parcours utilisateur"
+        },
+        "outcome": {
+          "title": "4 - Résultat"
+        }
+      }
+    },
+    "errors": {
+      "noCaseStudy": "Impossible de trouver l'étude de cas."
+    }
   },
-  "case-study": "Étude de cas",
-  "visit": "Visite",
-  "ProjectsList": [
+  "projectslist": [
     {
       "title": "Harfang Therapeutics",
       "date": "2023",
@@ -44,7 +97,7 @@
     },
     {
       "title": "Epic Stories Teambuilding",
-      "date": "2023", 
+      "date": "2023",
       "tag": "Site web",
       "image": "/articles/WebsiteEST.png",
       "link": "https://epicstoriesteambuilding.com/",
@@ -55,7 +108,7 @@
       "title": "TEB Health",
       "date": "2023",
       "tag": "Site web",
-      "image": "/articles/WebsiteTEB.png", 
+      "image": "/articles/WebsiteTEB.png",
       "link": "https://www.teb-health.com/",
       "hasCaseStudy": false,
       "isSelected": false
@@ -80,23 +133,26 @@
     {
       "title": "Floof App",
       "date": "2023",
-      "tag": "Application mobile",
+      "tag": "Appli mobile",
       "image": "/articles/AppFloof.png",
       "hasCaseStudy": true,
       "isSelected": true,
       "projectURL": "floof",
       "projectCaseStudy": {
         "caseStudyState": "à jour",
-        "caseStudydate": "October 2023",
-        "problemimage": "/images/Problem-Floof.png",
+        "caseStudyDate": "Octobre 2023",
+        "problemImage": "/images/Problem-Floof.png",
         "problemDescriptions": [
           "Avec nos modes de vie chargés et nos emplois du temps surchargés, il est facile d'oublier les besoins de nos amis à fourrure et à feuilles. Face au quotidien, même les tâches cruciales comme les rendez-vous vétérinaires, le réapprovisionnement en nourriture pour animaux et l'arrosage des plantes peuvent être négligés. Cette négligence involontaire peut avoir de graves conséquences pour nos compagnons bien-aimés - ou comme nous les appelons, nos floofs.",
           "Voici notre solution, votre guichet unique pour la gestion des soins aux animaux et aux plantes. Cette application mobile PWA s'intègre parfaitement à votre routine quotidienne, en gardant une trace des informations importantes, en définissant des rappels et en partageant tout cela avec nos amis et notre famille pour assurer le bien-être de vos amis à fourrure et à feuilles.",
-          "Ainsi est née l'application Floof !"
+          "Ainsi est née Floof !"
         ],
         "researchDescription": "Nous avons fait nos devoirs, en analysant en profondeur les applications existantes de soins aux animaux et aux plantes pour comprendre leurs forces et leurs limites. Nous avons également recueilli les commentaires des propriétaires d'animaux et des passionnés de plantes pour identifier leurs points faibles.",
-        "brandDescription": "Nous voulions que l'application Floof ait une personnalité à la fois ludique et sophistiquée. Nous avons choisi une palette de couleurs à la fois vibrante et apaisante, et nous avons conçu un logo à la fois mignon et élégant.",
-        "brandCurrentLogo": ["/images/Logo-Floof.png", "/images/Logo-Floof-2.png"],
+        "brandDescription": "Nous voulions que Floof ait une personnalité à la fois ludique et sophistiquée. Nous avons choisi une palette de couleurs à la fois vibrante et apaisante, et nous avons conçu un logo à la fois mignon et élégant.",
+        "brandCurrentLogo": [
+          "/images/Logo-Floof.png",
+          "/images/Logo-Floof-2.png"
+        ],
         "brandPropositions": [
           "/images/Proposal-Floof.png",
           "/images/Proposal-Floof-2.png",
@@ -126,12 +182,12 @@
             "hex": "#FFFFFF"
           }
         ],
-        "userJourneyDescription": "Nous avons créé des parcours utilisateur détaillés pour nous assurer que chaque étape de l'utilisation de l'application Floof soit intuitive et agréable. Nous voulions nous assurer que l'application soit facile à utiliser pour les personnes de tous âges et de tous niveaux de compétence.",
-        "userJourneyimage": "/images/UserJourney-Floof.png",
+        "userJourneyDescription": "Nous avons créé des parcours utilisateur détaillés pour nous assurer que chaque étape de l'utilisation de Floof soit intuitive et agréable. Nous voulions nous assurer que l'application soit facile à utiliser pour les personnes de tous âges et de tous niveaux de compétence.",
+        "userJourneyImage": "/images/UserJourney-Floof.png",
         "outComeDescriptions": [
-          "L'application Floof est actuellement en développement, mais nous faisons déjà de grands progrès. Nous nous concentrons sur la plateforme mobile car nous savons que c'est là que nos utilisateurs passent le plus de temps.",
-          "Nous réfléchissons constamment à de nouvelles fonctionnalités pour l'application Floof.",
-          "L'application Floof n'est pas seulement un outil de gestion des soins aux animaux et aux plantes ; c'est un compagnon pour la vie. C'est le moyen parfait de s'assurer que vos amis à fourrure et à feuilles sont toujours heureux et en bonne santé."
+          "Floof est actuellement en développement, mais nous faisons déjà de grands progrès. Nous nous concentrons sur la plateforme mobile car nous savons que c'est là que nos utilisateurs passent le plus de temps.",
+          "Nous réfléchissons constamment à de nouvelles fonctionnalités pour Floof.",
+          "Floof n'est pas seulement un outil de gestion des soins aux animaux et aux plantes ; c'est un compagnon pour la vie. C'est le moyen parfait de s'assurer que vos amis à fourrure et à feuilles sont toujours heureux et en bonne santé."
         ],
         "outComeImages": [
           "/images/Outcome-Floof-1.png",
@@ -146,23 +202,25 @@
     {
       "title": "Knotbook App",
       "date": "2023",
-      "tag": "Application mobile",
+      "tag": "Appli mobile",
       "image": "/articles/AppKnotbook.png",
       "hasCaseStudy": true,
       "isSelected": true,
       "projectURL": "knotbook",
       "projectCaseStudy": {
-        "caseStudydate": "October 2023",
+        "caseStudyDate": "Octobre 2023",
         "caseStudyState": "terminé",
-        "problemimage": "/images/Problem-Knotbook.png",
+        "problemImage": "/images/Problem-Knotbook.png",
         "problemDescriptions": [
           "En tant qu'amateurs de crochet, nous sommes toujours à la recherche de nouveaux motifs excitants. Mais parfois, nous tombons sur des termes ou des acronymes que nous ne reconnaissons pas rapidement.",
           "Nous voulons avoir un aperçu de tous les points pendant que nous construisons nos motifs.",
-          "Ainsi est née l'application Knotbook !"
+          "Ainsi est née Knotbook !"
         ],
         "researchDescription": "Nous avons parcouru Internet, testé et expérimenté de nombreuses applications.",
         "brandDescription": "Nous voulions créer un environnement où les utilisateurs n'auraient pas beaucoup de distractions tout en gardant le côté chaleureux.",
-        "brandCurrentLogo": ["/images/Logo-Knotbook.png"],
+        "brandCurrentLogo": [
+          "/images/Logo-Knotbook.png"
+        ],
         "brandPropositions": [
           "/images/Proposal-Knotbook.png",
           "/images/Proposal-Knotbook-2.png",
@@ -192,7 +250,7 @@
           }
         ],
         "userJourneyDescription": "Nous avons créé des parcours utilisateur détaillés pour nous guider tout au long de la conception et du développement. En raison des flux complexes dans l'application, nous avons créé des diagrammes détaillés pour le développement.",
-        "userJourneyimage": "/images/UserJourney-Knotbook.png",
+        "userJourneyImage": "/images/UserJourney-Knotbook.png",
         "outComeDescriptions": [
           "Nous nous sommes concentrés uniquement sur le mobile car nos utilisateurs n'auraient besoin que d'une solution mobile. Nous avons commencé par les maquettes les plus simples. Nous avons créé des designs en partant du basique - des MVP au style minimaliste jusqu'à des designs plus élaborés."
         ],
@@ -218,7 +276,7 @@
     {
       "title": "Bookipe",
       "date": "2022",
-      "tag": "Application mobile",
+      "tag": "Appli mobile",
       "image": "/articles/AppBookipe.png",
       "hasCaseStudy": false,
       "isSelected": false,
@@ -252,7 +310,7 @@
     {
       "title": "Contacts App",
       "date": "2021",
-      "tag": "Application web",
+      "tag": "Appli web",
       "image": "/articles/AppContacts.png",
       "hasCaseStudy": false,
       "isSelected": false,
