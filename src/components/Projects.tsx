@@ -1,58 +1,66 @@
 import Icon from "./Icons";
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { useState } from "react";
 import Filters from "./Filters";
 import Tag from "./Tag";
 import { useMessages, useTranslations } from "next-intl";
-import { TagType, Project } from "@/constants";
+import { TagType, Project } from "@/types";
 
-const Projects = ({ isProject }: { isProject?: boolean }) => {
+interface ProjectsProps {
+  isProject?: boolean;
+}
+
+const Projects = ({ isProject }: ProjectsProps) => {
   const t = useTranslations();
   const messages = useMessages();
+  console.log({ messages })
   const [selected, setSelected] = useState<TagType | null>(null);
 
   const projects = messages.projectslist as unknown as Project[];
 
-  const filteredProjects = isProject
-    ? projects
-    : projects.filter((project) => project.isSelected);
+  const filteredProjects = projects.filter((project) =>
+    isProject ? true : project.isSelected
+  );
 
-  const filterProjects = (projects: Project[]) =>
-    projects.filter(
-      (project) => selected === null || project.tag === selected
+  const filterByTag = (projects: Project[]) =>
+    projects.filter((project) =>
+      selected === null || project.tag === selected
     );
 
   return (
     <section className="projectsWrapper">
-      <div className="projectsHeader">
-        {(isProject) ? (
-          <Filters selected={selected} onSelect={setSelected} />
-        ) : (
-          <>
-            <h2>{t("projects.section.highlights")}</h2>
-            <a href="/projects">{t("projects.section.seeAll")}</a>
-          </>
-        )}
+      <div className="projectsTitle">
+
+        <h2 >{t("projects.section.highlights")}</h2>
+        <a href="/projects">{t("projects.section.seeAll")}</a>
       </div>
 
+      {isProject ? (
+        <Filters selected={selected} onSelect={setSelected} />
+      ) : (
+        "")}
+
       <div className="tiles">
-        {filterProjects(filteredProjects).map((project, index) => (
+        {filterByTag(filteredProjects).map((project, index) => (
           <div
             key={index}
-            className={`projectItem ${project.tag.replaceAll(" ", "")}`}
+            className={`projectItem ${project.tag.replace(/\s+/g, '')}`}
           >
             <div className="projectHeader">
               <div className="tagWrapper">
-                <Tag tag={project.tag} selected={selected} onSelect={setSelected} />
+                <Tag
+                  tag={project.tag}
+                  selected={selected}
+                  onSelect={setSelected}
+                />
               </div>
               {(project.link || project.hasCaseStudy) && (
                 <a
                   className="navLink button Transparent"
-                  href={
-                    project.hasCaseStudy
-                      ? `/projects/${project.projectURL}`
-                      : project.link
-                  }
-                  target={project.hasCaseStudy ? "" : "_blank"}
+                  href={project.hasCaseStudy
+                    ? `/projects/${project.projectURL}`
+                    : project.link}
+                  target={project.hasCaseStudy ? undefined : "_blank"}
+                  rel={!project.hasCaseStudy ? "noopener noreferrer" : undefined}
                 >
                   {project.link ? t("global.visit") : t("global.caseStudy")}
                   <Icon type="arrowRight" />
@@ -67,7 +75,6 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
           </div>
         ))}
       </div>
-
     </section>
   );
 };

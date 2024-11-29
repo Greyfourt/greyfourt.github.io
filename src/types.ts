@@ -2,7 +2,7 @@
 export type Project = {
     title: string;
     date: string;
-    tag: string;
+    tag: TagType;
     image: string;
     link?: string;
     projectURL?: string;
@@ -11,9 +11,7 @@ export type Project = {
     projectCaseStudy?: CaseStudy;
 }
 
-export type TagType = 'logo' | 'website' | 'mobileApp' | 'webApp' | 'graphics';
-export type FilterType = TagType | 'All';
-
+export type TagType = 'all' | 'logo' | 'website' | 'mobileApp' | 'webApp' | 'graphics';
 
 export type CaseStudy = {
     caseStudyState: string;

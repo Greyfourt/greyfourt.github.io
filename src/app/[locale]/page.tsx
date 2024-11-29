@@ -88,7 +88,7 @@ export default function Home() {
         </div>
 
         <button className="button Primary">
-          <a href="mailto:nazliozcubukcuoglu@gmail.com">{tRich('contact.letsTalk')}</a>
+          <a href="mailto:nazliozcubukcuoglu@gmail.com">{tRich('header.cta.sendMail')}</a>
         </button>
       </div>
     </div>

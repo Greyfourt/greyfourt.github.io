@@ -1,30 +1,34 @@
 import { useTranslations } from "next-intl";
 import Tag from "@/components/Tag";
-import { TagType } from '@/constants';
+import { TagType } from '@/types';
 import { Dispatch, SetStateAction } from 'react';
 
-
-type FiltersProps = {
+interface FiltersProps {
   selected: TagType | null;
   onSelect: Dispatch<SetStateAction<TagType | null>>;
-};
+}
 
-
-const Filters = ({ selected, onSelect }: FiltersProps) => {
+export const Filters = ({ selected, onSelect }: FiltersProps) => {
   const t = useTranslations();
- 
+  const tags: TagType[] = ['logo', 'website', 'mobileApp', 'webApp', 'graphics'];
+
   return (
     <div className="filters">
-      {Object.entries(t('global.tags')).map(([key, label]) => (
-        <Tag
-        key={key}
-        tag={key as TagType}
+      <Tag
+        key="all"
+        tag="all"
         selected={selected}
-        onSelect={onSelect}
+        onSelect={() => onSelect(null)}
       />
+      {tags.map((tag) => (
+        <Tag
+          key={tag}
+          tag={tag}
+          selected={selected}
+          onSelect={onSelect}
+        />
       ))}
     </div>
   );
- }
-
+}
 export default Filters;

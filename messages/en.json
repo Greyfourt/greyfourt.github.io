@@ -2,15 +2,15 @@
   "global": {
     "visit": "Visit",
     "caseStudy": "Case Study",
-    "published": "Published on",
-    "tags": {
-      "all": "All",
-      "logo": "Logo",
-      "website": "Website",
-      "mobileApp": "Mobile App",
-      "webApp": "Web App",
-      "graphics": "Graphics"
-    }
+    "published": "Published on"
+  },
+  "tags": {
+    "all": "All",
+    "logo": "Logo",
+    "website": "Website",
+    "mobileApp": "Mobile App",
+    "webApp": "Web App",
+    "graphics": "Graphics"
   },
   "home": {
     "header": {
@@ -18,7 +18,7 @@
       "description": "Transforming ideas into intuitive and immersive experiences.",
       "cta": {
         "checkLatestCase": "Check out my latest case study",
-        "letsDiscuss": "Let's discuss!",
+        "sendMail": "Let's discuss!",
         "downloadCV": "Download my CV"
       }
     },
@@ -33,7 +33,7 @@
     },
     "contact": {
       "help": "How can I be of help?",
-      "letsTalk": "Let's talk!",
+      "sendMail": "Let's talk!",
       "locations": {
         "inPerson": "Around a coffee in",
         "places": {
@@ -90,7 +90,7 @@
     {
       "title": "Harfang Therapeutics",
       "date": "2023",
-      "tag": "Logo",
+      "tag": "logo",
       "image": "/articles/LogoHT.png",
       "hasCaseStudy": false,
       "isSelected": true
@@ -98,7 +98,7 @@
     {
       "title": "Epic Stories Teambuilding",
       "date": "2023",
-      "tag": "Website",
+      "tag": "website",
       "image": "/articles/WebsiteEST.png",
       "link": "https://epicstoriesteambuilding.com/",
       "hasCaseStudy": false,
@@ -107,7 +107,7 @@
     {
       "title": "TEB Health",
       "date": "2023",
-      "tag": "Website",
+      "tag": "website",
       "image": "/articles/WebsiteTEB.png",
       "link": "https://www.teb-health.com/",
       "hasCaseStudy": false,
@@ -116,7 +116,7 @@
     {
       "title": "TEB Health",
       "date": "2023",
-      "tag": "Logo",
+      "tag": "logo",
       "image": "/articles/LogoTEB.png",
       "hasCaseStudy": false,
       "isSelected": false
@@ -124,7 +124,7 @@
     {
       "title": "La Commanderie des Templiers",
       "date": "2023",
-      "tag": "Website",
+      "tag": "website",
       "image": "/articles/WebsiteLCDT.png",
       "link": "https://www.lacommanderiedestempliers.com/",
       "hasCaseStudy": false,
@@ -133,7 +133,7 @@
     {
       "title": "Floof App",
       "date": "2023",
-      "tag": "Mobile App",
+      "tag": "mobileApp",
       "image": "/articles/AppFloof.png",
       "hasCaseStudy": true,
       "isSelected": true,
@@ -202,7 +202,7 @@
     {
       "title": "Knotbook App",
       "date": "2023",
-      "tag": "Mobile App",
+      "tag": "mobileApp",
       "image": "/articles/AppKnotbook.png",
       "hasCaseStudy": true,
       "isSelected": true,
@@ -267,7 +267,7 @@
     {
       "title": "La Mare à Toto",
       "date": "2022",
-      "tag": "Website",
+      "tag": "website",
       "image": "/articles/WebsiteLMAT.png",
       "link": "https://lamareatoto.fr/",
       "hasCaseStudy": false,
@@ -276,7 +276,7 @@
     {
       "title": "Bookipe",
       "date": "2022",
-      "tag": "Mobile App",
+      "tag": "mobileApp",
       "image": "/articles/AppBookipe.png",
       "hasCaseStudy": false,
       "isSelected": false,
@@ -285,7 +285,7 @@
     {
       "title": "Valensi Patrimoine",
       "date": "2021",
-      "tag": "Website",
+      "tag": "website",
       "image": "/articles/WebsiteValensi.png",
       "link": "https://valensi-patrimoine.fr/",
       "hasCaseStudy": false,
@@ -294,7 +294,7 @@
     {
       "title": "Valensi Patrimoine",
       "date": "2021",
-      "tag": "Graphics",
+      "tag": "graphics",
       "image": "/articles/GraphicValensi.png",
       "hasCaseStudy": false,
       "isSelected": false
@@ -302,7 +302,7 @@
     {
       "title": "Valensi Patrimoine",
       "date": "2021",
-      "tag": "Logo",
+      "tag": "logo",
       "image": "/articles/LogoValensi.png",
       "isSelected": false,
       "hasCaseStudy": false
@@ -310,7 +310,7 @@
     {
       "title": "Contacts App",
       "date": "2021",
-      "tag": "Web App",
+      "tag": "webApp",
       "image": "/articles/AppContacts.png",
       "hasCaseStudy": false,
       "isSelected": false,
@@ -319,7 +319,7 @@
     {
       "title": "ODB Rénovation",
       "date": "2020",
-      "tag": "Graphics",
+      "tag": "graphics",
       "image": "/articles/GraphicODB.png",
       "isSelected": false,
       "hasCaseStudy": false
