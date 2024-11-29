@@ -7,7 +7,7 @@ const createNextIntlPlugin = require('next-intl/plugin');
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig = withNextIntl({
-  // output: "export",
+  output: "export",
 });
 
 module.exports = nextConfig;

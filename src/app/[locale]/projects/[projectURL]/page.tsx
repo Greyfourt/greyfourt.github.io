@@ -1,7 +1,9 @@
+export const dynamic = 'force-static'
 
 import { notFound } from "next/navigation";
 import CaseStudy from "@/components/CaseStudy";
 import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl';
+// import { routing } from "@/i18n/routing";
 
 interface PageProps {
   params: {
@@ -42,6 +44,13 @@ type Project = {
   hasCaseStudy: boolean;
   projectCaseStudy?: CaseStudy;
 }
+export function generateStaticParams() {
+  return [{
+    projectURL: 'floof', locale: 'fr'
+  }];
+}
+
+
 
 const ProjectPage = ({ params }: PageProps) => {
   const messages = useMessages();
@@ -58,7 +67,6 @@ const ProjectPage = ({ params }: PageProps) => {
   }
 
   return (
-    <NextIntlClientProvider messages={messages}>
       <div className="bodyContainer">
         <div className="casestudyHeaderContainer">
           <h1>{project.title} • {project.date}</h1>
@@ -69,7 +77,6 @@ const ProjectPage = ({ params }: PageProps) => {
           <CaseStudy projectName={params.projectURL} caseStudy={project.projectCaseStudy} />
         </div>
       </div>
-    </NextIntlClientProvider>
   );
 }
 
