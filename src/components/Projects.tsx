@@ -1,9 +1,12 @@
+"use client"
+
 import Icon from "./Icons";
 import React, { useState } from "react";
 import Filters from "./Filters";
 import Tag from "./Tag";
 import { useMessages, useTranslations } from "next-intl";
 import { TagType, Project } from "@/types";
+import { Link } from "@/i18n/routing";
 
 interface ProjectsProps {
   isProject?: boolean;
@@ -31,7 +34,7 @@ const Projects = ({ isProject }: ProjectsProps) => {
       <div className="projectsTitle">
 
         <h2 >{t("projects.section.highlights")}</h2>
-        <a href="/projects">{t("projects.section.seeAll")}</a>
+        <Link href="/projects">{t("projects.section.seeAll")}</Link>
       </div>
 
       {isProject ? (
@@ -54,17 +57,17 @@ const Projects = ({ isProject }: ProjectsProps) => {
                 />
               </div>
               {(project.link || project.hasCaseStudy) && (
-                <a
+                <Link
                   className="navLink button Transparent"
                   href={project.hasCaseStudy
                     ? `/projects/${project.projectURL}`
-                    : project.link}
+                    : project.link || ""}
                   target={project.hasCaseStudy ? undefined : "_blank"}
                   rel={!project.hasCaseStudy ? "noopener noreferrer" : undefined}
                 >
                   {project.link ? t("global.visit") : t("global.caseStudy")}
                   <Icon type="arrowRight" />
-                </a>
+                </Link>
               )}
             </div>
             <img className="image" src={project.image} alt={project.title} />

@@ -1,15 +1,36 @@
-"use client"
+// "use client"
 
 import Icon from "@/components/Icons";
 import Projects from "@/components/Projects";
 import "../styles/App.scss";
 
 import { useTranslations } from 'next-intl';
-import { useState } from "react";
+// import { useState } from "react";
+import { setRequestLocale } from "next-intl/server";
+import { Link, routing } from "@/i18n/routing";
+import { notFound } from "next/navigation";
 // import ConfettiBackground from "@/components/ConfettiBackground";
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 
-export default function Home() {
+  // return [{ locale: 'en' }, { locale: 'fr' }];
+}
+
+export default function Home({ params: { locale } }: {
+  params: {
+    locale: string
+  }
+}) {
+  console.log("Home [locale]")
+
+
+  if (!locale) {
+    console.log("haaaaa")
+  }
+
+  setRequestLocale(locale);
+
   const t = useTranslations('home');
 
   const tRich = (key: string) => t.rich(key, {
@@ -26,9 +47,9 @@ export default function Home() {
         <p>{t('header.description')}</p>
         <button
           className="button Primary"
-      
+
         >
-          <a href="/projects/floof">{t('header.cta.checkLatestCase')}</a>
+          <Link href="/projects/floof">{t('header.cta.checkLatestCase')}</Link>
           <Icon type="arrowRight" />
         </button>
       </div>
