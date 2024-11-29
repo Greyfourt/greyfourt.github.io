@@ -5,14 +5,15 @@ import React, { useState } from "react";
 import Filters from "./Filters";
 import Tag from "./Tag";
 import { useMessages, useTranslations } from "next-intl";
-import { TagType, Project } from "@/types";
+import { TagType, Project, Locale } from "@/types";
 import { Link } from "@/i18n/routing";
 
 interface ProjectsProps {
   isProject?: boolean;
+  locale: Locale;
 }
 
-const Projects = ({ isProject }: ProjectsProps) => {
+const Projects = ({ isProject, locale }: ProjectsProps) => {
   const t = useTranslations();
   const messages = useMessages();
   console.log({ messages })
@@ -24,6 +25,7 @@ const Projects = ({ isProject }: ProjectsProps) => {
     isProject ? true : project.isSelected
   );
 
+
   const filterByTag = (projects: Project[]) =>
     projects.filter((project) =>
       selected === null || project.tag === selected
@@ -34,7 +36,10 @@ const Projects = ({ isProject }: ProjectsProps) => {
       <div className="projectsTitle">
 
         <h2 >{t("projects.section.highlights")}</h2>
-        <Link href="/projects">{t("projects.section.seeAll")}</Link>
+        {!isProject ? (
+          <a href={`/${locale}/projects`}>{t("projects.section.seeAll")}</a>
+        ) : (
+          "")}
       </div>
 
       {isProject ? (
@@ -57,17 +62,17 @@ const Projects = ({ isProject }: ProjectsProps) => {
                 />
               </div>
               {(project.link || project.hasCaseStudy) && (
-                <Link
+                <a
                   className="navLink button Transparent"
                   href={project.hasCaseStudy
-                    ? `/projects/${project.projectURL}`
+                    ? `${locale}/projects/${project.projectURL}`
                     : project.link || ""}
                   target={project.hasCaseStudy ? undefined : "_blank"}
                   rel={!project.hasCaseStudy ? "noopener noreferrer" : undefined}
                 >
                   {project.link ? t("global.visit") : t("global.caseStudy")}
                   <Icon type="arrowRight" />
-                </Link>
+                </a>
               )}
             </div>
             <img className="image" src={project.image} alt={project.title} />

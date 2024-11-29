@@ -9,6 +9,7 @@ import { useTranslations } from 'next-intl';
 import { setRequestLocale } from "next-intl/server";
 import { Link, routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
+import { Locale } from "@/types";
 // import ConfettiBackground from "@/components/ConfettiBackground";
 
 export function generateStaticParams() {
@@ -19,7 +20,7 @@ export function generateStaticParams() {
 
 export default function Home({ params: { locale } }: {
   params: {
-    locale: string
+    locale: Locale
   }
 }) {
   console.log("Home [locale]")
@@ -49,7 +50,7 @@ export default function Home({ params: { locale } }: {
           className="button Primary"
 
         >
-          <Link href="/projects/floof">{t('header.cta.checkLatestCase')}</Link>
+          <a href={`/${locale}/projects/floof`}>{t('header.cta.checkLatestCase')}</a>
           <Icon type="arrowRight" />
         </button>
       </div>
@@ -78,11 +79,12 @@ export default function Home({ params: { locale } }: {
         </div>
       </div>
 
-      <Projects />
+      <Projects 
+        locale={locale}
+      />
 
       <div className="contact">
         <div>
-          <h3>{t('contact.help')}</h3>
           <h2>{tRich('contact.letsTalk')}</h2>
         </div>
         <div className="contactRow">

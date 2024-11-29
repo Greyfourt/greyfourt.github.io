@@ -16,7 +16,7 @@ export type TagType = 'all' | 'logo' | 'website' | 'mobileApp' | 'webApp' | 'gra
 export type CaseStudy = {
     caseStudyState: string;
     caseStudyDate: string;
-    problemImage: string;
+    problemImage: string,
     problemDescriptions: string[];
     researchDescription: string;
     brandDescription: string;
@@ -34,3 +34,5 @@ export type CaseStudy = {
     outComeDescriptions: string[];
     outComeImages: string[];
 }
+
+export type Locale = 'fr' | 'en';
