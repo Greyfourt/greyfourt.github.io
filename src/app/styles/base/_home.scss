@@ -3,6 +3,22 @@
     gap: 1.5rem;
     padding: 4em 2em;
     width: 100%;
+    position: relative;
+    // overflow: hidden;
+
+    .confetti-container {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    
+    }
+
+    // Ensure content stays above animation
+    h1, h3, p, .button {
+        position: relative;
+        z-index: 1;
+    }
+
     & p {
         text-align: center;
     }

@@ -18,5 +18,17 @@
         "titleBar.inactiveBackground": "#21573299",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#215732"
+    "peacock.color": "#215732",
+    "i18n-ally.localesPaths": [
+        "src/i18n",
+        "src/messages",
+        "messages"
+    ],
+    "i18n-ally.keystyle": "nested",
+    "i18n-ally.extract.ignored": [
+        "Nazlı Özçubukçuoğlu",
+        "Home",
+        " • "
+    ],
+    "i18n-ally.sourceLanguage": "en"
 }

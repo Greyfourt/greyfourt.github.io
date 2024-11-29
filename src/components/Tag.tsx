@@ -1,29 +1,23 @@
-import Icon from "./Icons";
-import { Tags } from "./ProjectsList";
+import { useTranslations } from 'next-intl';
+import { TagType } from '@/types';
 
 interface TagProps {
-  tag: string;
-  index?: number | string;
-  currentTag?: string;
-  setCurrentTag: (tag: string) => void;
+  tag: TagType;
+  selected: TagType | null;
+  onSelect: (tag: TagType | null) => void;
 }
 
-const Tag = ({ tag, index, currentTag, setCurrentTag }: TagProps) => {
+const Tag = ({ tag, selected, onSelect }: TagProps) => {
+  const t = useTranslations('tags');
+  
   return (
     <button
-      className={
-        `${tag.replace(" ", "")}` +
-        " tag" +
-        (tag === currentTag ? " active" : "")
-      }
-      key={index}
-      onClick={() => {
-        setCurrentTag(tag);
-      }}
+      className={`tag ${tag === selected ? 'active' : ''}`}
+      onClick={() => onSelect(tag === selected ? null : tag)}
     >
-      <p>{tag}</p>
+      {t(`${tag}`)}
     </button>
   );
-};
+}
 
 export default Tag;
