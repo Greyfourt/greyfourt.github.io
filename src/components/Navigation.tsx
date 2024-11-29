@@ -3,10 +3,13 @@
 import { WebsiteCarbonBadge } from "react-websitecarbon-badge";
 import Icon from "./Icons"
 import { usePathname } from "next/navigation";
-import { Link } from "@/i18n/routing";
+import { Link, routing } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 
 const Footer = () => {
+  const t = useTranslations();
+
   return (
     <footer>
       <div className="contactIcons">
@@ -30,7 +33,7 @@ const Footer = () => {
         </a>
       </div>
       {/* <WebsiteCarbonBadge url="greyfourt.github.io" dark={true} /> */}
-      <p>with ♥ by Nazli &copy; 2023</p>
+      <p>{t.rich('footer.copyright')}</p>
     </footer>
   );
 }
@@ -38,10 +41,6 @@ const Footer = () => {
 export const Menu = ({ locale }: { locale: string }) => {
 
   const currentRoute = usePathname()
-
-  const navItem = () => {
-
-  }
 
   return (
     <nav>
@@ -70,6 +69,14 @@ export const Menu = ({ locale }: { locale: string }) => {
       <a className="navItem" href="mailto:nazliozcubukcuoglu@gmail.com">
         <Icon type="mail" />
       </a>
+
+      <a
+        href={ currentRoute.replace(`/${locale}`,locale === 'en' ? '/fr' : '/en')}
+        className="lang"
+      >
+        {locale === 'en' ? 'FR' : 'EN'}
+      </a>
+
     </nav>
   );
 }

@@ -26,9 +26,9 @@
       "title": "Je suis passionné par la compréhension des besoins des utilisateurs.",
       "biography": {
         "one": "<mark>Mon parcours vers le design n'a pas été linéaire,</mark> de l'ingénierie au design UI/UX, j'ai toujours suivi mes instincts créatifs.",
-      "two": "Mon expérience s'étend des startups aux agences, où je crée des <mark>solutions centrées sur l'utilisateur pour les applications mobiles, les produits SaaS, les sites web et l'identité visuelle.</mark>",
-      "three": "Je travaille actuellement avec dewwwe en tant que Designer Produit & Web basée à Lyon.",
-      "four": "J'ai pas mal de projets personnels aussi, j'adore discuter de nouvelles idées. Et faire des illustrations de temps en temps !"
+        "two": "Mon expérience s'étend des startups aux agences, où je crée des <mark>solutions centrées sur l'utilisateur pour les applications mobiles, les produits SaaS, les sites web et l'identité visuelle.</mark>",
+        "three": "Je travaille actuellement avec dewwwe en tant que Designer Produit & Web basée à Lyon.",
+        "four": "J'ai pas mal de projets personnels aussi, j'adore discuter de nouvelles idées. Et faire des illustrations de temps en temps !"
       }
     },
     "contact": {
@@ -84,6 +84,9 @@
     "errors": {
       "noCaseStudy": "Impossible de trouver l'étude de cas."
     }
+  },
+  "footer": {
+    "copyright": "Fait avec ♥ par Nazli © 2024"
   },
   "projectslist": [
     {

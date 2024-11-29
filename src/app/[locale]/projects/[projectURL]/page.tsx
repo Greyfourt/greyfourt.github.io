@@ -3,6 +3,8 @@ export const dynamic = 'force-static'
 import { notFound } from "next/navigation";
 import CaseStudy from "@/components/CaseStudy";
 import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl';
+import { Project } from "@/types";
+import { routing } from "@/i18n/routing";
 // import { routing } from "@/i18n/routing";
 
 interface PageProps {
@@ -11,44 +13,17 @@ interface PageProps {
   };
 }
 
-type CaseStudy = {
-  caseStudyState: string;
-  caseStudyDate: string;
-  problemImage: string;
-  problemDescriptions: string[];
-  researchDescription: string;
-  brandDescription: string;
-  brandCurrentLogo: string[];
-  brandPropositions: string[];
-  brandTypography: {
-    fontName: string;
-  };
-  brandColors: {
-    name: string;
-    hex: string;
-  }[];
-  userJourneyDescription: string;
-  userJourneyImage: string;
-  outComeDescriptions: string[];
-  outComeImages: string[];
-}
-
-type Project = {
-  title: string;
-  date: string;
-  tag: string;
-  image: string;
-  link?: string;
-  projectURL?: string;
-  isSelected: boolean;
-  hasCaseStudy: boolean;
-  projectCaseStudy?: CaseStudy;
-}
 export function generateStaticParams() {
-  return [{
-    projectURL: 'floof', locale: 'fr'
-  }];
-}
+  const projectsWithCaseStudy = ['floof', 'knotbook']
+  const locales = routing.locales
+  
+  return projectsWithCaseStudy.flatMap(project => 
+    locales.map(locale => ({
+      projectURL: project,
+      locale
+    }))
+  )
+ }
 
 
 

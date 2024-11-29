@@ -36,7 +36,10 @@ const Projects = ({ isProject, locale }: ProjectsProps) => {
       <div className="projectsTitle">
 
         <h2 >{t("projects.section.highlights")}</h2>
-        <a href={`/${locale}/projects`}>{t("projects.section.seeAll")}</a>
+        {!isProject ? (
+          <a href={`/${locale}/projects`}>{t("projects.section.seeAll")}</a>
+        ) : (
+          "")}
       </div>
 
       {isProject ? (
@@ -59,17 +62,17 @@ const Projects = ({ isProject, locale }: ProjectsProps) => {
                 />
               </div>
               {(project.link || project.hasCaseStudy) && (
-                <Link
+                <a
                   className="navLink button Transparent"
                   href={project.hasCaseStudy
-                    ? `/projects/${project.projectURL}`
+                    ? `${locale}/projects/${project.projectURL}`
                     : project.link || ""}
                   target={project.hasCaseStudy ? undefined : "_blank"}
                   rel={!project.hasCaseStudy ? "noopener noreferrer" : undefined}
                 >
                   {project.link ? t("global.visit") : t("global.caseStudy")}
                   <Icon type="arrowRight" />
-                </Link>
+                </a>
               )}
             </div>
             <img className="image" src={project.image} alt={project.title} />

@@ -85,6 +85,9 @@
       "noCaseStudy": "Cannot find case study."
     }
   },
+  "footer": {
+    "copyright": "Made with ♥ by Nazli © 2024"
+  },
   "projectslist": [
     {
       "title": "Harfang Therapeutics",
