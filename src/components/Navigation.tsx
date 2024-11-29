@@ -45,20 +45,20 @@ export const Menu = ({ locale }: { locale: string }) => {
 
   return (
     <nav>
-      <Link
-        href={`/`}
+      <a
+        href={`/${locale}/`}
         className={"navItem " + (currentRoute === "/" ? "active" : "")}
       >
         Home
-      </Link>
-      <Link
-        href={`/projects`}
+      </a>
+      <a
+        href={`/${locale}/projects`}
         className={
           "navItem " + (currentRoute === "/projects" ? "active" : "")
         }
       >
         Projects
-      </Link>
+      </a>
       <a
         className="navItem "
         href="https://greyfourt.github.io/CV_English_Nazli.pdf"

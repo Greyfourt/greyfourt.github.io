@@ -1,6 +1,7 @@
 
 import Projects from "@/components/Projects";
 import { routing } from "@/i18n/routing";
+import { Locale } from "@/types";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
@@ -9,7 +10,7 @@ export function generateStaticParams() {
 }
 
 const ProjectsPage = ({params: {locale}}: { params: {
-  locale: string
+  locale: Locale
 }}) => {
   let isProject = true;
 
@@ -18,7 +19,9 @@ const ProjectsPage = ({params: {locale}}: { params: {
 
   return (
     <div className="bodyContainer">
-      <Projects isProject />
+      <Projects 
+      isProject
+      locale={locale} />
     </div>
   );
 };
