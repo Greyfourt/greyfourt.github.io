@@ -1,4 +1,5 @@
 import ProjectsList from "@/components/ProjectsList";
+import { useMessages, useTranslations } from "next-intl";
 
 type CaseStudyType = {
   problemImage: string;
@@ -27,10 +28,14 @@ const CaseStudy = ({
   projectName: string;
   caseStudy: CaseStudyType;
 }) => {
+
+  const messages = useMessages();
+  const t = useTranslations();
+
   return (
     <>
       <div className="casestudyContentContainer">
-        <h2>Problem & Idea</h2>
+        <h2>{t("projects.caseStudyStructure.sections.problemIdea")}</h2>
         <div className="casestudyContentRow problem">
           <div className="image">
             <img
@@ -46,19 +51,19 @@ const CaseStudy = ({
         </div>
       </div>
       <div className="casestudyContentContainer">
-        <h2>Steps</h2>
+        <h2>{t("projects.caseStudyStructure.sections.steps")}</h2>
         <>
           <div className="casestudyContentColumn research">
-            <h3>1 - Research</h3>
+            <h3>{t("projects.caseStudyStructure.sections.research.title")}</h3>
             <p>{caseStudy.researchDescription}</p>
           </div>
           <div className="casestudyContentColumn brandIdentity">
-            <h3>2 - Brand Identity</h3>
+            <h3>{t("projects.caseStudyStructure.sections.brandIdentity.title")}</h3>
             <p>{caseStudy.brandDescription}</p>
             <div className="brandingWrapper">
               <div className="brandingContainer">
                 <div className="title">
-                  <p>Current Logo</p>
+                  <p>{t("projects.caseStudyStructure.sections.brandIdentity.subsections.currentLogo")}</p>
                 </div>
                 <div className="brandingItem">
                   {...caseStudy.brandCurrentLogo.map((logo, index) => (
@@ -66,14 +71,14 @@ const CaseStudy = ({
                       src={logo}
                       key={index}
                       className="currentLogo"
-                      alt="current logo"
+                      alt={t("projects.caseStudyStructure.sections.brandIdentity.subsections.currentLogo")}
                     />
                   ))}
                 </div>
               </div>
               <div className="brandingContainer">
                 <div className="title">
-                  <p>Propositions</p>
+                  <p>{t("projects.caseStudyStructure.sections.brandIdentity.subsections.proposals")}</p>
                 </div>
                 <div className="brandingItem proposalLogos">
                   {...caseStudy.brandPropositions.map((logo, index) => (
@@ -81,7 +86,7 @@ const CaseStudy = ({
                       src={logo}
                       key={index}
                       className="proposalLogo"
-                      alt="proposal logo with text"
+                      alt={t("projects.caseStudyStructure.sections.brandIdentity.subsections.proposals")}
                     />
                   ))}
                 </div>
@@ -90,20 +95,20 @@ const CaseStudy = ({
             <div className="brandingWrapper">
               <div className="brandingContainer">
                 <div className="title">
-                  <p>Fonts</p>
+                  <p>{t("projects.caseStudyStructure.sections.brandIdentity.subsections.fonts")}</p>
                 </div>
                 <div className="brandingItem typography">
                   <h1>Aa</h1>
                   <h3>{caseStudy.brandTypography.fontName}</h3>
                   <p className="bold">
-                    The quick brown fox jumped over the lazy dog.
+                  {t("projects.caseStudyStructure.sections.brandIdentity.subsections.pangram")}
                   </p>
-                  <p>The quick brown fox jumped over the lazy dog.</p>
+                  <p>{t("projects.caseStudyStructure.sections.brandIdentity.subsections.pangram")}</p>
                 </div>
               </div>
               <div className="brandingContainer">
                 <div className="title">
-                  <p>Colors</p>
+                  <p>{t("projects.caseStudyStructure.sections.brandIdentity.subsections.colors")}</p>
                 </div>
                 <div className="brandingItem">
                   {...caseStudy.brandColors.map((color, index) => (
@@ -123,14 +128,14 @@ const CaseStudy = ({
             </div>
           </div>
           <div className="casestudyContentColumn userJourneys">
-            <h3>3 - User Journeys</h3>
+            <h3>{t("projects.caseStudyStructure.sections.userJourneys.title")}</h3>
             <p>{caseStudy.userJourneyDescription}</p>
             <div className="image">
               <img src={caseStudy.userJourneyImage} alt="userjourneys" />
             </div>
           </div>
           <div className="casestudyContentColumn Outcome">
-            <h3>4 - Outcome</h3>
+            <h3>{t("projects.caseStudyStructure.sections.outcome.title")}</h3>
             {caseStudy.outComeDescriptions.map((outComeDescription, index) => (
               <p key={index}>{outComeDescription}</p>
             ))}

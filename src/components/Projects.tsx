@@ -66,7 +66,7 @@ const Projects = ({ isProject }: { isProject?: boolean }) => {
                   ""
                 )}
               </div>
-              
+
               <img className="image" src={ Project.image ? Project.image : "articles/Placeholder.png" } alt="" />
               <div className="titleDate">
                 <p>{Project.title}</p>

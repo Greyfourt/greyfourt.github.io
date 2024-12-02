@@ -7,12 +7,22 @@
         width: 100%;
     }
 
+    & .projectsTitle {
+        @include flex(column, center, center);
+        gap: 1.5rem;
+        padding: 4em 2em;
+        width: 100%;
+    }
 
     & .projectsHeader {
         @include flex(row, center, center);
         width: 100%;
         padding: 1.25em;
         gap: 1.25em;
+
+        & .tagWrapper {
+            @include flex(row, center, center);
+        }
 
         & h2 {
             margin: 0;
@@ -30,6 +40,7 @@
         padding: 1em;
         width: 100%;
         gap: .5rem;
+        max-width: 1180px;
 
         & .projectItem {
             @include flex(column, space-evenly, flex-start);
@@ -110,28 +121,14 @@
     }
 }
 
-
-.filtersContainer {
+.filters {
     @include flex(row, center, center);
-    gap: 1rem;
-    padding: 1rem 0;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
 
     @media only screen and (max-width: 480px) {
-        @include flex(column, center, center);
-        width: 100%;
-    }
-
-    & .filters {
-        @include flex(row, center, center);
-        gap: 0.5rem;
-        padding: 0.5rem 1rem;
-
-        @media only screen and (max-width: 480px) {
-            // @include flex(column, center, center);
-            width: 80%;
-            flex-wrap: wrap;
-        }
-
+        width: 80%;
+        flex-wrap: wrap;
     }
 }
 
@@ -156,49 +153,8 @@
     }
 }
 
-.Website .tag:hover,
-.Website .tag.active,
-button.Website.tag.active {
-    background-color: $color-yellow-20;
-    color: $color-yellow-100;
+.tag:hover,
+.tag.active {
+    background-color: $color-secondary-30;
     cursor: pointer;
-}
-
-.MobileApp .tag:hover,
-.MobileApp .tag.active,
-button.MobileApp.tag.active {
-    background-color: $color-pink-20;
-    color: $color-pink-100;
-    cursor: pointer;
-}
-
-.Graphics .tag:hover,
-.Graphics .tag.active,
-button.Graphics.tag.active {
-    background-color: $color-orange-20;
-    color: $color-orange-100;
-    cursor: pointer;
-}
-
-.Logo .tag:hover,
-.Logo .tag.active,
-button.Logo.tag.active {
-    background-color: $color-blue-20;
-    color: $color-blue-100;
-    cursor: pointer;
-}
-
-.WebApp .tag:hover,
-.WebApp .tag.active,
-button.WebApp.tag.active {
-    background-color: $color-green-20;
-    color: $color-green-100;
-    cursor: pointer;
-}
-
-.CaseStudy .tag:hover,
-.CaseStudy .tag.active,
-button.CaseStudy.tag.active {
-    background-color: $color-tag;
-    color: $color-button-text;
 }
