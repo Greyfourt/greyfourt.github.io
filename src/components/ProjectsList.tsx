@@ -1,5 +1,32 @@
 const ProjectsList = [
   {
+    title: "Christel Rubinel",
+    date: "2024",
+    tag: "Website",
+    image: "",
+    link: "https://christelrubinel.com/",
+    hasCaseStudy: false,
+    isSelected: true,
+  },
+  {
+    title: "Delphine Chartier",
+    date: "2024",
+    tag: "Website",
+    image: "",
+    link: "https://delphinechartier.com/",
+    hasCaseStudy: false,
+    isSelected: true,
+  },
+  {
+    title: "MNOPé Management",
+    date: "2024",
+    tag: "Website",
+    image: "",
+    link: "https://mnope-management.com/",
+    hasCaseStudy: false,
+    isSelected: true,
+  },
+  {
     title: "Harfang Therapeutics",
     date: "2023",
     tag: "Logo",
