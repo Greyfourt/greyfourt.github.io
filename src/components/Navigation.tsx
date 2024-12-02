@@ -3,7 +3,6 @@
 import { WebsiteCarbonBadge } from "react-websitecarbon-badge";
 import Icon from "./Icons"
 import { usePathname } from "next/navigation";
-import { Link, routing } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 
 
@@ -45,7 +44,7 @@ export const Menu = ({ locale }: { locale: string }) => {
   return (
     <nav>
       <a
-        href={`/${locale}/`}
+        href={`/${locale}`}
         className={"navItem " + (currentRoute === "/" ? "active" : "")}
       >
         Home

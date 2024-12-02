@@ -65,7 +65,7 @@ const Projects = ({ isProject, locale }: ProjectsProps) => {
                 <a
                   className="navLink button Transparent"
                   href={project.hasCaseStudy
-                    ? `${locale}/projects/${project.projectURL}`
+                    ? `/${locale}/projects/${project.projectURL}`
                     : project.link || ""}
                   target={project.hasCaseStudy ? undefined : "_blank"}
                   rel={!project.hasCaseStudy ? "noopener noreferrer" : undefined}
