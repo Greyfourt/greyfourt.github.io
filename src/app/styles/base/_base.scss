@@ -12,10 +12,12 @@ body {
 // Landing Page
 .bodyContainer {
   @include flex(column, center, center);
+  gap: 128px;
+  padding: 64px 0;;
 
   &>div {
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // align-items: center;
     width: 100%;
     min-height: 350px;
     max-width: 1050px;
@@ -28,77 +30,133 @@ body {
   }
 }
 
-// Navigation Bar
+/* Main Navigation Styles */
 nav {
-  @include flex(row, center, center);
   position: sticky;
-  right: 0;
   top: 0;
-  // height: 3em;
-  z-index: 10000;
-  background: $color-background;
+  right: 0;
+  z-index: 100;
   width: 100%;
-  gap: 1em;
-
-  & .navItem {
-    @include flex(row, center, center);
-    position: relative;
-    height: 3em;
-    line-height: 3em;
-    padding: 0 1rem;
-    margin: 1rem;
-    border: 0;
-    // font-size: 0.8em;
-    // font-weight: 700;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: $color-white-100 !important;
-
-    &.contactButton {
-      &:hover {
-        border-radius: 32px;
-        background-color: $color-secondary;
-      }
-    }
-
-    &.active {
-      border-radius: 0;
-      border-bottom: solid 2px $color-secondary;
-    }
-
-    &:hover {
-      border-radius: 0;
-      border-bottom: dashed 2px $color-secondary;
-    }
-  }
-
-  @media only screen and (max-width: 480px) {
-    gap: 0.5em;
-    width: unset !important;
-    width: 100%;
-    right: unset !important;
-
-    & .navItem {
-      font-size: 0.75em;
-      padding: 0 0.5em;
-      width: 100%;
-    }
-  }
-
+  height: 4rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  
+  /* Subtle shadow for depth */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
 }
 
+/* Navigation Items */
+.navItem {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  
+  color: $color-white-100;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  text-decoration: none;
+  
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.navItem::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: $color-secondary;
+  transition: all 0.2s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.navItem:hover::after {
+  width: calc(100% - 2 * 1rem);
+}
+
+/* Active State */
+.navItem.active::after {
+  width: calc(100% - 2 * 1rem);
+  background-color: $color-secondary;
+}
+
+/* Contact Button Special Styling */
+.navItem.contactButton {
+  border-radius: 2rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.navItem.contactButton:hover {
+  background-color: $color-secondary;
+}
+
+/* Icon Specific Styling */
+.navItem svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.2s ease;
+}
+
+.navItem:hover svg {
+  transform: scale(1.1);
+}
+
+/* Language Switcher */
 .langSwitcher {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
+  margin-left: auto;
 }
 
 .lang {
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.75rem;
   border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.lang:hover {
+  background: color-mix(in slab, $color-main 50%, transparent);
 }
 
 .lang.active {
-  background: var(--accent-color);
+  background: $color-main;
+  color: $color-white-100;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+    justify-content: space-around;
+    padding: 0 0.5rem;
+  }
+  
+  .navItem::after {
+    bottom: -2px;
+  }
+}
+
+/* Small Screen Optimization */
+@media (max-width: 480px) {
+  nav {
+    gap: 0.25rem;
+  }
+
+  .navItem {
+    padding: 0.5rem;
+  }
+  
+  /* Hide letter-spacing on very small screens */
+  .navItem {
+    letter-spacing: 0.1em;
+  }
 }
 
 // Icons
@@ -117,10 +175,10 @@ svg {
   border-radius: 32px;
 
   &.Primary {
-    background: $color-button;
+    background: $color-main-30;
 
     &:hover {
-      background: $color-main-30;
+      background: $color-secondary-30;
     }
 
     & a,
@@ -129,10 +187,9 @@ svg {
       color: $color-button-text;
       fill: $color-button-text;
     }
-
   }
 
-  &.Transparent {
+  &.Secondary {
     background: transparent;
     border: solid 1px $color-button;
 
@@ -185,5 +242,3 @@ footer {
     gap: 1rem;
   }
 }
-
-

@@ -1,36 +1,27 @@
-import ProjectsList from "@/components/ProjectsList";
 import { useMessages, useTranslations } from "next-intl";
+import { CaseStudy as CaseStudyType, Locale } from "@/types";
+import { setRequestLocale } from "next-intl/server";
 
-type CaseStudyType = {
-  problemImage: string;
-  problemDescriptions: string[];
-  researchDescription: string;
-  brandDescription: string;
-  brandCurrentLogo: string[];
-  brandPropositions: string[];
-  brandTypography: {
-    fontName: string;
-  };
-  brandColors: {
-    name: string;
-    hex: string;
-  }[];
-  userJourneyDescription: string;
-  userJourneyImage: string;
-  outComeDescriptions: string[];
-  outComeImages: string[];
-};
-
-const CaseStudy = ({
-  projectName,
-  caseStudy,
-}: {
-  projectName: string;
+interface CaseStudyProps {
   caseStudy: CaseStudyType;
-}) => {
+  locale: Locale;
+  projectName: string;
+}
 
-  const messages = useMessages();
+const CaseStudy = ({ caseStudy, locale, projectName }: CaseStudyProps) => {
   const t = useTranslations();
+  const messages = useMessages();
+
+  console.log("Current locale:", locale);
+  console.log("Messages locale:", messages.locale); // See if messages has locale info
+  console.log("Translation test:", t("projects.caseStudyStructure.sections.problemIdea"));
+  console.log("Full messages:", messages);
+
+
+  setRequestLocale(locale);
+
+  console.log(`This is case page: ${locale}`);
+
 
   return (
     <>
@@ -39,7 +30,7 @@ const CaseStudy = ({
         <div className="casestudyContentRow problem">
           <div className="image">
             <img
-              src={"/images/Problem-" + `${projectName.charAt(0).toUpperCase() + projectName.slice(1)}` + ".png"}
+              src={`/images/Problem-${projectName.charAt(0).toUpperCase()}${projectName.slice(1)}.png`}
               alt="users"
             />
           </div>
@@ -66,7 +57,7 @@ const CaseStudy = ({
                   <p>{t("projects.caseStudyStructure.sections.brandIdentity.subsections.currentLogo")}</p>
                 </div>
                 <div className="brandingItem">
-                  {...caseStudy.brandCurrentLogo.map((logo, index) => (
+                  {caseStudy.brandCurrentLogo.map((logo, index) => (
                     <img
                       src={logo}
                       key={index}
@@ -81,7 +72,7 @@ const CaseStudy = ({
                   <p>{t("projects.caseStudyStructure.sections.brandIdentity.subsections.proposals")}</p>
                 </div>
                 <div className="brandingItem proposalLogos">
-                  {...caseStudy.brandPropositions.map((logo, index) => (
+                  {caseStudy.brandPropositions.map((logo, index) => (
                     <img
                       src={logo}
                       key={index}
@@ -101,7 +92,7 @@ const CaseStudy = ({
                   <h1>Aa</h1>
                   <h3>{caseStudy.brandTypography.fontName}</h3>
                   <p className="bold">
-                  {t("projects.caseStudyStructure.sections.brandIdentity.subsections.pangram")}
+                    {t("projects.caseStudyStructure.sections.brandIdentity.subsections.pangram")}
                   </p>
                   <p>{t("projects.caseStudyStructure.sections.brandIdentity.subsections.pangram")}</p>
                 </div>
@@ -111,14 +102,14 @@ const CaseStudy = ({
                   <p>{t("projects.caseStudyStructure.sections.brandIdentity.subsections.colors")}</p>
                 </div>
                 <div className="brandingItem">
-                  {...caseStudy.brandColors.map((color, index) => (
+                  {caseStudy.brandColors.map((color, index) => (
                     <div className="colors" key={index}>
                       <div
                         className="colorBox"
                         style={{
-                          backgroundColor: `${color.hex}`,
+                          backgroundColor: color.hex,
                         }}
-                      ></div>
+                      />
                       <p>{color.name}</p>
                       <p>{color.hex}</p>
                     </div>
@@ -140,7 +131,7 @@ const CaseStudy = ({
               <p key={index}>{outComeDescription}</p>
             ))}
             <div className="outcomeRow">
-              {...caseStudy.outComeImages.map((image, index) => (
+              {caseStudy.outComeImages.map((image, index) => (
                 <div className="image" key={index}>
                   <img src={image} alt="Outcome" />
                 </div>

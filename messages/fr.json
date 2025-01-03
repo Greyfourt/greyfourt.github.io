@@ -1,44 +1,97 @@
 {
   "global": {
-    "visit": "Visiter",
+    "visit": "Venez voir",
     "caseStudy": "Étude de cas",
     "published": "Publié le"
   },
   "tags": {
     "all": "Tout",
     "logo": "Logo",
-    "website": "Site web",
-    "mobileApp": "Appli mobile",
-    "webApp": "Appli web",
-    "graphics": "Graphisme"
+    "website": "Site Web",
+    "mobileApp": "Application mobile",
+    "webApp": "Application web",
+    "graphics": "Graphiques"
   },
   "home": {
     "header": {
-      "role": "Designer Web & Produit",
-      "description": "Transformer des idées en expériences intuitives et immersives.",
+      "role": {
+        "one": "Designer Web & Produit",
+        "two": "Actuellement : conception de produits numériques, esquisse d'idées aléatoires",
+        "three": "et me demandant si mes plantes ont besoin d'eau à nouveau."
+      },
+      "description": "Je transforme des idées complexes en expériences numériques conviviales et agréables qui suscitent joie et engagement.",
       "cta": {
-        "checkLatestCase": "Découvrez ma dernière étude de cas",
-        "sendMail": "Envoyez-moi un mail !",
-        "downloadCV": "Télécharger mon CV"
+        "checkLatestCase": "Découvrez ma dernière étude de cas !",
+        "sendMail": "Discutons et créons quelque chose d'incroyable !",
+        "downloadCV": "Téléchargez mon CV"
       }
     },
-    "about": {
-      "title": "Je suis passionné par la compréhension des besoins des utilisateurs.",
+    "aboutMe": {
+      "title": "Sur : Moi",
+      "sections": {
+        "education": {
+          "title": "Éducation",
+          "main": "Ingénierie informatique",
+          "secondary": "D'où mon background technique"
+        },
+        "style": {
+          "title": "Style",
+          "main": "Minimaliste, simple et épuré",
+          "secondary": "Je suis aussi un passionné du mode sombre !"
+        },
+        "languages": {
+          "title": "Langues",
+          "main": "Français, Anglais, Turc",
+          "secondary": "L'italien est un travail en cours :)"
+        },
+        "hobbies": {
+          "title": "Loisirs",
+          "main": "Artisanat (crochet, broderie, céramique), plantes, dessin et science-fiction.",
+          "secondary": "On ne peut pas être trop créatif, n'est-ce pas ? 😉"
+        },
+        "green": {
+          "title": "Vert",
+          "main": "Éco-Conscient, Végétarien",
+          "secondary": "Pas de planète B."
+        }
+      }
+    },
+    "aboutWork": {
+      "title": "Sur : Travail",
       "biography": {
-        "one": "<mark>Mon parcours vers le design n'a pas été linéaire,</mark> de l'ingénierie au design UI/UX, j'ai toujours suivi mes instincts créatifs.",
-        "two": "Mon expérience s'étend des startups aux agences, où je crée des <mark>solutions centrées sur l'utilisateur pour les applications mobiles, les produits SaaS, les sites web et l'identité visuelle.</mark>",
-        "three": "Je travaille actuellement avec dewwwe en tant que Designer Produit & Web basée à Lyon.",
-        "four": "J'ai pas mal de projets personnels aussi, j'adore discuter de nouvelles idées. Et faire des illustrations de temps en temps !"
+        "one": "De l'écriture de code à la création d'interfaces - il s'avère que l'ingénierie et le design parlent le même langage de résolution de problèmes.",
+        "two": "Créé pour des startups, des agences et des clients indépendants. Mon arsenal : applications mobiles, produits SaaS, sites Web épurés et identités de marque qui fonctionnent."
+      },
+      "sections": {
+        "work": {
+          "title": "Travail",
+          "main": "En collaboration avec dewwwe",
+          "secondary": "à Lyon"
+        },
+        "experiences": {
+          "title": "Expériences",
+          "main": "J'ai commencé dans des startups, maintenant je m'épanouis en tant que freelance",
+          "secondary": "J'ai trouvé mon rythme dans le travail indépendant après des aventures précieuses en startup",
+          "cta": "Téléchargez mon CV"
+        },
+        "favTools": {
+          "title": "Outils préférés",
+          "main": "Figma, Wordpress, Next.js. J'ai aussi passé pas mal de temps sur Procreate et Canva.",
+          "secondary": "Toujours à l'affût de nouveaux outils, je garde un œil sur Penpot."
+        }
       }
     },
     "contact": {
-      "letsTalk": "Une idée ? <mark>Parlons-en !</mark>",
+      "letsTalk": {
+        "one": "Prêt à donner vie à votre vision ?",
+        "two": "<mark>Créons quelque chose de génial ensemble !</mark>"
+      },
       "locations": {
-        "inPerson": "Autour d'un café ",
+        "inPerson": "Autour d'un café à",
         "places": {
-          "lyon": "à Lyon, France",
+          "lyon": "Lyon, France",
           "or": "ou",
-          "turin": "à Turin, Italie"
+          "turin": "Turin, Italie"
         },
         "remote": {
           "title": "Pas si proche ?",
@@ -49,7 +102,7 @@
   },
   "projects": {
     "section": {
-      "highlights": "Mes derniers projets",
+      "highlights": "Projets phares",
       "seeAll": "Voir tout"
     },
     "caseStudyStructure": {
@@ -70,7 +123,7 @@
             "proposals": "Propositions",
             "fonts": "Polices",
             "colors": "Couleurs",
-            "pangram": "Portez ce vieux whisky au juge blond qui fume."
+            "pangram": "Le rapide renard brun a sauté par-dessus le chien paresseux."
           }
         },
         "userJourneys": {
@@ -82,7 +135,7 @@
       }
     },
     "errors": {
-      "noCaseStudy": "Impossible de trouver l'étude de cas."
+      "noCaseStudy": "Oups ! Impossible de trouver cette étude de cas."
     }
   },
   "footer": {
@@ -145,12 +198,12 @@
         "caseStudyDate": "Octobre 2023",
         "problemImage": "/images/Problem-Floof.png",
         "problemDescriptions": [
-          "Avec nos modes de vie chargés et nos emplois du temps surchargés, il est facile d'oublier les besoins de nos amis à fourrure et à feuilles. Face au quotidien, même les tâches cruciales comme les rendez-vous vétérinaires, le réapprovisionnement en nourriture pour animaux et l'arrosage des plantes peuvent être négligés. Cette négligence involontaire peut avoir de graves conséquences pour nos compagnons bien-aimés - ou comme nous les appelons, nos floofs.",
-          "Voici notre solution, votre guichet unique pour la gestion des soins aux animaux et aux plantes. Cette application mobile PWA s'intègre parfaitement à votre routine quotidienne, en gardant une trace des informations importantes, en définissant des rappels et en partageant tout cela avec nos amis et notre famille pour assurer le bien-être de vos amis à fourrure et à feuilles.",
-          "Ainsi est née Floof !"
+          "Avec des modes de vie chargés et des emplois du temps surchargés, il est facile d'ignorer les besoins de nos amis à fourrure et à feuilles. Dans le tourbillon quotidien, même des tâches cruciales comme les rendez-vous chez le vétérinaire, les réapprovisionnements de nourriture pour animaux et l'arrosage des plantes peuvent passer à la trappe. Cette négligence involontaire peut avoir de graves conséquences pour nos compagnons bien-aimés - ou comme nous les appelons, les floofs.",
+          "Voici notre solution, votre solution tout-en-un pour gérer les soins aux animaux de compagnie et aux plantes. Cette application mobile PWA s'intègre parfaitement à votre routine quotidienne, gardant une trace des informations importantes, définissant des rappels et partageant tout cela avec nos amis et notre famille pour assurer le bien-être de vos amis à fourrure et à feuilles.",
+          "Ainsi, l'application Floof est née !"
         ],
-        "researchDescription": "Nous avons fait nos devoirs, en analysant en profondeur les applications existantes de soins aux animaux et aux plantes pour comprendre leurs forces et leurs limites. Nous avons également recueilli les commentaires des propriétaires d'animaux et des passionnés de plantes pour identifier leurs points faibles.",
-        "brandDescription": "Nous voulions que Floof ait une personnalité à la fois ludique et sophistiquée. Nous avons choisi une palette de couleurs à la fois vibrante et apaisante, et nous avons conçu un logo à la fois mignon et élégant.",
+        "researchDescription": "Nous avons fait nos devoirs, en analysant en profondeur les applications existantes de soins aux animaux de compagnie et aux plantes pour comprendre leurs forces et leurs limites. Nous avons également recueilli des retours d'expérience de propriétaires d'animaux et d'amateurs de plantes pour identifier leurs points de douleur.",
+        "brandDescription": "Nous voulions que l'application Floof ait une personnalité à la fois ludique et sophistiquée. Nous avons choisi une palette de couleurs à la fois vibrante et apaisante, et nous avons conçu un logo à la fois mignon et élégant.",
         "brandCurrentLogo": [
           "/images/Logo-Floof.png",
           "/images/Logo-Floof-2.png"
@@ -184,12 +237,12 @@
             "hex": "#FFFFFF"
           }
         ],
-        "userJourneyDescription": "Nous avons créé des parcours utilisateur détaillés pour nous assurer que chaque étape de l'utilisation de Floof soit intuitive et agréable. Nous voulions nous assurer que l'application soit facile à utiliser pour les personnes de tous âges et de tous niveaux de compétence.",
+        "userJourneyDescription": "Nous avons créé des parcours utilisateurs détaillés pour nous assurer que chaque étape de l'utilisation de l'application Floof soit intuitive et agréable. Nous voulions nous assurer que l'application soit facile à utiliser pour les personnes de tous âges et niveaux de compétence.",
         "userJourneyImage": "/images/UserJourney-Floof.png",
         "outComeDescriptions": [
-          "Floof est actuellement en développement, mais nous faisons déjà de grands progrès. Nous nous concentrons sur la plateforme mobile car nous savons que c'est là que nos utilisateurs passent le plus de temps.",
-          "Nous réfléchissons constamment à de nouvelles fonctionnalités pour Floof.",
-          "Floof n'est pas seulement un outil de gestion des soins aux animaux et aux plantes ; c'est un compagnon pour la vie. C'est le moyen parfait de s'assurer que vos amis à fourrure et à feuilles sont toujours heureux et en bonne santé."
+          "L'application Floof est actuellement en développement, mais nous faisons déjà de grands progrès. Nous nous concentrons sur la plateforme mobile car nous savons que c'est là que nos utilisateurs passent le plus de temps.",
+          "Nous brainstormons constamment de nouvelles fonctionnalités pour l'application Floof.",
+          "L'application Floof n'est pas seulement un outil pour gérer les soins aux animaux de compagnie et aux plantes ; c'est un compagnon pour la vie. C'est le moyen parfait de s'assurer que vos amis à fourrure et à feuilles sont toujours heureux et en bonne santé."
         ],
         "outComeImages": [
           "/images/Outcome-Floof-1.png",
@@ -214,12 +267,12 @@
         "caseStudyState": "terminé",
         "problemImage": "/images/Problem-Knotbook.png",
         "problemDescriptions": [
-          "En tant qu'amateurs de crochet, nous sommes toujours à la recherche de nouveaux motifs excitants. Mais parfois, nous tombons sur des termes ou des acronymes que nous ne reconnaissons pas rapidement.",
-          "Nous voulons avoir un aperçu de tous les points pendant que nous construisons nos motifs.",
-          "Ainsi est née Knotbook !"
+          "En tant qu'amateurs de crochet, nous sommes toujours à la recherche de nouveaux et passionnants motifs. Mais parfois, nous tombons sur des termes ou des acronymes que nous ne reconnaissons pas rapidement.",
+          "Nous voulons avoir des aperçus de tous les points de suture pendant que nous construisons nos motifs.",
+          "Ainsi, l'application Knotbook est née !"
         ],
-        "researchDescription": "Nous avons parcouru Internet, testé et expérimenté de nombreuses applications.",
-        "brandDescription": "Nous voulions créer un environnement où les utilisateurs n'auraient pas beaucoup de distractions tout en gardant le côté chaleureux.",
+        "researchDescription": "Nous avons parcouru Internet, testé et joué avec de nombreuses applications.",
+        "brandDescription": "Nous voulions créer un environnement où les utilisateurs n'auraient pas trop de distractions tout en gardant un côté chaleureux.",
         "brandCurrentLogo": [
           "/images/Logo-Knotbook.png"
         ],
@@ -251,10 +304,10 @@
             "hex": "#FFFFFF"
           }
         ],
-        "userJourneyDescription": "Nous avons créé des parcours utilisateur détaillés pour nous guider tout au long de la conception et du développement. En raison des flux complexes dans l'application, nous avons créé des diagrammes détaillés pour le développement.",
+        "userJourneyDescription": "Nous avons créé des parcours utilisateurs détaillés pour nous guider tout au long de la conception et du développement. En raison des flux compliqués dans l'application, nous avons créé des diagrammes détaillés pour le développement.",
         "userJourneyImage": "/images/UserJourney-Knotbook.png",
         "outComeDescriptions": [
-          "Nous nous sommes concentrés uniquement sur le mobile car nos utilisateurs n'auraient besoin que d'une solution mobile. Nous avons commencé par les maquettes les plus simples. Nous avons créé des designs en partant du basique - des MVP au style minimaliste jusqu'à des designs plus élaborés."
+          "Nous nous sommes concentrés uniquement sur le mobile car nos utilisateurs n'auraient besoin que d'une solution à emporter. Nous avons commencé par les wireframes les plus simples. Nous avons créé des designs à partir de la base - des MVPs minimalement stylés à des designs plus élaborés."
         ],
         "outComeImages": [
           "/images/Outcome-Knotbook-1.png",

@@ -6,7 +6,6 @@ import Filters from "./Filters";
 import Tag from "./Tag";
 import { useMessages, useTranslations } from "next-intl";
 import { TagType, Project, Locale } from "@/types";
-import { Link } from "@/i18n/routing";
 
 interface ProjectsProps {
   isProject?: boolean;
@@ -16,7 +15,7 @@ interface ProjectsProps {
 const Projects = ({ isProject, locale }: ProjectsProps) => {
   const t = useTranslations();
   const messages = useMessages();
-  console.log({ messages })
+
   const [selected, setSelected] = useState<TagType | null>(null);
 
   const projects = messages.projectslist as unknown as Project[];
@@ -63,7 +62,7 @@ const Projects = ({ isProject, locale }: ProjectsProps) => {
               </div>
               {(project.link || project.hasCaseStudy) && (
                 <a
-                  className="navLink button Transparent"
+                  className="navLink button Secondary"
                   href={project.hasCaseStudy
                     ? `/${locale}/projects/${project.projectURL}`
                     : project.link || ""}
@@ -75,7 +74,7 @@ const Projects = ({ isProject, locale }: ProjectsProps) => {
                 </a>
               )}
             </div>
-            <img className="image" src={ project.image ? project.image : "articles/Placeholder.png" } alt="" />
+            <img className="image" src={project.image ? project.image : "articles/Placeholder.png"} alt="" />
             <div className="titleDate">
               <p>{project.title}</p>
               <p>{project.date}</p>

@@ -36,3 +36,36 @@ export type CaseStudy = {
 }
 
 export type Locale = 'fr' | 'en';
+
+export type Section = {
+    title: string;
+    main: string;
+    secondary?: string;
+    cta?: string;
+}
+
+export type AboutMe = {
+    header: {
+        title: string;
+    };
+    
+    sections: {
+        education: Section;
+        style: Section;
+        languages: Section;
+        hobbies: Section;
+        green: Section;
+    };
+}
+
+export type AboutWork = {
+    header: {
+        title: string;
+    };
+    
+    sections: {
+        work: Section;
+        experiences: Section;
+        favTools: Section;
+    };
+}

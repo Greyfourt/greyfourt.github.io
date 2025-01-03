@@ -1,6 +1,6 @@
 {
   "global": {
-    "visit": "Visit",
+    "visit": "Swing by",
     "caseStudy": "Case Study",
     "published": "Published on"
   },
@@ -14,25 +14,78 @@
   },
   "home": {
     "header": {
-      "role": "Web & Product Designer",
-      "description": "Transforming ideas into intuitive and immersive experiences.",
+      "role": {
+        "one": "Web & Product Designer",
+        "two": "Currently: designing digital products, sketching random ideas,",
+        "three": "and wondering if my plants need water again."
+      },
+      "description": "I transform complex ideas into delightful, user-centric digital experiences that spark joy and engagement.",
       "cta": {
-        "checkLatestCase": "Check out my latest case study",
-        "sendMail": "Let's discuss!",
-        "downloadCV": "Download my CV"
+        "checkLatestCase": "Dive into my latest case study!",
+        "sendMail": "Let's chat and create something amazing!",
+        "downloadCV": "Grab my CV"
       }
     },
-    "about": {
-      "title": "I'm passionate about understanding users needs.",
+    "aboutMe": {
+      "title": "About: Me",
+      "sections": {
+        "education": {
+          "title": "Education",
+          "main": "Computer Engineering",
+          "secondary": "Hence my technical background"
+        },
+        "style": {
+          "title": "Style",
+          "main": "Minimalistic, simple, and clean",
+          "secondary": "Dark mode enthusiast here!"
+        },
+        "languages": {
+          "title": "Languages",
+          "main": "French, English, Turkish",
+          "secondary": "Italian is a work in progress :)"
+        },
+        "hobbies": {
+          "title": "Hobbies",
+          "main": "Crochet, embroidery, ceramics, plants, drawing, and sci-fi.",
+          "secondary": "Can't be too crafty, right? 😉"
+        },
+        "green": {
+          "title": "Green",
+          "main": "Eco-conscious, Vegetarian",
+          "secondary": "No planet B."
+        }
+      }
+    },
+    "aboutWork": {
+      "title": "About: Work",
       "biography": {
-        "one": "My journey to design wasn't linear, from Engineering to UI/UX Design, I've always pursued my creative instincts.",
-        "two": "My experience spans startups and agencies, where I craft user-centric solutions for mobile apps, SaaS products, websites, and branding.",
-        "three": "I'm currently working with dewwwe as a Product & Web Designer based in Lyon.",
-        "four": "I love side projects and discussing over new ideas. And sketching some illustrations too time to time!"
+        "one": "From writing code to crafting interfaces - turns out engineering and design speak the same language of problem-solving.",
+        "two": "Built for startups, agencies, and independent clients. My toolkit: mobile apps, SaaS products, clean websites, and brand identities that work."
+      },
+      "sections": {
+        "work": {
+          "title": "Work",
+          "main": "Collaborating with dewwwe",
+          "secondary": "in Lyon"
+        },
+        "experiences": {
+          "title": "Experiences",
+          "main": "Started in startups, now thriving as a freelancer",
+          "secondary": "Found my groove in independent work after valuable startup adventures",
+          "cta": "Grab my CV"
+        },
+        "favTools": {
+          "title": "Fav Tools",
+          "main": "Figma, Wordpress, Next.js. Also, I've spent quite a bit of time on Procreate and Canva.",
+          "secondary": "Always on the lookout for new tools, keeping a close eye on Penpot."
+        }
       }
     },
     "contact": {
-      "letsTalk": "How can I be of help? <mark>Let's talk!</mark>",
+      "letsTalk": {
+        "one": "Ready to bring your vision to life?",
+        "two": "<mark>Let's create something amazing together!</mark>"
+      },
       "locations": {
         "inPerson": "Around a coffee in",
         "places": {
@@ -49,7 +102,7 @@
   },
   "projects": {
     "section": {
-      "highlights": "Highlights",
+      "highlights": "Featured Projects",
       "seeAll": "See all"
     },
     "caseStudyStructure": {
@@ -82,7 +135,7 @@
       }
     },
     "errors": {
-      "noCaseStudy": "Cannot find case study."
+      "noCaseStudy": "Oops! Can't find that case study."
     }
   },
   "footer": {
@@ -214,11 +267,11 @@
         "caseStudyState": "done",
         "problemImage": "/images/Problem-Knotbook.png",
         "problemDescriptions": [
-          "As crochet lovers, we are always in research of new and exciting patterns. But sometimes, we come upon some terms or acronyms that we do not recognise quickly.",
-          "We want to have sneak peaks to all stitches while we are building our patterns.",
+          "As crochet lovers, we are always in search of new and exciting patterns. But sometimes, we come upon some terms or acronyms that we do not recognize quickly.",
+          "We want to have sneak peeks to all stitches while we are building our patterns.",
           "So the Knotbook app is born!"
         ],
-        "researchDescription": "Swarmed the internet, tested and played around many applications.",
+        "researchDescription": "Swarmed the internet, tested and played around with many applications.",
         "brandDescription": "We wanted to create an environment that users will not have a lot of distractions while keeping the cozy side.",
         "brandCurrentLogo": [
           "/images/Logo-Knotbook.png"
@@ -251,10 +304,10 @@
             "hex": "#FFFFFF"
           }
         ],
-        "userJourneyDescription": "We created detailed user journeys to guide us throughout design and development. Due to the complicated flows in the application, created detailed diagrams for the development.",
+        "userJourneyDescription": "We created detailed user journeys to guide us throughout design and development. Due to the complicated flows in the application, we created detailed diagrams for the development.",
         "userJourneyImage": "/images/UserJourney-Knotbook.png",
         "outComeDescriptions": [
-          "Focused only on the mobile as our users would only need a on-the-go solution. Started with simplest wireframes. Created designs from the basic - minimally styled MVPs to more studied designs."
+          "Focused only on the mobile as our users would only need a on-the-go solution. Started with the simplest wireframes. Created designs from the basic - minimally styled MVPs to more studied designs."
         ],
         "outComeImages": [
           "/images/Outcome-Knotbook-1.png",

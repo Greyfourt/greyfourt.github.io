@@ -1,6 +1,8 @@
 .projectsWrapper {
     @include flex(column, center, center);
     width: 100%;
+    gap: 1rem;
+
 
     @media only screen and (max-width: 480px) {
         @include flex(column, center, center);
@@ -9,9 +11,9 @@
 
     & .projectsTitle {
         @include flex(column, center, center);
-        gap: 1.5rem;
-        padding: 4em 2em;
         width: 100%;
+        gap: 0.5rem;
+        text-align: center;
     }
 
     & .projectsHeader {

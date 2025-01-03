@@ -1,100 +1,145 @@
-.landingHeader {
+.header {
+  @include flex(column, center, center);
+  gap: 3rem;
+  padding: 4em 2em;
+  width: 100%;
+
+  .illustration {
     @include flex(column, center, center);
-    gap: 1.5rem;
-    padding: 4em 2em;
+
+    border-radius: 90%;
+    background-color: $color-main-30;
+    // border: solid $color-main 50px;
+
+    & img {
+      @include flex(column, center, flex-end);
+      height: 300px;
+      width: 300px;
+
+      object-fit: contain;
+    }
+  }
+
+  & .titleSection {
+    @include flex(column, center, center);
+    gap: 32px;
+    text-align: center;
     width: 100%;
-    position: relative;
-    // overflow: hidden;
 
-    .confetti-container {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-    
+    & h1,
+    h2,
+    p {
+      width: 100%;
+      overflow-wrap: break-word;
+      hyphens: auto;
     }
 
-    // Ensure content stays above animation
-    h1, h3, p, .button {
-        position: relative;
-        z-index: 1;
+    & div {
+      @include flex(column, center, center);
+      gap: 8px;
+      text-align: center;
+      width: 100%;
     }
+  }
 
-    & p {
-        text-align: center;
-    }
+  & p {
+    text-align: center;
+  }
 }
 
-
 .about {
-    @include flex(row, center, center);
-    gap: 3rem;
+  width: 100%;
+  @include flex(column, center, center);
+  gap: 4rem;
 
-    & .aboutImage {
-        @include flex(column, center, flex-start);
+  & .aboutText {
+    width: 100%;
+    @include flex(column, center, center);
+    gap: 1rem;
 
-        @media only screen and (max-width: 1200px) {
-            transform: scaleX(-1);
-        }
+    & p {
+      text-align: center;
+    }
+  }
+
+  & .aboutGrid {
+    @include flex(row, center, flex-start);
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  & .aboutCard {
+    @include flex(column, flex-start, center);
+    gap: 12px;
+    width: 300px;
+    text-align: center;
+
+    & .descriptions {
+      font-weight: 500;
+      gap: 4px;
+
+      & .secondary {
+        opacity: 0.5;
+      }
     }
 
-    & .aboutTextCol {
-        @include flex(column, center, flex-start);
-        gap: 1.5rem;
+    & .cta {
+      text-decoration: none;
+      transition: opacity 0.2s ease;
 
-        @media only screen and (max-width: 1200px) {
-            margin-left: -9rem;
-            padding: 2rem;
-            background-color: $color-background;
-            z-index: 100;
-            border-radius: 2rem;
-        }
-
-        & .aboutText {
-            @include flex(column, center, flex-start);
-            gap: 1.5rem;
-        }
+      &:hover {
+        opacity: 0.8;
+      }
     }
+  }
+
+
 }
 
 .contact {
+  @include flex(column, center, center);
+  gap: 2rem;
+
+  @media only screen and (max-width: 1200px) {
+    padding: 1em 0;
+  }
+
+  & div {
     @include flex(column, center, center);
-    gap: 2rem;
+    gap: 8px;
+  }
+
+  & h2 {
+    text-align: center;
+  }
+
+  & .contactRow {
+    @include flex(row, center, center);
+    gap: 1rem;
 
     @media only screen and (max-width: 1200px) {
-        padding: 1em 0;
+      @include flex(column, center, center);
     }
 
-    & h2 {
-        text-align: center;
+    & .locationRow {
+      @include flex(row, center, center);
+      gap: 12px;
+
     }
 
-    & .contactRow {
-        @include flex(row, center, center);
-        gap: 1rem;
+    & .location {
+      @include flex(row, center, center);
+      gap: 0.5rem;
 
-        @media only screen and (max-width: 1200px) {
-            @include flex(column, center, center);
-        }
+      & svg {
+        height: 1.5em;
+        width: 1.5em;
+        fill: $color-main;
+      }
 
-        & .locationRow {
-            @include flex(row, center, center);
-            gap: 12px;
-
-        }
-
-        & .location {
-            @include flex(row, center, center);
-            gap: 0.5rem;
-
-            & svg {
-                height: 1.5em;
-                width: 1.5em;
-                fill: $color-main;
-            }
-
-            h4 {
-                color: $color-main;
-            }
-        }
+      h4 {
+        color: $color-main;
+      }
     }
+  }
 }

@@ -9,7 +9,8 @@ import { useTranslations } from 'next-intl';
 import { setRequestLocale } from "next-intl/server";
 import { Link, routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { Locale } from "@/types";
+import { Locale, AboutMe, AboutWork, Section } from "@/types";
+import About from "@/components/About";
 // import ConfettiBackground from "@/components/ConfettiBackground";
 
 export function generateStaticParams() {
@@ -18,18 +19,14 @@ export function generateStaticParams() {
   // return [{ locale: 'en' }, { locale: 'fr' }];
 }
 
-export default function Home({ params: { locale } }: {
+export default function Home({ params: { locale, aboutMe, aboutWork, sections } }: {
   params: {
-    locale: Locale
+    locale: Locale,
+    aboutMe: AboutMe,
+    aboutWork: AboutWork,
+    sections: Section,
   }
 }) {
-  console.log("Home [locale]")
-
-
-  if (!locale) {
-    console.log("haaaaa")
-  }
-
   setRequestLocale(locale);
 
   const t = useTranslations('home');
@@ -42,50 +39,29 @@ export default function Home({ params: { locale } }: {
   return (
     <div className="bodyContainer">
 
-      <div className="landingHeader">
-        <h1>Nazlı Özçubukçuoğlu</h1>
-        <h3><mark>{t('header.role')}</mark></h3>
-        <p>{t('header.description')}</p>
-        <button
-          className="button Primary"
-
-        >
-          <a href={`/${locale}/projects/floof`}>{t('header.cta.checkLatestCase')}</a>
-          <Icon type="arrowRight" />
-        </button>
-      </div>
-
-      <div className="about">
-        <div className="aboutImage">
+      <div className="header">
+        <div className="illustration">
           <img src="/illustration.png" alt="" />
         </div>
-        <div className="aboutTextCol">
-          <h2>{t('about.title')}</h2>
-          <div className="aboutText">
-            <p>{tRich('about.biography.one')}</p>
-            <p>{tRich('about.biography.two')}</p>
-            <p>{tRich('about.biography.three')}</p>
-            <p>{tRich('about.biography.four')}</p>
-          </div>
+        <div className="titleSection">
+          <h1>Nazlı Özçubukçuoğlu</h1>
 
-          <a
-            href="https://greyfourt.github.io/CV_English_Nazli.pdf"
-            download="CV_English_Nazli"
-            target="_blank"
-            rel="nofollow"
-          >
-            {t('header.cta.downloadCV')}
-          </a>
+          <h3><mark>{t('header.role.one')}</mark></h3>
+          <div>
+            <h4>{t('header.role.two')}</h4>
+            <h4>{t('header.role.three')}</h4>
+          </div>
         </div>
       </div>
 
-      <Projects 
-        locale={locale}
-      />
+      <About locale={locale} />
+
+      <Projects locale={locale} />
 
       <div className="contact">
         <div>
-          <h2>{tRich('contact.letsTalk')}</h2>
+          <h3>{t('contact.letsTalk.one')}</h3>
+          <h2>{tRich('contact.letsTalk.two')}</h2>
         </div>
         <div className="contactRow">
           <h4>{t('contact.locations.inPerson')}</h4>
