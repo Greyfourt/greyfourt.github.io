@@ -70,8 +70,8 @@
         },
         "experiences": {
           "title": "Expériences",
-          "main": "J'ai commencé dans des startups, maintenant je m'épanouis en tant que freelance",
-          "secondary": "J'ai trouvé mon rythme dans le travail indépendant après des aventures précieuses en startup",
+          "main": "J'ai trouvé mon rythme dans le travail indépendant après des aventures précieuses en startup",
+          "secondary": "",
           "cta": "Téléchargez mon CV"
         },
         "favTools": {
