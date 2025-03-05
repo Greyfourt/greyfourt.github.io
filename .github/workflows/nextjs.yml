@@ -61,6 +61,18 @@ jobs:
           #
           # You may remove this line if you want to manage the configuration yourself.
           static_site_generator: next
+      - name: Configure Next.js for static export
+        run: |
+            echo '/**
+             * @type {import("next").NextConfig}
+             */
+            const createNextIntlPlugin = require("next-intl/plugin");
+            const withNextIntl = createNextIntlPlugin();
+            const nextConfig = withNextIntl({
+              output: "export",
+            });
+            module.exports = nextConfig;' > next.config.js
+
       - name: Restore cache
         uses: actions/cache@v4
         with:
