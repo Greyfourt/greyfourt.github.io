@@ -5,18 +5,15 @@ const createNextIntlPlugin = require('next-intl/plugin');
 
 const withNextIntl = createNextIntlPlugin();
 
+// Configure Next.js for GitHub Pages
 const nextConfig = {
+  // This is required for static exports (GitHub Pages)
   output: 'export',
-  // Add this for GitHub Pages with a custom domain or project site
-  basePath: process.env.NODE_ENV === 'production' ? '' : '',
-  // If you're using a custom domain, you can remove this
-  assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
-  // This is needed for GitHub Pages deployment
+  
+  // Required for image optimization in static export
   images: {
     unoptimized: true
-  },
-  // Disable trailing slashes to match GitHub Pages behavior
-  trailingSlash: false,
+  }
 };
 
 // Apply the next-intl plugin
