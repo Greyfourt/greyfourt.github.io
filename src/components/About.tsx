@@ -36,7 +36,7 @@ const AboutCard = ({ keyName, t, locale, type }: AboutProps) => {
       )}
       {keyName === 'experiences' && (
         <a 
-          href="https://greyfourt.github.io/CV_English_Nazli.pdf" 
+          href={locale === 'fr' ? '/CV - 2026 Nazlı FR.pdf' : '/CV - 2026 Nazlı EN.pdf'}
           target="_blank"
           rel="nofollow"
           className="cta"
