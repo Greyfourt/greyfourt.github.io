@@ -27,15 +27,8 @@ const AboutCard = ({ keyName, t, locale, type }: AboutProps) => {
           </p>
         )}
       </div>
-      {keyName === 'favTools' && (
-        <div>
-            <img src="" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" />
-        </div>
-      )}
       {keyName === 'experiences' && (
-        <a 
+        <a
           href={locale === 'fr' ? '/CV - 2026 Nazlı FR.pdf' : '/CV - 2026 Nazlı EN.pdf'}
           target="_blank"
           rel="nofollow"
