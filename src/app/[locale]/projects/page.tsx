@@ -14,9 +14,6 @@ const ProjectsPage = ({params: {locale}}: { params: {
 }}) => {
   let isProject = true;
 
-  console.log("ProjectsPage [locale]")
-  
-
   return (
     <div className="bodyContainer">
       <Projects 

@@ -8,9 +8,6 @@ const Icon = ({
     searchTerms?: string,
     all?: boolean
 }) => {
-    // console.log(props);
-    // const { all, onClick, type, searchTerms } = props;
-
     let icons = [
       {
         type: "interrogationPoint",
@@ -187,15 +184,13 @@ const Icon = ({
       },
     ];
     icons.forEach(icon => {
-        // console.log("icons props", icon);
-
         let outHtml = {
             ...icon.outHtml
         };
         let htmlProps = {
             ...outHtml.props
         }
-        // class 
+
         let className = htmlProps.className;
         className += " icon";
         className += " " + icon.type;
@@ -203,22 +198,19 @@ const Icon = ({
         className += " " + type;
 
         htmlProps.className = className;
+        htmlProps["aria-hidden"] = true;
 
-        // onclick
         if (onClick) {
-
             htmlProps.onClick = (e: any) => {
                 onClick(e, icon.type);
             }
         }
 
-        // out
         outHtml.props = htmlProps;
 
         let newIcon = icon;
         newIcon.outHtml = outHtml;
 
-        // console.log("newIcon", newIcon);
         return newIcon
     });
 
@@ -227,24 +219,15 @@ const Icon = ({
     if (all) {
         if (searchTerms !== "") {
             icons = icons.filter(x => {
-                let output = false;
-                // console.log("x", x);
                 const conditionForType = x.type.toLowerCase().includes(searchTerms.toLowerCase());
                 const conditionForNames = x.names.some(name => name.toLowerCase().includes(searchTerms.toLowerCase()));
-                if (conditionForType || conditionForNames) {
-                    output = true;
-                }
-
-                return output;
+                return conditionForType || conditionForNames;
             });
-
-            // console.log("icons after Filter", icons);
         }
         const outHtml = (
             <Fragment>
                 {
                     icons.map((icon, index) => {
-                        // console.log("icon coucou", icon);
                         return (
                             <div className="iconWrapper" key={index} onClick={(e: any) => { onClick && onClick(e, icon.type) }}>
                                 {icon.outHtml}
@@ -265,13 +248,10 @@ const Icon = ({
                 }
             </Fragment>
         );
-        // console.log("outHtml", outHtml);
-
         return outHtml;
     } else {
         let icon = icons.find(icon => icon.type === type || icon.names.includes(type));
-        // console.log("icon", icon); 
-        return icon && icon !== undefined ? icon.outHtml : icons[0].outHtml;
+        return icon ? icon.outHtml : icons[0].outHtml;
     }
 
 }

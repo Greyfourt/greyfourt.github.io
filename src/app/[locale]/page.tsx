@@ -5,13 +5,11 @@ import Projects from "@/components/Projects";
 import "../styles/App.scss";
 
 import { useTranslations } from 'next-intl';
-// import { useState } from "react";
 import { setRequestLocale } from "next-intl/server";
 import { Link, routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { Locale, AboutMe, AboutWork, Section } from "@/types";
 import About from "@/components/About";
-// import ConfettiBackground from "@/components/ConfettiBackground";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

@@ -1,4 +1,4 @@
-import { useMessages, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { CaseStudy as CaseStudyType, Locale } from "@/types";
 import { setRequestLocale } from "next-intl/server";
 
@@ -10,17 +10,8 @@ interface CaseStudyProps {
 
 const CaseStudy = ({ caseStudy, locale, projectName }: CaseStudyProps) => {
   const t = useTranslations();
-  const messages = useMessages();
-
-  console.log("Current locale:", locale);
-  console.log("Messages locale:", messages.locale); // See if messages has locale info
-  console.log("Translation test:", t("projects.caseStudyStructure.sections.problemIdea"));
-  console.log("Full messages:", messages);
-
 
   setRequestLocale(locale);
-
-  console.log(`This is case page: ${locale}`);
 
 
   return (

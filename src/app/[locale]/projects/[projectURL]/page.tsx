@@ -42,8 +42,6 @@ const ProjectPage = async ({ params }: PageProps) => {
 
   const project = projectsList.find(p => p.projectURL === params.projectURL);
 
-  console.log(`This is projectURL page: ${params.locale}`);
-
   if (!project) notFound();
   if (!project.hasCaseStudy || !project.projectCaseStudy) {
     return (
