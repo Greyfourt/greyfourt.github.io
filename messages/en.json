@@ -15,9 +15,9 @@
   "home": {
     "header": {
       "role": {
-        "one": "Web & Product Designer",
-        "two": "Currently: designing digital products, sketching random ideas,",
-        "three": "and wondering if my plants need water again."
+        "one": "Creative Designer & Developer",
+        "two": "Engineering mindset, designer's eye.",
+        "three": "Sketching random ideas and wondering if my plants need water."
       },
       "description": "I transform complex ideas into delightful, user-centric digital experiences that spark joy and engagement.",
       "cta": {
@@ -60,18 +60,18 @@
       "title": "About: Work",
       "biography": {
         "one": "From writing code to crafting interfaces - turns out engineering and design speak the same language of problem-solving.",
-        "two": "Built for startups, agencies, and independent clients. My toolkit: mobile apps, SaaS products, clean websites, and brand identities that work."
+        "two": "From SaaS products to freelance work — 15+ projects across design, development, and everything in between."
       },
       "sections": {
         "work": {
           "title": "Work",
-          "main": "Collaborating with dewwwe",
-          "secondary": "in Lyon"
+          "main": "Seeking my next adventure",
+          "secondary": "Freelance or full-time, based in Lyon"
         },
         "experiences": {
           "title": "Experiences",
-          "main": "Started in startups, now thriving as a freelancer",
-          "secondary": "Found my groove in independent work after valuable startup adventures",
+          "main": "5+ years across startups, SaaS, and freelance",
+          "secondary": "15+ websites and branding projects across Europe",
           "cta": "Grab my CV"
         },
         "favTools": {
@@ -83,8 +83,8 @@
     },
     "contact": {
       "letsTalk": {
-        "one": "Ready to bring your vision to life?",
-        "two": "<mark>Let's create something amazing together!</mark>"
+        "one": "Got a project in mind?",
+        "two": "<mark>Let's bring it to life together.</mark>"
       },
       "locations": {
         "inPerson": "Around a coffee in",
@@ -139,7 +139,7 @@
     }
   },
   "footer": {
-    "copyright": "Made with ♥ by Nazli © 2024"
+    "copyright": "Made with ♥ by Nazli © 2026"
   },
   "projectslist": [
     {
