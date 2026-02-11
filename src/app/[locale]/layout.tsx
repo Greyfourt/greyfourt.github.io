@@ -47,6 +47,7 @@ export default async function LocaleLayout({
       </head>
       <body className={nunito.className}>
         <NextIntlClientProvider messages={messages}>
+          <a href="#main-content" className="skip-link">Skip to content</a>
           <Menu locale={locale}/>
           {children}
           <Footer />

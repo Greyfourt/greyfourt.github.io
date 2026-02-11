@@ -22,7 +22,7 @@ const CaseStudy = ({ caseStudy, locale, projectName }: CaseStudyProps) => {
           <div className="image">
             <img
               src={`/images/Problem-${projectName.charAt(0).toUpperCase()}${projectName.slice(1)}.png`}
-              alt="users"
+              alt="Problem illustration"
             />
           </div>
           <div className="casestudyContentColumn">
@@ -113,7 +113,7 @@ const CaseStudy = ({ caseStudy, locale, projectName }: CaseStudyProps) => {
             <h3>{t("projects.caseStudyStructure.sections.userJourneys.title")}</h3>
             <p>{caseStudy.userJourneyDescription}</p>
             <div className="image">
-              <img src={caseStudy.userJourneyImage} alt="userjourneys" />
+              <img src={caseStudy.userJourneyImage} alt="User journey diagram" />
             </div>
           </div>
           <div className="casestudyContentColumn Outcome">
@@ -124,7 +124,7 @@ const CaseStudy = ({ caseStudy, locale, projectName }: CaseStudyProps) => {
             <div className="outcomeRow">
               {caseStudy.outComeImages.map((image, index) => (
                 <div className="image" key={index}>
-                  <img src={image} alt="Outcome" />
+                  <img src={image} alt="Project outcome screenshot" />
                 </div>
               ))}
             </div>

@@ -35,11 +35,11 @@ export default function Home({ params: { locale, aboutMe, aboutWork, sections } 
   })
 
   return (
-    <div className="bodyContainer">
+    <div className="bodyContainer" id="main-content">
 
       <div className="header">
         <div className="illustration">
-          <img src="/illustration.png" alt="" />
+          <img src="/illustration.png" alt="Nazli illustration" />
         </div>
         <div className="titleSection">
           <h1>Nazlı Özçubukçuoğlu</h1>
@@ -84,9 +84,9 @@ export default function Home({ params: { locale, aboutMe, aboutWork, sections } 
           </div>
         </div>
 
-        <button className="button Primary">
-          <a href="mailto:nazliozcubukcuoglu@gmail.com">{tRich('header.cta.sendMail')}</a>
-        </button>
+        <a href="mailto:nazliozcubukcuoglu@gmail.com" className="button Primary">
+          {tRich('header.cta.sendMail')}
+        </a>
       </div>
     </div>
   );

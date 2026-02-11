@@ -17,17 +17,17 @@ const Footer = () => {
           download="CV_English_Nazli"
           target="_blank"
           rel="nofollow"
+          aria-label="Download CV"
         >
           <Icon type="doc" />
         </a>
         <a href="tel:+330769201157">
           <Icon type="phone" />
         </a>
-        <a href="mailto:nazliozcubukcuoglu@gmail.com">
+        <a href="mailto:nazliozcubukcuoglu@gmail.com" aria-label="Send email">
           <Icon type="mail" />
         </a>
-        <a href="https://linkedin.com/in/nazli-oz/">
-          {" "}
+        <a href="https://linkedin.com/in/nazli-oz/" aria-label="LinkedIn profile">
           <Icon type="linkedin" />
         </a>
       </div>
@@ -65,7 +65,7 @@ export const Menu = ({ locale }: { locale: string }) => {
       >
         <Icon type="doc" />
       </a>
-      <a className="navItem" href="mailto:nazliozcubukcuoglu@gmail.com">
+      <a className="navItem" href="mailto:nazliozcubukcuoglu@gmail.com" aria-label="Send email">
         <Icon type="mail" />
       </a>
 

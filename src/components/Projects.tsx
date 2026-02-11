@@ -74,7 +74,7 @@ const Projects = ({ isProject, locale }: ProjectsProps) => {
                 </a>
               )}
             </div>
-            <img className="image" src={project.image ? project.image : "articles/Placeholder.png"} alt="" />
+            <img className="image" src={project.image ? project.image : "articles/Placeholder.png"} alt={project.title} />
             <div className="titleDate">
               <p>{project.title}</p>
               <p>{project.date}</p>
