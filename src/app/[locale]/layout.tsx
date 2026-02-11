@@ -3,7 +3,7 @@ import Footer, { Menu } from '@/components/Navigation'
 import "../styles/App.scss";
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
-import Matomo from '@/utils/matomo'
+import CookieBanner from '@/components/CookieBanner'
 
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
@@ -105,7 +105,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        <Matomo />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -117,6 +116,7 @@ export default async function LocaleLayout({
           <Menu locale={locale}/>
           {children}
           <Footer />
+          <CookieBanner />
         </NextIntlClientProvider>
       </body>
     </html>

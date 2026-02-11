@@ -8,6 +8,8 @@ import { useTranslations } from "next-intl";
 
 const Footer = () => {
   const t = useTranslations();
+  const pathname = usePathname();
+  const locale = pathname.startsWith('/fr') ? 'fr' : 'en';
 
   return (
     <footer>
@@ -31,7 +33,11 @@ const Footer = () => {
           <Icon type="linkedin" />
         </a>
       </div>
-      {/* <WebsiteCarbonBadge url="greyfourt.github.io" dark={true} /> */}
+      <div className="footerLinks">
+        <a href={`/${locale}/legal`}>{t('footer.legal')}</a>
+        <span>•</span>
+        <a href={`/${locale}/privacy`}>{t('footer.privacy')}</a>
+      </div>
       <p>{t.rich('footer.copyright')}</p>
     </footer>
   );
