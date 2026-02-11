@@ -26,11 +26,50 @@ export function generateStaticParams() {
   )
 }
 
-// Add this function to get translations at build time
-export async function generateMetadata({ params: { locale } }: PageProps) {
-  const t = await getTranslations({ locale });
+const baseUrl = 'https://greyfourt.github.io';
+
+export async function generateMetadata({ params: { locale, projectURL } }: PageProps) {
   const messages = await getMessages({ locale });
-  return { /* your metadata */ };
+  const projectsList = messages.projectslist as unknown as Project[];
+  const project = projectsList.find(p => p.projectURL === projectURL);
+
+  if (!project) return {};
+
+  const langPrefix = locale === 'en' ? '' : `/${locale}`;
+  const canonicalUrl = `${baseUrl}${langPrefix}/projects/${projectURL}`;
+  const description = project.projectCaseStudy?.problemDescriptions?.[0]?.substring(0, 155) + '...' || `Case study for ${project.title}`;
+
+  return {
+    title: `${project.title} - Case Study`,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'en': `${baseUrl}/projects/${projectURL}`,
+        'fr': `${baseUrl}/fr/projects/${projectURL}`,
+      },
+    },
+    openGraph: {
+      title: `${project.title} - Case Study`,
+      description,
+      url: canonicalUrl,
+      siteName: "Nazlı's Portfolio",
+      locale: locale === 'fr' ? 'fr_FR' : 'en_US',
+      type: 'article',
+      images: [
+        {
+          url: `${baseUrl}${project.image}`,
+          alt: project.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${project.title} - Case Study`,
+      description,
+      images: [`${baseUrl}${project.image}`],
+    },
+  };
 }
 
 const ProjectPage = async ({ params }: PageProps) => {

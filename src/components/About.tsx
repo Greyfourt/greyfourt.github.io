@@ -21,7 +21,7 @@ const AboutCard = ({ keyName, t, locale, type }: AboutProps) => {
       <p className="foot title">{t(`${type}.sections.${keyName}.title`)}</p>
       <div className="descriptions">
         <p className="main">{t(`${type}.sections.${keyName}.main`)}</p>
-        {t(`${type}.sections.${keyName}.secondary`) && (
+        {t.has(`${type}.sections.${keyName}.secondary`) && (
           <p className="secondary">
             {t(`${type}.sections.${keyName}.secondary`)}
           </p>
