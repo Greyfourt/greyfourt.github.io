@@ -21,7 +21,7 @@ const Footer = () => {
         >
           <Icon type="doc" />
         </a>
-        <a href="tel:+330769201157">
+        <a href="tel:+33785632386" aria-label="Call phone">
           <Icon type="phone" />
         </a>
         <a href="mailto:nazliozcubukcuoglu@gmail.com" aria-label="Send email">
@@ -59,9 +59,10 @@ export const Menu = ({ locale }: { locale: string }) => {
       </a>
       <a
         className="navItem "
-        href="https://greyfourt.github.io/CV_English_Nazli.pdf"
+        href={locale === 'fr' ? '/CV - 2026 Nazlı FR.pdf' : '/CV - 2026 Nazlı EN.pdf'}
         target="_blank"
         rel="nofollow"
+        aria-label="Download CV"
       >
         <Icon type="doc" />
       </a>
