@@ -84,7 +84,7 @@ export default function Home({ params: { locale, aboutMe, aboutWork, sections } 
           </div>
         </div>
 
-        <a href="mailto:nazliozcubukcuoglu@gmail.com" className="button Primary">
+        <a href="mailto:nazliozcubukcuoglu@gmail.com" className="button Secondary">
           {tRich('header.cta.sendMail')}
         </a>
       </div>

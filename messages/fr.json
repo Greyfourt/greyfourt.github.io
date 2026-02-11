@@ -1,7 +1,7 @@
 {
   "global": {
     "visit": "Venez voir",
-    "caseStudy": "Étude de cas",
+    "caseStudy": "Case study",
     "published": "Publié le"
   },
   "tags": {
@@ -21,7 +21,7 @@
       },
       "description": "Je transforme des idées complexes en expériences numériques conviviales et agréables qui suscitent joie et engagement.",
       "cta": {
-        "checkLatestCase": "Découvrez ma dernière étude de cas !",
+        "checkLatestCase": "Découvrez ma dernière case study !",
         "sendMail": "Discutons et créons quelque chose d'incroyable !",
         "downloadCV": "Téléchargez mon CV"
       }
@@ -134,7 +134,7 @@
       }
     },
     "errors": {
-      "noCaseStudy": "Oups ! Impossible de trouver cette étude de cas."
+      "noCaseStudy": "Oups ! Impossible de trouver cette case study."
     }
   },
   "cookies": {
