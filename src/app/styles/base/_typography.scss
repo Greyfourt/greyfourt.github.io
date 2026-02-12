@@ -1,5 +1,9 @@
 @import "https://fonts.googleapis.com/css?family=Nunito+Sans:300,700,900";
 
+html {
+    font-size: 16px;
+}
+
 h1,
 h2,
 h3,
@@ -11,7 +15,6 @@ mark {
     font-style: normal;
     color: $color-white-100;
     font-weight: 300;
-    // line-height: 1.5;
     margin: 0;
     padding: 0;
     overflow-wrap: break-word;
@@ -19,42 +22,42 @@ mark {
 }
 
 h1 {
-    font-size: 2.5em;
-    letter-spacing: 0.2em; 
+    font-size: 2.5rem; // 40px
+    letter-spacing: 0.2em;
     text-transform: uppercase;
 }
 
 h2 {
-    font-size: 2em; // 32px
+    font-size: 2rem; // 32px
     letter-spacing: 0.2em;
     text-transform: uppercase;
     font-weight: 500;
 }
 
 h3 {
-    font-size: 1.5em; // 24px
+    font-size: 1.5rem; // 24px
     letter-spacing: 0.03em;
 }
 
 h4 {
-    font-size: 1.25em; // 20px
+    font-size: 1.25rem; // 20px
     letter-spacing: 0.03em;
 }
 
 p {
-    font-size: 1.1em; // 16px
+    font-size: 1rem; // 16px
     letter-spacing: 0.01em;
 }
 
 p.foot {
-    font-size: 1.1em;
+    font-size: 1rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     font-weight: 200;
 }
 
 a {
-    font-size: 1.1em; // 16px
+    font-size: 1rem; // 16px
     text-decoration: none;
     color: $color-secondary;
     letter-spacing: 0.01em;
