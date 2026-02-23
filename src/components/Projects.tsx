@@ -48,43 +48,48 @@ const Projects = ({ isProject, locale }: ProjectsProps) => {
         "")}
 
       <div className="tiles">
-        {filterByTag(filteredProjects).map((project, index) => (
+        {filterByTag(filteredProjects).map((project) => (
           <div
             key={`${project.title}-${project.tag}`}
             className={`projectItem ${project.tag.replace(/\s+/g, '')}`}
           >
-            <div className="projectHeader">
-              <div className="tagWrapper">
+            <div className="imageWrapper">
+              <img
+                src={project.image ? project.image : "articles/Placeholder.png"}
+                alt={project.title}
+              />
+            </div>
+            <div className="projectInfo">
+              <div className="projectMeta">
+                <p className="projectTitle">{project.title}</p>
+                <p className="projectDate">{project.date}</p>
+              </div>
+              <div className="projectActions">
                 <Tag
                   tag={project.tag}
                   selected={selected}
                   onSelect={setSelected}
                 />
+                {project.hasCaseStudy ? (
+                  <Link
+                    className="projectLink"
+                    href={`/projects/${project.projectURL}`}
+                    aria-label={`${t("global.caseStudy")} - ${project.title}`}
+                  >
+                    <Icon type="caseStudyLink" />
+                  </Link>
+                ) : project.link ? (
+                  <a
+                    className="projectLink"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${t("global.visit")} ${project.title}`}
+                  >
+                    <Icon type="externalLink" />
+                  </a>
+                ) : null}
               </div>
-              {project.hasCaseStudy ? (
-                <Link
-                  className="navLink button Secondary"
-                  href={`/projects/${project.projectURL}`}
-                >
-                  {t("global.caseStudy")}
-                  <Icon type="arrowRight" />
-                </Link>
-              ) : project.link ? (
-                <a
-                  className="navLink button Secondary"
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t("global.visit")}
-                  <Icon type="arrowRight" />
-                </a>
-              ) : null}
-            </div>
-            <img className="image" src={project.image ? project.image : "articles/Placeholder.png"} alt={project.title} />
-            <div className="titleDate">
-              <p>{project.title}</p>
-              <p>{project.date}</p>
             </div>
           </div>
         ))}
