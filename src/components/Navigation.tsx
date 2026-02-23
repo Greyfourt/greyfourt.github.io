@@ -2,8 +2,8 @@
 
 import { WebsiteCarbonBadge } from "react-websitecarbon-badge";
 import Icon from "./Icons"
-import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/routing";
 
 
 const Footer = () => {
@@ -36,9 +36,9 @@ const Footer = () => {
         </a>
       </div>
       <div className="footerLinks">
-        <a href={`/${locale}/legal`}>{t('footer.legal')}</a>
+        <Link href="/legal">{t('footer.legal')}</Link>
         <span>•</span>
-        <a href={`/${locale}/privacy`}>{t('footer.privacy')}</a>
+        <Link href="/privacy">{t('footer.privacy')}</Link>
       </div>
       <p>{t.rich('footer.copyright')}</p>
       <WebsiteCarbonBadge url="greyfourt.github.io" co2="0.08" percentage="93" dark={true} />
@@ -48,27 +48,26 @@ const Footer = () => {
 
 export const Menu = ({ locale }: { locale: string }) => {
   const t = useTranslations();
-  const currentRoute = usePathname()
+  const pathname = usePathname();
 
-  const isHome = currentRoute === `/${locale}` || (locale === 'en' && currentRoute === '/');
-  const isProjects = currentRoute.startsWith(`/${locale}/projects`) || (locale === 'en' && currentRoute.startsWith('/projects'));
+  const isHome = pathname === '/';
+  const isProjects = pathname.startsWith('/projects');
+  const otherLocale = locale === 'en' ? 'fr' : 'en';
 
   return (
     <nav>
-      <a
-        href={`/${locale}`}
+      <Link
+        href="/"
         className={"navItem " + (isHome ? "active" : "")}
       >
         {t('nav.home')}
-      </a>
-      <a
-        href={`/${locale}/projects`}
-        className={
-          "navItem " + (isProjects ? "active" : "")
-        }
+      </Link>
+      <Link
+        href="/projects"
+        className={"navItem " + (isProjects ? "active" : "")}
       >
         {t('nav.projects')}
-      </a>
+      </Link>
       <a
         className="navItem "
         href={locale === 'fr' ? '/CV_2026_Nazli_FR.pdf' : '/CV_2026_Nazli_EN.pdf'}
@@ -82,12 +81,13 @@ export const Menu = ({ locale }: { locale: string }) => {
         <Icon type="mail" />
       </a>
 
-      <a
-        href={ currentRoute.replace(`/${locale}`,locale === 'en' ? '/fr' : '/en')}
+      <Link
+        href={pathname}
+        locale={otherLocale}
         className="lang"
       >
         {locale === 'en' ? 'FR' : 'EN'}
-      </a>
+      </Link>
 
     </nav>
   );

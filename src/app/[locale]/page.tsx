@@ -6,7 +6,7 @@ import "../styles/App.scss";
 
 import { useTranslations } from 'next-intl';
 import { setRequestLocale } from "next-intl/server";
-import { Link, routing } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { Locale, AboutMe, AboutWork, Section } from "@/types";
 import About from "@/components/About";

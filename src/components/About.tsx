@@ -1,6 +1,7 @@
 import { Locale, AboutMe, AboutWork } from "@/types";
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/routing";
 
 interface AboutProps {
   locale: Locale;
@@ -29,7 +30,7 @@ const AboutCard = ({ keyName, t, locale, type }: AboutProps) => {
       </div>
       {keyName === 'experiences' && (
         <a
-          href={locale === 'fr' ? '/CV - 2026 Nazlı FR.pdf' : '/CV - 2026 Nazlı EN.pdf'}
+          href={locale === 'fr' ? '/CV_2026_Nazli_FR.pdf' : '/CV_2026_Nazli_EN.pdf'}
           target="_blank"
           rel="nofollow"
           className="cta"
@@ -52,12 +53,12 @@ const AboutSection = ({ locale, t, type }: AboutProps) => {
         <div className="aboutText">
           <p>{t('aboutWork.biography.one')}</p>
           <p>{t('aboutWork.biography.two')}</p>
-          <a 
-            href={`/${locale}/projects/floof`} 
+          <Link
+            href="/projects/floof"
             className="button Secondary"
           >
             {t('header.cta.checkLatestCase')}
-          </a>
+          </Link>
         </div>
       )}
       <div className="aboutGrid">
