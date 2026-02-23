@@ -15,8 +15,7 @@ const Footer = () => {
     <footer>
       <div className="contactIcons">
         <a
-          href="https://greyfourt.github.io/CV_English_Nazli.pdf"
-          download="CV_English_Nazli"
+          href={locale === 'fr' ? '/CV_2026_Nazli_FR.pdf' : '/CV_2026_Nazli_EN.pdf'}
           target="_blank"
           rel="nofollow"
           aria-label="Download CV"
@@ -32,6 +31,9 @@ const Footer = () => {
         <a href="https://linkedin.com/in/nazli-oz/" aria-label="LinkedIn profile">
           <Icon type="linkedin" />
         </a>
+        <a href="https://github.com/greyfourt/greyfourt.github.io" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+          <Icon type="github" />
+        </a>
       </div>
       <div className="footerLinks">
         <a href={`/${locale}/legal`}>{t('footer.legal')}</a>
@@ -39,33 +41,37 @@ const Footer = () => {
         <a href={`/${locale}/privacy`}>{t('footer.privacy')}</a>
       </div>
       <p>{t.rich('footer.copyright')}</p>
+      <WebsiteCarbonBadge url="greyfourt.github.io" co2="0.08" percentage="93" dark={true} />
     </footer>
   );
 }
 
 export const Menu = ({ locale }: { locale: string }) => {
-
+  const t = useTranslations();
   const currentRoute = usePathname()
+
+  const isHome = currentRoute === `/${locale}` || (locale === 'en' && currentRoute === '/');
+  const isProjects = currentRoute.startsWith(`/${locale}/projects`) || (locale === 'en' && currentRoute.startsWith('/projects'));
 
   return (
     <nav>
       <a
         href={`/${locale}`}
-        className={"navItem " + (currentRoute === "/" ? "active" : "")}
+        className={"navItem " + (isHome ? "active" : "")}
       >
-        Home
+        {t('nav.home')}
       </a>
       <a
         href={`/${locale}/projects`}
         className={
-          "navItem " + (currentRoute === "/projects" ? "active" : "")
+          "navItem " + (isProjects ? "active" : "")
         }
       >
-        Projects
+        {t('nav.projects')}
       </a>
       <a
         className="navItem "
-        href={locale === 'fr' ? '/CV - 2026 Nazlı FR.pdf' : '/CV - 2026 Nazlı EN.pdf'}
+        href={locale === 'fr' ? '/CV_2026_Nazli_FR.pdf' : '/CV_2026_Nazli_EN.pdf'}
         target="_blank"
         rel="nofollow"
         aria-label="Download CV"

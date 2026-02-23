@@ -1,4 +1,8 @@
 {
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets"
+  },
   "global": {
     "visit": "Venez voir",
     "caseStudy": "Case study",
@@ -223,12 +227,84 @@
   },
   "projectslist": [
     {
+      "title": "Vita Alma",
+      "date": "2026",
+      "tag": "website",
+      "image": "/articles/WebsiteVitaAlma.png",
+      "link": "https://vitaalma.com",
+      "hasCaseStudy": false,
+      "isSelected": true
+    },
+    {
+      "title": "Ecco-eco Architecture",
+      "date": "2025",
+      "tag": "website",
+      "image": "/articles/WebsiteEcco-eco.png",
+      "link": "https://ecco-eco.fr",
+      "hasCaseStudy": false,
+      "isSelected": false
+    },
+    {
+      "title": "DGV Consulting",
+      "date": "2025",
+      "tag": "website",
+      "image": "/articles/WebsiteDGV.png",
+      "link": "https://dgvconsulting.it",
+      "hasCaseStudy": false,
+      "isSelected": true
+    },
+    {
+      "title": "Gruppo Bertone",
+      "date": "2025",
+      "tag": "website",
+      "image": "/articles/WebsiteBertone.png",
+      "link": "https://gruppobertone.com",
+      "hasCaseStudy": false,
+      "isSelected": false
+    },
+    {
+      "title": "surfcamp.it",
+      "date": "2024",
+      "tag": "website",
+      "image": "/articles/WebsiteSurfcamp.png",
+      "link": "https://surfcamp.it",
+      "hasCaseStudy": false,
+      "isSelected": false
+    },
+    {
+      "title": "Christel Rubinel",
+      "date": "2024",
+      "tag": "website",
+      "image": "/articles/WebsiteChristel.png",
+      "link": "https://christelrubinel.fr",
+      "hasCaseStudy": false,
+      "isSelected": false
+    },
+    {
+      "title": "Delphine Chartier",
+      "date": "2024",
+      "tag": "website",
+      "image": "/articles/WebsiteDelphine.png",
+      "link": "https://delphinechartier.com",
+      "hasCaseStudy": false,
+      "isSelected": false
+    },
+    {
+      "title": "Harfang Therapeutics",
+      "date": "2024",
+      "tag": "website",
+      "image": "/articles/WebsiteHarfang.png",
+      "link": "https://harfang-therapeutics.com/",
+      "hasCaseStudy": false,
+      "isSelected": true
+    },
+    {
       "title": "Harfang Therapeutics",
       "date": "2023",
       "tag": "logo",
       "image": "/articles/LogoHT.png",
       "hasCaseStudy": false,
-      "isSelected": true
+      "isSelected": false
     },
     {
       "title": "Epic Stories Teambuilding",
@@ -398,6 +474,14 @@
           "/images/Outcome-Knotbook-6.png"
         ]
       }
+    },
+    {
+      "title": "Corpo Karma",
+      "date": "2022",
+      "tag": "website",
+      "image": "/articles/WebsiteCorpoKarma.png",
+      "hasCaseStudy": false,
+      "isSelected": false
     },
     {
       "title": "La Mare à Toto",
