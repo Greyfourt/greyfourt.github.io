@@ -35,18 +35,15 @@ body {
 .bodyContainer {
   @include flex(column, center, center);
   gap: 128px;
-  padding: 64px 0;;
+  padding: 64px 0;
 
   &>div {
-    // justify-content: center;
-    // align-items: center;
     width: 100%;
     min-height: 350px;
     max-width: 1050px;
   }
 
   @media only screen and (max-width: 480px) {
-    @include flex(column, center, center);
     width: 100%;
     padding: 0;
   }
@@ -56,7 +53,6 @@ body {
 nav {
   position: sticky;
   top: 0;
-  right: 0;
   z-index: 100;
   width: 100%;
   height: 4rem;
@@ -106,17 +102,6 @@ nav {
 /* Active State */
 .navItem.active::after {
   width: calc(100% - 2 * 1rem);
-  background-color: $color-secondary;
-}
-
-/* Contact Button Special Styling */
-.navItem.contactButton {
-  border-radius: 2rem;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.navItem.contactButton:hover {
-  background-color: $color-secondary;
 }
 
 /* Icon Specific Styling */
@@ -131,13 +116,6 @@ nav {
 }
 
 /* Language Switcher */
-.langSwitcher {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-left: auto;
-}
-
 .lang {
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
@@ -145,12 +123,7 @@ nav {
 }
 
 .lang:hover {
-  background: color-mix(in slab, $color-main 50%, transparent);
-}
-
-.lang.active {
-  background: $color-main;
-  color: $color-white-100;
+  background: color-mix(in srgb, $color-main 50%, transparent);
 }
 
 /* Responsive Design */
@@ -173,10 +146,6 @@ nav {
 
   .navItem {
     padding: 0.5rem;
-  }
-  
-  /* Hide letter-spacing on very small screens */
-  .navItem {
     letter-spacing: 0.1em;
   }
 }
@@ -221,10 +190,6 @@ svg {
 
     &:hover {
       background: $color-secondary-30;
-
-      & a {
-        color: $color-white-100 !important;
-      }
     }
   }
 
@@ -251,7 +216,6 @@ input[type="reset"] {
 footer {
   @include flex(column, center, center);
   gap: 2rem;
-  background-color: transparent;
   min-height: 180px;
   border-top: solid 1px $color-main;
   padding-top: 32px;
@@ -302,7 +266,6 @@ footer {
 
   & p {
     font-size: 0.9rem;
-    margin: 0;
   }
 
   & .cookieBannerActions {

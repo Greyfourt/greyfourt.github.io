@@ -9,7 +9,6 @@
 
     border-radius: 90%;
     background-color: $color-main-30;
-    // border: solid $color-main 50px;
 
     & img {
       @include flex(column, center, flex-end);
@@ -27,11 +26,9 @@
     width: 100%;
 
     & h1,
-    h2,
-    p {
+    & h2,
+    & p {
       width: 100%;
-      overflow-wrap: break-word;
-      hyphens: auto;
     }
 
     & div {
@@ -92,8 +89,6 @@
       }
     }
   }
-
-
 }
 
 .contact {
@@ -124,7 +119,6 @@
     & .locationRow {
       @include flex(row, center, center);
       gap: 12px;
-
     }
 
     & .location {

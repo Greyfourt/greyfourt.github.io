@@ -3,11 +3,6 @@
     width: 100%;
     gap: 1rem;
 
-    @media only screen and (max-width: 480px) {
-        @include flex(column, center, center);
-        width: 100%;
-    }
-
     & .projectsTitle {
         @include flex(column, center, center);
         width: 100%;
@@ -85,17 +80,13 @@
                     gap: 0.1rem;
 
                     .projectTitle {
-                        margin: 0;
                         font-weight: 600;
                         font-size: 0.95rem;
-                        color: $color-white-100;
                     }
 
                     .projectDate {
-                        margin: 0;
                         font-size: 0.8rem;
                         opacity: 0.5;
-                        color: $color-white-100;
                     }
                 }
 
@@ -156,8 +147,7 @@
     transition: background-color 0.2s ease;
 
     & p {
-        margin: 0;
-        padding: 0em;
+        padding: 0;
     }
 
     & svg {
@@ -169,5 +159,4 @@
 .tag:hover,
 .tag.active {
     background-color: $color-secondary-30;
-    cursor: pointer;
 }
