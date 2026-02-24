@@ -30,6 +30,7 @@ const ProjectCard = ({
         <img
           src={project.image ? project.image : "articles/Placeholder.png"}
           alt={project.title}
+          loading="lazy"
         />
       </div>
       <div className="projectInfo">

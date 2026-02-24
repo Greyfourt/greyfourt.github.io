@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from "react";
-import { WebsiteCarbonBadge } from "react-websitecarbon-badge";
 import Icon from "./Icons"
 import ThemeToggle from "./ThemeToggle"
 import { useTranslations } from "next-intl";
@@ -43,7 +42,14 @@ const Footer = () => {
         <Link href="/privacy">{t('footer.privacy')}</Link>
       </div>
       <p>{t.rich('footer.copyright')}</p>
-      <WebsiteCarbonBadge url="greyfourt.github.io" co2="0.08" percentage="93" dark={true} />
+      <div className="carbonbadge">
+        <a href="https://www.websitecarbon.com/website/greyfourt-github-io/" target="_blank" rel="noopener noreferrer">
+          0.08g of CO<sub>2</sub>/view
+        </a>
+        <a href="https://websitecarbon.com" target="_blank" rel="noopener noreferrer">
+          Website Carbon
+        </a>
+      </div>
     </footer>
   );
 }
