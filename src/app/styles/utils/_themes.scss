@@ -1,5 +1,4 @@
-:root,
-[data-theme="dark"] {
+@mixin dark-theme {
   // Backgrounds
   --bg: #171719;
   --bg-elevated: #1F1F22;
@@ -33,7 +32,7 @@
   --tag-graphics: #F2D4A7;
 }
 
-[data-theme="light"] {
+@mixin light-theme {
   --bg: #EAEAED;
   --bg-elevated: #F4F4F6;
   --bg-hover: #E0E0E4;
@@ -60,4 +59,25 @@
   --tag-mobileApp: #2A7229;   // 4.9:1
   --tag-webApp: #6B3FA8;      // 6.0:1
   --tag-graphics: #8B6018;    // 4.6:1
+}
+
+// Default: dark theme
+:root {
+  @include dark-theme;
+}
+
+// System preference: light (only when no manual override)
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    @include light-theme;
+  }
+}
+
+// Manual overrides via data-theme attribute
+[data-theme="dark"] {
+  @include dark-theme;
+}
+
+[data-theme="light"] {
+  @include light-theme;
 }

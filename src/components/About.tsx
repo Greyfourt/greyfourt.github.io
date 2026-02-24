@@ -58,7 +58,7 @@ const AboutSection = ({ locale, t, type }: AboutProps) => {
           <p>{t('aboutWork.biography.two')}</p>
           <Link
             href="/projects/floof"
-            className="button Secondary"
+            className="button Primary"
           >
             {t('header.cta.checkLatestCase')}
           </Link>

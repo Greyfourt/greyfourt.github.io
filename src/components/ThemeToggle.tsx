@@ -11,6 +11,7 @@ export default function ThemeToggle() {
     if (stored === 'light' || stored === 'dark') {
       setTheme(stored);
     } else {
+      // No stored preference — CSS @media handles it, just sync the toggle display
       const preferLight = window.matchMedia('(prefers-color-scheme: light)').matches;
       setTheme(preferLight ? 'light' : 'dark');
     }

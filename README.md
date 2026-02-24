@@ -141,6 +141,7 @@ For the CI check to be enforced, enable branch protection on `main` in **Setting
 - [x] Use Next.js `<Link>` for internal navigation (client-side transitions)
 
 ### Short-term
+- [ ] Fix Matomo duplicate tracker registration (`setTrackerUrl`/`setSiteId` registered twice in `_paq`)
 - [ ] Add more case studies (Corpo Karma, Vita Alma, DGV Consulting)
 - [ ] Use Next.js `<Image>` for lazy loading and layout shift prevention
 - [ ] Derive sitemap case study slugs from data instead of hardcoding

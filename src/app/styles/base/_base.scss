@@ -20,32 +20,34 @@
   }
 }
 
+// Shared layout values
+$layout-max: 1050px;
+$layout-pad: 1.5rem;
+$layout-pad-mobile: 1.5rem;
+
 // Body
 body {
   @include flex(column, center, center);
   background-color: var(--bg);
   -webkit-text-size-adjust: 100%; //fix for iOS
-
-  @media only screen and (max-width: 480px) {
-    padding: 0 1rem;
-  }
 }
 
 // Landing Page
 .bodyContainer {
   @include flex(column, center, center);
   gap: 128px;
-  padding: 64px 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $layout-max;
+  padding: 64px $layout-pad;
 
   &>div {
     width: 100%;
     min-height: 350px;
-    max-width: 1050px;
   }
 
   @media only screen and (max-width: 480px) {
-    width: 100%;
-    padding: 0;
+    padding: 0 $layout-pad-mobile;
   }
 }
 
@@ -54,11 +56,12 @@ nav {
   position: sticky;
   top: 0;
   z-index: 200;
+  box-sizing: border-box;
   width: 100%;
-  max-width: 1050px;
+  max-width: $layout-max;
   margin: 0 auto;
   height: 3.75rem;
-  padding: 0 1.5rem;
+  padding: 0 $layout-pad;
 
   display: flex;
   align-items: center;
@@ -77,7 +80,7 @@ nav {
   }
 
   @media (max-width: 480px) {
-    padding: 0 1.25rem;
+    padding: 0 $layout-pad-mobile;
   }
 }
 
@@ -162,11 +165,11 @@ nav {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 2rem;
 
-  max-width: 1050px;
+  max-width: $layout-max;
   margin: 0 auto;
-  padding: 6rem 1.5rem 3rem;
+  padding: 6rem $layout-pad 3rem;
 
   opacity: 0;
   visibility: hidden;
@@ -186,7 +189,7 @@ nav {
   }
 
   @media (max-width: 480px) {
-    padding: 6rem 1.25rem 2rem;
+    padding: 6rem $layout-pad-mobile 2rem;
   }
 }
 
@@ -229,6 +232,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
   opacity: 0;
   transition: opacity 0.3s ease 0.3s;
 
@@ -315,36 +320,43 @@ svg {
 // Buttons
 .button {
   @include flex();
-  padding: 8px 16px;
+  padding: 9px 16px;
   gap: 8px;
   cursor: pointer;
-  border-radius: 32px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  transition: background 0.15s ease, opacity 0.15s ease;
 
   &.Primary {
-    background: var(--accent-soft);
-
-    &:hover {
-      background: var(--pop-soft);
-    }
+    background: var(--accent);
+    color: #ffffff;
 
     & a,
     & button,
     & svg {
-      color: var(--text);
-      fill: var(--text);
+      color: #ffffff;
+      fill: #ffffff;
+    }
+
+    &:hover {
+      background: var(--accent);
+      opacity: 0.9;
     }
   }
 
   &.Secondary {
-    background: transparent;
-    border: solid 1px var(--pop-soft);
+    background: var(--bg-hover);
+    color: var(--text);
 
     & a {
-      color: var(--text) !important;
+      color: var(--text);
     }
 
     &:hover {
-      background: var(--pop-soft);
+      background: var(--bg-tag);
     }
   }
 
@@ -370,10 +382,17 @@ input[type="reset"] {
 // Footer
 footer {
   @include flex(column, center, center);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $layout-max;
   gap: 2rem;
   min-height: 180px;
   border-top: solid 1px var(--accent);
-  padding-top: 32px;
+  padding: 32px $layout-pad 0;
+
+  @media (max-width: 480px) {
+    padding: 32px $layout-pad-mobile 0;
+  }
 
   & p {
     text-align: center;
@@ -398,6 +417,34 @@ footer {
         opacity: 1;
         text-decoration: underline;
       }
+    }
+  }
+
+  // Website Carbon Badge — override library colors
+  .carbonbadge {
+    --b1: var(--accent);
+    --b2: var(--accent);
+    font-size: 13px;
+
+    a {
+      background: transparent !important;
+      border-color: transparent !important;
+      color: var(--text) !important;
+      font-family: inherit !important;
+      border-radius: 6px !important;
+    }
+
+    // Right pill ("Website Carbon")
+    a:last-of-type {
+      background: var(--accent) !important;
+      color: #fff !important;
+      border-color: var(--accent) !important;
+    }
+
+    // Description text below
+    > span {
+      color: var(--text) !important;
+      font-size: 0.85em;
     }
   }
 }
