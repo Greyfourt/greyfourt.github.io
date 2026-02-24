@@ -231,9 +231,6 @@ Case study images go in `public/images/` with naming:
 - `color-mix()` for transparent variants of CSS custom properties
 - Path alias: `@/*` maps to `./src/*`
 
-## Carbon Badge
-The footer displays a static Website Carbon badge (pure HTML/CSS, no external library). The CO2 value is hardcoded — update it manually after re-testing at [websitecarbon.com](https://www.websitecarbon.com/website/greyfourt-github-io/).
-
 ## Important Notes
 - Image optimization is disabled (`unoptimized: true`) for GitHub Pages compatibility
 - All images are WebP format with `loading="lazy"` for performance

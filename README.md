@@ -144,8 +144,7 @@ For the CI check to be enforced, enable branch protection on `main` in **Setting
 - [x] Unified layout system (`$layout-max`, `$layout-pad` shared across nav, menu, content, footer)
 - [x] WebP image conversion (all PNGs → WebP, ~68% size reduction)
 - [x] Lazy loading on all images (`loading="lazy"`)
-- [x] Replaced `react-websitecarbon-badge` + `styled-components` with static HTML/CSS badge (~86KB saved)
-- [x] Removed unused `@lottiefiles/dotlottie-react` dependency
+- [x] Removed `react-websitecarbon-badge`, `styled-components`, and `@lottiefiles/dotlottie-react` dependencies
 
 ### Short-term
 - [ ] Reduce HTML inline payload (next-intl embeds all messages JSON into every page, ~110KB)

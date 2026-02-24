@@ -42,14 +42,6 @@ const Footer = () => {
         <Link href="/privacy">{t('footer.privacy')}</Link>
       </div>
       <p>{t.rich('footer.copyright')}</p>
-      <div className="carbonbadge">
-        <a href="https://www.websitecarbon.com/website/greyfourt-github-io/" target="_blank" rel="noopener noreferrer">
-          0.08g of CO<sub>2</sub>/view
-        </a>
-        <a href="https://websitecarbon.com" target="_blank" rel="noopener noreferrer">
-          Website Carbon
-        </a>
-      </div>
     </footer>
   );
 }
