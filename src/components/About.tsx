@@ -13,12 +13,15 @@ interface AboutProps {
 const AboutCard = ({ keyName, t, locale, type }: AboutProps) => {
   return (
     <div key={keyName} className="aboutCard">
-      <div className="icon">
-        <img
-          src={`/icons/${keyName}.svg`}
-          alt={t(`${type}.sections.${keyName}.title`)}
-        />
-      </div>
+      <div
+        className="icon"
+        role="img"
+        aria-label={t(`${type}.sections.${keyName}.title`)}
+        style={{
+          maskImage: `url(/icons/${keyName}.svg)`,
+          WebkitMaskImage: `url(/icons/${keyName}.svg)`,
+        }}
+      />
       <p className="foot title">{t(`${type}.sections.${keyName}.title`)}</p>
       <div className="descriptions">
         <p className="main">{t(`${type}.sections.${keyName}.main`)}</p>

@@ -1,10 +1,3 @@
-// Pastel tag colors
-$tag-logo: #F2A7C3;
-$tag-website: #A7D8F2;
-$tag-mobileApp: #B5E8B5;
-$tag-webApp: #D4B5F2;
-$tag-graphics: #F2D4A7;
-
 .projectsWrapper {
     @include flex(column, center, center);
     width: 100%;
@@ -58,7 +51,7 @@ $tag-graphics: #F2D4A7;
 
                 .projectAction {
                     transform: scale(1.1);
-                    background-color: lighten($color-secondary, 5%);
+                    background-color: var(--pop-hover);
                 }
             }
 
@@ -95,7 +88,7 @@ $tag-graphics: #F2D4A7;
                     content: '';
                     position: absolute;
                     inset: 0;
-                    background: lighten($color-background, 4%);
+                    background: var(--bg-elevated);
                     z-index: -1;
                     transition: opacity 0.4s ease;
                 }
@@ -107,7 +100,7 @@ $tag-graphics: #F2D4A7;
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+                    background: linear-gradient(transparent, var(--shadow-overlay));
                     z-index: -1;
                     opacity: 0;
                     transition: opacity 0.4s ease;
@@ -142,7 +135,7 @@ $tag-graphics: #F2D4A7;
                 width: 2.25rem;
                 height: 2.25rem;
                 border-radius: 50%;
-                background-color: $color-secondary;
+                background-color: var(--pop);
                 transition: transform 0.25s ease, background-color 0.25s ease;
 
                 svg {
@@ -150,7 +143,7 @@ $tag-graphics: #F2D4A7;
                     height: 1.25rem;
 
                     path {
-                        stroke: $color-white-100;
+                        stroke: var(--text);
                         fill: none;
                     }
                 }
@@ -183,8 +176,8 @@ $tag-graphics: #F2D4A7;
     transition: background-color 0.2s ease, border-color 0.2s ease;
 
     // Default / "all" tag
-    background-color: rgba($color-white-100, 0.08);
-    color: $color-white-100;
+    background-color: var(--bg-tag);
+    color: var(--text);
 
     & p {
         padding: 0;
@@ -198,60 +191,60 @@ $tag-graphics: #F2D4A7;
 
 // Pastel colors per tag type
 .tag[data-tag="logo"] {
-    background-color: rgba($tag-logo, 0.15);
-    color: $tag-logo;
-    border-color: rgba($tag-logo, 0.3);
+    background-color: color-mix(in srgb, var(--tag-logo) 15%, transparent);
+    color: var(--tag-logo);
+    border-color: color-mix(in srgb, var(--tag-logo) 30%, transparent);
 }
 
 .tag[data-tag="website"] {
-    background-color: rgba($tag-website, 0.15);
-    color: $tag-website;
-    border-color: rgba($tag-website, 0.3);
+    background-color: color-mix(in srgb, var(--tag-website) 15%, transparent);
+    color: var(--tag-website);
+    border-color: color-mix(in srgb, var(--tag-website) 30%, transparent);
 }
 
 .tag[data-tag="mobileApp"] {
-    background-color: rgba($tag-mobileApp, 0.15);
-    color: $tag-mobileApp;
-    border-color: rgba($tag-mobileApp, 0.3);
+    background-color: color-mix(in srgb, var(--tag-mobileApp) 15%, transparent);
+    color: var(--tag-mobileApp);
+    border-color: color-mix(in srgb, var(--tag-mobileApp) 30%, transparent);
 }
 
 .tag[data-tag="webApp"] {
-    background-color: rgba($tag-webApp, 0.15);
-    color: $tag-webApp;
-    border-color: rgba($tag-webApp, 0.3);
+    background-color: color-mix(in srgb, var(--tag-webApp) 15%, transparent);
+    color: var(--tag-webApp);
+    border-color: color-mix(in srgb, var(--tag-webApp) 30%, transparent);
 }
 
 .tag[data-tag="graphics"] {
-    background-color: rgba($tag-graphics, 0.15);
-    color: $tag-graphics;
-    border-color: rgba($tag-graphics, 0.3);
+    background-color: color-mix(in srgb, var(--tag-graphics) 15%, transparent);
+    color: var(--tag-graphics);
+    border-color: color-mix(in srgb, var(--tag-graphics) 30%, transparent);
 }
 
 // Hover & active: boost the opacity
 .tag:hover,
 .tag.active {
     &[data-tag="logo"] {
-        background-color: rgba($tag-logo, 0.3);
+        background-color: color-mix(in srgb, var(--tag-logo) 30%, transparent);
     }
 
     &[data-tag="website"] {
-        background-color: rgba($tag-website, 0.3);
+        background-color: color-mix(in srgb, var(--tag-website) 30%, transparent);
     }
 
     &[data-tag="mobileApp"] {
-        background-color: rgba($tag-mobileApp, 0.3);
+        background-color: color-mix(in srgb, var(--tag-mobileApp) 30%, transparent);
     }
 
     &[data-tag="webApp"] {
-        background-color: rgba($tag-webApp, 0.3);
+        background-color: color-mix(in srgb, var(--tag-webApp) 30%, transparent);
     }
 
     &[data-tag="graphics"] {
-        background-color: rgba($tag-graphics, 0.3);
+        background-color: color-mix(in srgb, var(--tag-graphics) 30%, transparent);
     }
 
     // "all" tag hover
     &[data-tag="all"] {
-        background-color: rgba($color-white-100, 0.15);
+        background-color: var(--bg-hover);
     }
 }

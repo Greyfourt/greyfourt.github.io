@@ -1,0 +1,63 @@
+:root,
+[data-theme="dark"] {
+  // Backgrounds
+  --bg: #171719;
+  --bg-elevated: #1F1F22;
+  --bg-hover: #27272B;
+  --bg-tag: #2C2C30;
+
+  // Text
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.6);
+
+  // Accent (periwinkle)
+  --accent: #AEB8FE;
+  --accent-soft: rgba(174, 184, 254, 0.3);
+
+  // Pop (coral)
+  --pop: #E88D67;
+  --pop-soft: rgba(232, 141, 103, 0.3);
+  --pop-hover: #EC9E7B;
+
+  // Borders & shadows
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow-sm: rgba(0, 0, 0, 0.1);
+  --shadow-md: rgba(0, 0, 0, 0.4);
+  --shadow-overlay: rgba(0, 0, 0, 0.85);
+
+  // Tag pastels
+  --tag-logo: #F2A7C3;
+  --tag-website: #A7D8F2;
+  --tag-mobileApp: #B5E8B5;
+  --tag-webApp: #D4B5F2;
+  --tag-graphics: #F2D4A7;
+}
+
+[data-theme="light"] {
+  --bg: #EAEAED;
+  --bg-elevated: #F4F4F6;
+  --bg-hover: #E0E0E4;
+  --bg-tag: #D5D5D9;
+
+  --text: #1a1a1c;
+  --text-muted: rgba(0, 0, 0, 0.55);
+
+  --accent: #4E5CB5;           // 5.0:1 on bg
+  --accent-soft: rgba(78, 92, 181, 0.12);
+
+  --pop: #AE471A;              // 4.7:1 on bg
+  --pop-soft: rgba(174, 71, 26, 0.12);
+  --pop-hover: #963C15;        // 5.9:1 on bg
+
+  --border: rgba(0, 0, 0, 0.12);
+  --shadow-sm: rgba(0, 0, 0, 0.06);
+  --shadow-md: rgba(0, 0, 0, 0.14);
+  --shadow-overlay: rgba(0, 0, 0, 0.7);
+
+  // Tags — all pass WCAG AA 4.5:1 on #EAEAED
+  --tag-logo: #A93B64;        // 5.0:1
+  --tag-website: #266A95;     // 4.9:1
+  --tag-mobileApp: #2A7229;   // 4.9:1
+  --tag-webApp: #6B3FA8;      // 6.0:1
+  --tag-graphics: #8B6018;    // 4.6:1
+}

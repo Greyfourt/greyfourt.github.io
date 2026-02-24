@@ -65,12 +65,12 @@ export default function Home({ params: { locale, aboutMe, aboutWork, sections } 
           <h4>{t('contact.locations.inPerson')}</h4>
           <div className="locationRow">
             <div className="location">
-              <Icon type="location" />
+              <Icon name="location" />
               <h4>{t('contact.locations.places.lyon')}</h4>
             </div>
             <h4>{t('contact.locations.places.or')}</h4>
             <div className="location">
-              <Icon type="location" />
+              <Icon name="location" />
               <h4>{t('contact.locations.places.turin')}</h4>
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function Home({ params: { locale, aboutMe, aboutWork, sections } 
         <div className="contactRow">
           <h4>{t('contact.locations.remote.title')}</h4>
           <div className="location">
-            <Icon type="world" />
+            <Icon name="world" />
             <h4>{t('contact.locations.remote.option')}</h4>
           </div>
         </div>

@@ -49,7 +49,7 @@ const ProjectCard = ({
       </div>
       {(project.hasCaseStudy || project.link) && (
         <span className="projectAction">
-          <Icon type={project.hasCaseStudy ? "caseStudyLink" : "externalLink"} />
+          <Icon name={project.hasCaseStudy ? "caseStudyLink" : "externalLink"} />
         </span>
       )}
     </>

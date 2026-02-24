@@ -2,6 +2,7 @@
 
 import { WebsiteCarbonBadge } from "react-websitecarbon-badge";
 import Icon from "./Icons"
+import ThemeToggle from "./ThemeToggle"
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
 
@@ -20,19 +21,19 @@ const Footer = () => {
           rel="nofollow"
           aria-label="Download CV"
         >
-          <Icon type="doc" />
+          <Icon name="doc" />
         </a>
         <a href="tel:+33785632386" aria-label="Call phone">
-          <Icon type="phone" />
+          <Icon name="phone" />
         </a>
         <a href="mailto:nazliozcubukcuoglu@gmail.com" aria-label="Send email">
-          <Icon type="mail" />
+          <Icon name="mail" />
         </a>
         <a href="https://linkedin.com/in/nazli-oz/" aria-label="LinkedIn profile">
-          <Icon type="linkedin" />
+          <Icon name="linkedin" />
         </a>
         <a href="https://github.com/greyfourt/greyfourt.github.io" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
-          <Icon type="github" />
+          <Icon name="github" />
         </a>
       </div>
       <div className="footerLinks">
@@ -75,11 +76,13 @@ export const Menu = ({ locale }: { locale: string }) => {
         rel="nofollow"
         aria-label="Download CV"
       >
-        <Icon type="doc" />
+        <Icon name="doc" />
       </a>
       <a className="navItem" href="mailto:nazliozcubukcuoglu@gmail.com" aria-label="Send email">
-        <Icon type="mail" />
+        <Icon name="mail" />
       </a>
+
+      <ThemeToggle />
 
       <Link
         href={pathname}

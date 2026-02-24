@@ -8,7 +8,7 @@
     @include flex(column, center, center);
 
     border-radius: 90%;
-    background-color: $color-main-30;
+    background-color: var(--accent-soft);
 
     & img {
       @include flex(column, center, flex-end);
@@ -71,6 +71,18 @@
     width: 300px;
     text-align: center;
 
+    & .icon {
+      width: 72px;
+      height: 72px;
+      background-color: var(--accent);
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      -webkit-mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+    }
+
     & .descriptions {
       font-weight: 500;
       gap: 4px;
@@ -128,11 +140,11 @@
       & svg {
         height: 1.5em;
         width: 1.5em;
-        fill: $color-main;
+        fill: var(--accent);
       }
 
       h4 {
-        color: $color-main;
+        color: var(--accent);
       }
     }
   }

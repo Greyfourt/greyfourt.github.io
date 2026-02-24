@@ -5,13 +5,13 @@
     align-items: $align-items;
 }
 
-@mixin icon($color: $color-white-100) {
+@mixin icon() {
     &.filled {
-        fill: $color;
+        fill: var(--text);
     }
 
     &.outlined {
-        stroke: $color;
+        stroke: var(--text);
         fill: transparent;
     }
 }
