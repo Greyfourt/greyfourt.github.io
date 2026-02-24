@@ -8,7 +8,7 @@ Live at **https://greyfourt.github.io**
 
 - **Framework**: Next.js 14 (App Router, static export)
 - **Language**: TypeScript
-- **Styling**: SASS/SCSS
+- **Styling**: SASS/SCSS + CSS custom properties (dark/light theming)
 - **i18n**: next-intl (English + French)
 - **Analytics**: Matomo (self-hosted, cookie-consent gated)
 - **Font**: Nunito (Google Fonts, optimized via next/font)
@@ -39,11 +39,11 @@ src/
       legal/page.tsx       # Legal notice
       privacy/page.tsx     # Privacy policy
     (root)/                # Fallback non-localized layout
-    styles/                # SCSS files (variables, mixins, base styles)
+    styles/                # SCSS files (themes, mixins, base styles)
     sitemap.ts             # Auto-generated sitemap
     robots.ts              # robots.txt generation
     manifest.ts            # PWA manifest
-  components/              # React components (About, Projects, CaseStudy, Navigation, etc.)
+  components/              # React components (Navigation, ThemeToggle, Icons, About, Projects, etc.)
   i18n/                    # Internationalization config (routing, request)
   types.ts                 # TypeScript type definitions
   utils/                   # Matomo analytics setup
@@ -121,17 +121,27 @@ For the CI check to be enforced, enable branch protection on `main` in **Setting
 
 ## Scripts
 
-| Command         | Description                    |
-|-----------------|--------------------------------|
-| `npm run dev`   | Start dev server               |
-| `npm run build` | Build static export to `./out` |
-| `npm run lint`  | Run ESLint                     |
+| Command             | Description                              |
+|---------------------|------------------------------------------|
+| `npm run dev`       | Start dev server                         |
+| `npm run build`     | Build static export to `./out`           |
+| `npm run lint`      | Run ESLint                               |
+| `npm run clean`     | Clear `.next` cache                      |
+| `npm run dev:clean` | Clear cache and start dev server         |
 
 ## Roadmap
 
+### Done
+- [x] Dark/light theme toggle with WCAG AA accessible colors
+- [x] CSS custom properties theming system (replaced SCSS color variables)
+- [x] Icon registry system (`iconRegistry.ts` + `Icons.tsx`)
+- [x] Full-screen hamburger menu navigation (all screen sizes)
+- [x] FOHT (Flash of Wrong Theme) prevention
+- [x] CSS mask-image for theme-aware SVG icons in About section
+- [x] Use Next.js `<Link>` for internal navigation (client-side transitions)
+
 ### Short-term
 - [ ] Add more case studies (Corpo Karma, Vita Alma, DGV Consulting)
-- [ ] Use Next.js `<Link>` for internal navigation (client-side transitions)
 - [ ] Use Next.js `<Image>` for lazy loading and layout shift prevention
 - [ ] Derive sitemap case study slugs from data instead of hardcoding
 - [ ] Add dedicated OG image for better social media previews
@@ -146,4 +156,3 @@ For the CI check to be enforced, enable branch protection on `main` in **Setting
 - [ ] Upgrade to Next.js 15
 - [ ] Add a blog/articles section
 - [ ] Add project filtering by year in addition to tag
-- [ ] Dark/light theme toggle

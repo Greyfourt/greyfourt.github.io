@@ -6,7 +6,7 @@ Personal portfolio website for Nazli, a Creative Designer & Developer based in L
 ## Tech Stack
 - **Framework:** Next.js 14 (App Router) with static export (`output: 'export'`)
 - **Language:** TypeScript
-- **Styling:** SASS/SCSS (variables in `src/app/styles/utils/_variables.scss`)
+- **Styling:** SASS/SCSS with CSS custom properties for theming
 - **i18n:** next-intl (locales: `en` default, `fr` with `/fr` prefix)
 - **Analytics:** Matomo (self-hosted, cookie-consent gated)
 - **Fonts:** Nunito (via next/font)
@@ -17,12 +17,15 @@ Personal portfolio website for Nazli, a Creative Designer & Developer based in L
 - `npm run build` — Production build (outputs to `./out/`)
 - `npm run lint` — ESLint check
 - `npm start` — Serve production build
+- `npm run clean` — Clear `.next` cache
+- `npm run dev:clean` — Clear cache and start dev server
 
 ## Project Structure
 ```
 src/
 ├── app/
 │   ├── [locale]/           # Localized routes (en, fr)
+│   │   ├── layout.tsx      # Root layout (metadata, SEO, FOHT script)
 │   │   ├── page.tsx        # Homepage
 │   │   ├── projects/
 │   │   │   ├── page.tsx    # Projects listing + filters
@@ -30,8 +33,29 @@ src/
 │   │   ├── legal/page.tsx
 │   │   └── privacy/page.tsx
 │   ├── (root)/             # Fallback non-localized routes
-│   └── styles/             # SCSS files
-├── components/             # React components
+│   └── styles/
+│       ├── App.scss        # Main entry — imports all partials
+│       ├── utils/
+│       │   ├── _themes.scss    # Dark/light theme CSS custom properties
+│       │   ├── _variables.scss # (legacy, emptied — colors now in _themes.scss)
+│       │   └── _mixins.scss    # SCSS mixins (flex, icon)
+│       └── base/
+│           ├── _base.scss      # Nav, buttons, footer, cookie banner, legal pages
+│           ├── _typography.scss # Font styles
+│           ├── _home.scss      # Homepage sections (header, about)
+│           ├── _projects.scss  # Project cards, filters, tags
+│           └── _casestudy.scss # Case study page styles
+├── components/
+│   ├── Navigation.tsx      # Nav bar + full-screen hamburger menu (client component)
+│   ├── ThemeToggle.tsx     # Dark/light theme toggle (client component)
+│   ├── Icons.tsx           # SVG icon component (renders from registry)
+│   ├── iconRegistry.ts     # Icon data registry (all SVG paths as plain objects)
+│   ├── About.tsx           # About sections (uses CSS mask-image for SVG icons)
+│   ├── Projects.tsx        # Project cards grid
+│   ├── CaseStudy.tsx       # Case study page component
+│   ├── Filters.tsx         # Project tag filters
+│   ├── Tag.tsx             # Tag badge component
+│   └── CookieBanner.tsx    # Cookie consent banner
 ├── i18n/                   # next-intl config (routing.ts, request.ts)
 ├── types.ts                # TypeScript type definitions
 └── utils/                  # Matomo analytics setup
@@ -41,9 +65,87 @@ messages/
 public/
 ├── articles/               # Project thumbnail images (e.g., WebsiteEST.png, AppFloof.png)
 ├── images/                 # Case study images (Problem-*, Proposal-*, Outcome-*, etc.)
-├── icons/                  # SVG icons for About sections
+├── icons/                  # SVG icons for About sections (colored via CSS mask-image)
 └── animations/             # Lottie animation files
 ```
+
+## Theming System
+
+### CSS Custom Properties
+All colors are defined as CSS custom properties in `src/app/styles/utils/_themes.scss`. There are **no SCSS color variables** — everything uses `var(--name)` for runtime theme switching.
+
+Key tokens:
+- `--bg`, `--bg-elevated`, `--bg-hover`, `--bg-tag` — background layers
+- `--text`, `--text-muted` — text colors
+- `--accent`, `--accent-soft` — primary accent (blue/indigo)
+- `--pop`, `--pop-soft`, `--pop-hover` — secondary accent (orange)
+- `--border`, `--shadow-sm`, `--shadow-md`, `--shadow-overlay` — UI chrome
+- `--tag-logo`, `--tag-website`, `--tag-mobileApp`, `--tag-webApp`, `--tag-graphics` — project tag colors
+
+### Dark Mode (default)
+- Background: `#171719`, accent: `#AEB8FE`, pop: `#E88D67`
+- Applied via `:root` and `[data-theme="dark"]`
+
+### Light Mode
+- Background: `#EAEAED`, accent: `#4E5CB5`, pop: `#AE471A`
+- Applied via `[data-theme="light"]`
+- All colors pass WCAG AA contrast (4.5:1 minimum for text)
+
+### FOHT Prevention (Flash of Wrong Theme)
+An inline `<script>` in `layout.tsx` reads `localStorage` and sets `data-theme` before first paint — prevents a flash of wrong theme on load.
+
+### Theme Toggle
+`ThemeToggle.tsx` is a `'use client'` component that:
+- Reads stored preference from `localStorage` (falls back to `prefers-color-scheme`)
+- Sets `data-theme` attribute on `<html>` and persists to `localStorage`
+- Shows sun/moon icon with "Light"/"Dark" label
+
+### Tag Colors with Transparency
+Since `rgba()` doesn't work with CSS custom properties, tag backgrounds use:
+```scss
+background: color-mix(in srgb, var(--tag-xxx) 15%, transparent);
+```
+
+## Icon System
+
+### Icon Registry (`iconRegistry.ts`)
+All SVG icon data lives in a plain TypeScript object — no JSX, just path data. Each icon has:
+- `viewBox`, `style` (`"filled"` or `"outlined"`), `paths[]`, optional `circles[]` and `rects[]`
+
+### Icon Component (`Icons.tsx`)
+Renders SVGs from the registry using `currentColor` for theme-aware coloring:
+- `<Icon name="sun" />` — looks up the icon by name in the registry
+- Filled icons: `fill: currentColor`, Outlined icons: `stroke: currentColor`
+
+### About Section SVG Icons
+External SVGs in `public/icons/` have hardcoded stroke colors. The About component uses CSS `mask-image` instead of `<img>` to control color via CSS:
+```tsx
+<div className="icon" style={{ maskImage: `url(/icons/${key}.svg)` }} />
+```
+```scss
+.icon { background-color: var(--accent); mask-size: contain; }
+```
+
+## Navigation
+
+### Always-Hamburger Design
+The nav uses a hamburger menu at all screen sizes (no desktop nav links). The bar shows only:
+- **Left:** "greyfourt" brand link
+- **Right:** Hamburger button (animates to X when open)
+
+### Full-Screen Menu
+Clicking the hamburger opens a full-screen overlay (`position: fixed; inset: 0`) containing:
+- **Links:** Home, Projects, CV (download), Contact (mailto)
+- **Footer:** Social icons (mail, LinkedIn, GitHub) + theme toggle + language switcher
+- **Animation:** Links fade in with staggered delays, footer fades in after
+
+### Z-Index Layering
+- `nav`: z-index 200 (sticky bar)
+- `.navBrand`, `.navHamburger`: z-index 201 (above overlay)
+- `.navMenu`: z-index 199 (below nav bar items, above page content)
+
+### Scroll Lock
+Body scroll is disabled when the menu is open via `useEffect` toggling `document.body.style.overflow`.
 
 ## Content Management
 All content lives in `messages/en.json` and `messages/fr.json`. These are the **single source of truth** for:
@@ -83,6 +185,11 @@ Case study images go in `public/images/` with naming:
 - `Problem-{Name}.png`, `Proposal-{Name}-{N}.png`, `Logo-{Name}.png`
 - `UserJourney-{Name}.png`, `Outcome-{Name}-{N}.png`
 
+### Adding a New Icon
+1. Add the SVG path data to `src/components/iconRegistry.ts`
+2. Use it anywhere with `<Icon name="yourIcon" />`
+3. Icon automatically inherits text color from its parent via `currentColor`
+
 ## Image Naming Conventions
 - Thumbnails: `public/articles/{Tag}{Name}.png` (e.g., `WebsiteEST.png`, `AppFloof.png`, `LogoHT.png`)
 - Case study: `public/images/{Section}-{Name}.png`
@@ -93,9 +200,9 @@ Case study images go in `public/images/` with naming:
 - Site URL: https://greyfourt.github.io
 
 ## Style Guide
-- Dark theme: background `#171719`, primary `#AEB8FE`, secondary `#E88D67`
-- SCSS with BEM-inspired naming
-- Mobile-responsive design
+- CSS custom properties for all colors (no SCSS `$color-` variables)
+- SCSS used only for nesting, mixins, and `@for` loops
+- `color-mix()` for transparent variants of CSS custom properties
 - Path alias: `@/*` maps to `./src/*`
 
 ## Important Notes
@@ -103,3 +210,5 @@ Case study images go in `public/images/` with naming:
 - The `(root)` route group is a fallback — main content is under `[locale]`
 - `fr.json` translations should match `en.json` structure exactly, with French text
 - Case study states: EN uses "up to date" / "done", FR uses "à jour" / "terminé"
+- macOS has case-insensitive filesystem — avoid files that differ only by case (e.g., `icons.ts` vs `Icons.tsx`)
+- If the `.next` cache becomes stale after structural changes, run `npm run clean`
