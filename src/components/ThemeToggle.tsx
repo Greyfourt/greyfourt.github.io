@@ -24,8 +24,9 @@ export default function ThemeToggle() {
   };
 
   return (
-    <button onClick={toggle} className="navItem" aria-label="Toggle theme">
+    <button onClick={toggle} className="themeToggle" aria-label="Toggle theme">
       <Icon name={theme === 'dark' ? 'sun' : 'moon'} />
+      <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
     </button>
   );
 }
