@@ -28,7 +28,7 @@ const ProjectCard = ({
     <>
       <div className="imageWrapper">
         <img
-          src={project.image ? project.image : "articles/Placeholder.png"}
+          src={project.image ? project.image : "articles/Placeholder.webp"}
           alt={project.title}
           loading="lazy"
         />

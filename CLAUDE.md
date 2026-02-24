@@ -62,9 +62,11 @@ src/
 messages/
 ├── en.json                 # English content + project data
 └── fr.json                 # French content + project data
+scripts/
+└── convert-to-webp.mjs    # PNG → WebP conversion (uses sharp)
 public/
-├── articles/               # Project thumbnail images (e.g., WebsiteEST.png, AppFloof.png)
-├── images/                 # Case study images (Problem-*, Proposal-*, Outcome-*, etc.)
+├── articles/               # Project thumbnail images (WebP format, e.g., WebsiteEST.webp)
+├── images/                 # Case study images (WebP format, Problem-*, Proposal-*, etc.)
 ├── icons/                  # SVG icons for About sections (colored via CSS mask-image)
 └── animations/             # Lottie animation files
 ```
@@ -84,20 +86,28 @@ Key tokens:
 
 ### Dark Mode (default)
 - Background: `#171719`, accent: `#AEB8FE`, pop: `#E88D67`
-- Applied via `:root` and `[data-theme="dark"]`
+- Applied via `:root` (default) and `[data-theme="dark"]` (explicit override)
 
 ### Light Mode
 - Background: `#EAEAED`, accent: `#4E5CB5`, pop: `#AE471A`
-- Applied via `[data-theme="light"]`
+- Applied via `@media (prefers-color-scheme: light)` on `:root:not([data-theme])` (system preference) and `[data-theme="light"]` (explicit override)
 - All colors pass WCAG AA contrast (4.5:1 minimum for text)
 
+### Hydration-Safe Theme Strategy
+Theme colors are defined as SCSS mixins (`@mixin dark-theme`, `@mixin light-theme`) to avoid duplication. The cascade:
+1. `:root` — dark theme as default (no attribute needed)
+2. `@media (prefers-color-scheme: light)` on `:root:not([data-theme])` — respects system preference when no manual override
+3. `[data-theme="dark"]` / `[data-theme="light"]` — manual overrides set by user toggle
+
+This avoids hydration mismatches because the server-rendered `<html>` has **no `data-theme` attribute** — CSS media queries handle system preference without JS.
+
 ### FOHT Prevention (Flash of Wrong Theme)
-An inline `<script>` in `layout.tsx` reads `localStorage` and sets `data-theme` before first paint — prevents a flash of wrong theme on load.
+An inline `<script>` in `layout.tsx` reads `localStorage` and sets `data-theme` **only if a stored preference exists**. If the user has never toggled the theme, CSS `@media (prefers-color-scheme)` handles it natively — no flash, no hydration mismatch.
 
 ### Theme Toggle
 `ThemeToggle.tsx` is a `'use client'` component that:
-- Reads stored preference from `localStorage` (falls back to `prefers-color-scheme`)
-- Sets `data-theme` attribute on `<html>` and persists to `localStorage`
+- On mount: reads `localStorage`; if no stored preference, syncs display to `prefers-color-scheme` without setting `data-theme`
+- On toggle: sets `data-theme` attribute on `<html>`, persists choice to `localStorage`
 - Shows sun/moon icon with "Light"/"Dark" label
 
 ### Tag Colors with Transparency
@@ -126,6 +136,15 @@ External SVGs in `public/icons/` have hardcoded stroke colors. The About compone
 .icon { background-color: var(--accent); mask-size: contain; }
 ```
 
+## Layout System
+All major containers share unified SCSS layout variables for consistent alignment:
+```scss
+$layout-max: 1050px;
+$layout-pad: 1.5rem;
+$layout-pad-mobile: 1.5rem;
+```
+Applied to: `nav`, `.navMenu`, `.bodyContainer`, `footer`. Each uses `max-width: $layout-max` and `padding: ... $layout-pad`, ensuring brand, menu items, content, and footer all share the same left/right edges at all screen sizes.
+
 ## Navigation
 
 ### Always-Hamburger Design
@@ -136,7 +155,7 @@ The nav uses a hamburger menu at all screen sizes (no desktop nav links). The ba
 ### Full-Screen Menu
 Clicking the hamburger opens a full-screen overlay (`position: fixed; inset: 0`) containing:
 - **Links:** Home, Projects, CV (download), Contact (mailto)
-- **Footer:** Social icons (mail, LinkedIn, GitHub) + theme toggle + language switcher
+- **Footer:** Social icons (mail, LinkedIn, GitHub) + theme toggle + language switcher, separated by a `border-top` divider
 - **Animation:** Links fade in with staggered delays, footer fades in after
 
 ### Z-Index Layering
@@ -159,14 +178,14 @@ Add an entry to `projectslist` in **both** `en.json` and `fr.json`:
   "title": "Project Name",
   "date": "2024",
   "tag": "website",
-  "image": "/articles/WebsiteProjectName.png",
+  "image": "/articles/WebsiteProjectName.webp",
   "link": "https://example.com/",
   "hasCaseStudy": false,
   "isSelected": false
 }
 ```
 - **tag options:** `logo`, `website`, `mobileApp`, `webApp`, `graphics`
-- **image:** Thumbnail goes in `public/articles/` (naming: `{Tag}{Name}.png`)
+- **image:** Thumbnail goes in `public/articles/` (naming: `{Tag}{Name}.webp`)
 - **link:** External URL (omit if no live link)
 - **projectURL:** URL slug for case study (only if `hasCaseStudy: true`)
 - **isSelected:** `true` = shown on homepage "Featured Projects"
@@ -182,8 +201,8 @@ Set `hasCaseStudy: true`, add `projectURL` slug, and include a `projectCaseStudy
 - Outcome: `outComeDescriptions[]`, `outComeImages[]`
 
 Case study images go in `public/images/` with naming:
-- `Problem-{Name}.png`, `Proposal-{Name}-{N}.png`, `Logo-{Name}.png`
-- `UserJourney-{Name}.png`, `Outcome-{Name}-{N}.png`
+- `Problem-{Name}.webp`, `Proposal-{Name}-{N}.webp`, `Logo-{Name}.webp`
+- `UserJourney-{Name}.webp`, `Outcome-{Name}-{N}.webp`
 
 ### Adding a New Icon
 1. Add the SVG path data to `src/components/iconRegistry.ts`
@@ -191,8 +210,15 @@ Case study images go in `public/images/` with naming:
 3. Icon automatically inherits text color from its parent via `currentColor`
 
 ## Image Naming Conventions
-- Thumbnails: `public/articles/{Tag}{Name}.png` (e.g., `WebsiteEST.png`, `AppFloof.png`, `LogoHT.png`)
-- Case study: `public/images/{Section}-{Name}.png`
+- **Format:** All images use WebP (converted from PNG for ~68% size reduction)
+- Thumbnails: `public/articles/{Tag}{Name}.webp` (e.g., `WebsiteEST.webp`, `AppFloof.webp`, `LogoHT.webp`)
+- Case study: `public/images/{Section}-{Name}.webp`
+- All `<img>` tags use `loading="lazy"` for deferred offscreen loading
+
+### Image Conversion Scripts
+- `scripts/convert-to-webp.mjs` — Converts PNG files in `public/articles/` and `public/images/` to WebP using sharp (quality 80), deletes original PNGs
+- Run with: `node scripts/convert-to-webp.mjs`
+- `sharp` is a devDependency for image processing
 
 ## Deployment
 - Push to `main` triggers GitHub Actions (`.github/workflows/nextjs.yml`)
@@ -205,8 +231,12 @@ Case study images go in `public/images/` with naming:
 - `color-mix()` for transparent variants of CSS custom properties
 - Path alias: `@/*` maps to `./src/*`
 
+## Carbon Badge
+The footer displays a static Website Carbon badge (pure HTML/CSS, no external library). The CO2 value is hardcoded — update it manually after re-testing at [websitecarbon.com](https://www.websitecarbon.com/website/greyfourt-github-io/).
+
 ## Important Notes
 - Image optimization is disabled (`unoptimized: true`) for GitHub Pages compatibility
+- All images are WebP format with `loading="lazy"` for performance
 - The `(root)` route group is a fallback — main content is under `[locale]`
 - `fr.json` translations should match `en.json` structure exactly, with French text
 - Case study states: EN uses "up to date" / "done", FR uses "à jour" / "terminé"

@@ -230,7 +230,7 @@
       "title": "Vita Alma",
       "date": "2026",
       "tag": "website",
-      "image": "/articles/WebsiteVitaAlma.png",
+      "image": "/articles/WebsiteVitaAlma.webp",
       "link": "https://vitaalma.com",
       "hasCaseStudy": false,
       "isSelected": true
@@ -239,7 +239,7 @@
       "title": "Ecco-eco",
       "date": "2025",
       "tag": "website",
-      "image": "/articles/WebsiteEcco-eco.png",
+      "image": "/articles/WebsiteEcco-eco.webp",
       "link": "https://ecco-eco.fr",
       "hasCaseStudy": false,
       "isSelected": false
@@ -248,7 +248,7 @@
       "title": "DGV Consulting",
       "date": "2025",
       "tag": "website",
-      "image": "/articles/WebsiteDGV.png",
+      "image": "/articles/WebsiteDGV.webp",
       "link": "https://dgvconsulting.it",
       "hasCaseStudy": false,
       "isSelected": true
@@ -257,7 +257,7 @@
       "title": "Gruppo Bertone",
       "date": "2025",
       "tag": "website",
-      "image": "/articles/WebsiteBertone.png",
+      "image": "/articles/WebsiteBertone.webp",
       "link": "https://gruppobertone.com",
       "hasCaseStudy": false,
       "isSelected": false
@@ -266,7 +266,7 @@
       "title": "surfcamp.it",
       "date": "2024",
       "tag": "website",
-      "image": "/articles/WebsiteSurfcamp.png",
+      "image": "/articles/WebsiteSurfcamp.webp",
       "link": "https://surfcamp.it",
       "hasCaseStudy": false,
       "isSelected": false
@@ -275,7 +275,7 @@
       "title": "Christel Rubinel",
       "date": "2024",
       "tag": "website",
-      "image": "/articles/WebsiteChristel.png",
+      "image": "/articles/WebsiteChristel.webp",
       "link": "https://christelrubinel.fr",
       "hasCaseStudy": false,
       "isSelected": false
@@ -284,7 +284,7 @@
       "title": "Delphine Chartier",
       "date": "2024",
       "tag": "website",
-      "image": "/articles/WebsiteDelphine.png",
+      "image": "/articles/WebsiteDelphine.webp",
       "link": "https://delphinechartier.com",
       "hasCaseStudy": false,
       "isSelected": false
@@ -293,7 +293,7 @@
       "title": "Harfang Therapeutics",
       "date": "2024",
       "tag": "website",
-      "image": "/articles/WebsiteHarfang.png",
+      "image": "/articles/WebsiteHarfang.webp",
       "link": "https://harfang-therapeutics.com/",
       "hasCaseStudy": false,
       "isSelected": true
@@ -302,7 +302,7 @@
       "title": "Harfang Therapeutics",
       "date": "2023",
       "tag": "logo",
-      "image": "/articles/LogoHT.png",
+      "image": "/articles/LogoHT.webp",
       "hasCaseStudy": false,
       "isSelected": false
     },
@@ -310,7 +310,7 @@
       "title": "Epic Stories Teambuilding",
       "date": "2023",
       "tag": "website",
-      "image": "/articles/WebsiteEST.png",
+      "image": "/articles/WebsiteEST.webp",
       "link": "https://epicstoriesteambuilding.com/",
       "hasCaseStudy": false,
       "isSelected": false
@@ -319,7 +319,7 @@
       "title": "TEB Health",
       "date": "2023",
       "tag": "website",
-      "image": "/articles/WebsiteTEB.png",
+      "image": "/articles/WebsiteTEB.webp",
       "link": "https://www.teb-health.com/",
       "hasCaseStudy": false,
       "isSelected": false
@@ -328,7 +328,7 @@
       "title": "TEB Health",
       "date": "2023",
       "tag": "logo",
-      "image": "/articles/LogoTEB.png",
+      "image": "/articles/LogoTEB.webp",
       "hasCaseStudy": false,
       "isSelected": false
     },
@@ -336,7 +336,7 @@
       "title": "La Commanderie des Templiers",
       "date": "2023",
       "tag": "website",
-      "image": "/articles/WebsiteLCDT.png",
+      "image": "/articles/WebsiteLCDT.webp",
       "link": "https://www.lacommanderiedestempliers.com/",
       "hasCaseStudy": false,
       "isSelected": false
@@ -345,14 +345,14 @@
       "title": "Floof App",
       "date": "2023",
       "tag": "mobileApp",
-      "image": "/articles/AppFloof.png",
+      "image": "/articles/AppFloof.webp",
       "hasCaseStudy": true,
       "isSelected": true,
       "projectURL": "floof",
       "projectCaseStudy": {
         "caseStudyState": "up to date",
         "caseStudyDate": "October 2023",
-        "problemImage": "/images/Problem-Floof.png",
+        "problemImage": "/images/Problem-Floof.webp",
         "problemDescriptions": [
           "With busy lifestyles and jam-packed schedules, it's easy to overlook the needs of our furry and leafy friends. Against the daily grind, even crucial tasks like vet appointments, pet food refills, and plant watering can fall by the wayside. This unintentional neglect can have serious consequences for our beloved companions - or as we call them floofs.",
           "Here is our take, your one-stop solution for managing pet and plant care. This PWA mobile app seamlessly integrates into your daily routine, keeping track of important information, setting reminders, and sharing it all with our friends & family to ensure the well-being of your furry and leafy friends.",
@@ -361,16 +361,16 @@
         "researchDescription": "We've done our homework, extensively analyzing existing pet and plant care apps to understand their strengths and limitations. We've also gathered feedback from pet owners and plant enthusiasts to identify their pain points.",
         "brandDescription": "We wanted the Floof App to have a personality that was both playful and sophisticated. We chose a color palette that was both vibrant and calming, and we designed a logo that was both cute and stylish.",
         "brandCurrentLogo": [
-          "/images/Logo-Floof.png",
-          "/images/Logo-Floof-2.png"
+          "/images/Logo-Floof.webp",
+          "/images/Logo-Floof-2.webp"
         ],
         "brandPropositions": [
-          "/images/Proposal-Floof.png",
-          "/images/Proposal-Floof-2.png",
-          "/images/Proposal-Floof-3.png",
-          "/images/Proposal-Floof-4.png",
-          "/images/Proposal-Floof-5.png",
-          "/images/Proposal-Floof-6.png"
+          "/images/Proposal-Floof.webp",
+          "/images/Proposal-Floof-2.webp",
+          "/images/Proposal-Floof-3.webp",
+          "/images/Proposal-Floof-4.webp",
+          "/images/Proposal-Floof-5.webp",
+          "/images/Proposal-Floof-6.webp"
         ],
         "brandTypography": {
           "fontName": "Nunito"
@@ -394,19 +394,19 @@
           }
         ],
         "userJourneyDescription": "We created detailed user journeys to make sure that every step of using the Floof App was intuitive and enjoyable. We wanted to make sure that the app was easy to use for people of all ages and skill levels.",
-        "userJourneyImage": "/images/UserJourney-Floof.png",
+        "userJourneyImage": "/images/UserJourney-Floof.webp",
         "outComeDescriptions": [
           "The Floof App is currently in development, but we're already making great progress. We're focusing on the mobile platform because we know that's where our users are spending most of their time.",
           "We're constantly brainstorming new features for the Floof App.",
           "The Floof App is not just a tool for managing pet and plant care; it's a companion for life. It's the perfect way to make sure that your furry and leafy friends are always happy and healthy."
         ],
         "outComeImages": [
-          "/images/Outcome-Floof-1.png",
-          "/images/Outcome-Floof-2.png",
-          "/images/Outcome-Floof-3.png",
-          "/images/Outcome-Floof-4.png",
-          "/images/Outcome-Floof-5.png",
-          "/images/Outcome-Floof-6.png"
+          "/images/Outcome-Floof-1.webp",
+          "/images/Outcome-Floof-2.webp",
+          "/images/Outcome-Floof-3.webp",
+          "/images/Outcome-Floof-4.webp",
+          "/images/Outcome-Floof-5.webp",
+          "/images/Outcome-Floof-6.webp"
         ]
       }
     },
@@ -414,14 +414,14 @@
       "title": "Knotbook App",
       "date": "2023",
       "tag": "mobileApp",
-      "image": "/articles/AppKnotbook.png",
+      "image": "/articles/AppKnotbook.webp",
       "hasCaseStudy": true,
       "isSelected": true,
       "projectURL": "knotbook",
       "projectCaseStudy": {
         "caseStudyDate": "October 2023",
         "caseStudyState": "done",
-        "problemImage": "/images/Problem-Knotbook.png",
+        "problemImage": "/images/Problem-Knotbook.webp",
         "problemDescriptions": [
           "As crochet lovers, we are always in search of new and exciting patterns. But sometimes, we come upon some terms or acronyms that we do not recognize quickly.",
           "We want to have sneak peeks to all stitches while we are building our patterns.",
@@ -430,14 +430,14 @@
         "researchDescription": "Swarmed the internet, tested and played around with many applications.",
         "brandDescription": "We wanted to create an environment that users will not have a lot of distractions while keeping the cozy side.",
         "brandCurrentLogo": [
-          "/images/Logo-Knotbook.png"
+          "/images/Logo-Knotbook.webp"
         ],
         "brandPropositions": [
-          "/images/Proposal-Knotbook.png",
-          "/images/Proposal-Knotbook-2.png",
-          "/images/Proposal-Knotbook-3.png",
-          "/images/Proposal-Knotbook-4.png",
-          "/images/Proposal-Knotbook-5.png"
+          "/images/Proposal-Knotbook.webp",
+          "/images/Proposal-Knotbook-2.webp",
+          "/images/Proposal-Knotbook-3.webp",
+          "/images/Proposal-Knotbook-4.webp",
+          "/images/Proposal-Knotbook-5.webp"
         ],
         "brandTypography": {
           "fontName": "Nunito"
@@ -461,17 +461,17 @@
           }
         ],
         "userJourneyDescription": "We created detailed user journeys to guide us throughout design and development. Due to the complicated flows in the application, we created detailed diagrams for the development.",
-        "userJourneyImage": "/images/UserJourney-Knotbook.png",
+        "userJourneyImage": "/images/UserJourney-Knotbook.webp",
         "outComeDescriptions": [
           "Focused only on the mobile as our users would only need a on-the-go solution. Started with the simplest wireframes. Created designs from the basic - minimally styled MVPs to more studied designs."
         ],
         "outComeImages": [
-          "/images/Outcome-Knotbook-1.png",
-          "/images/Outcome-Knotbook-2.png",
-          "/images/Outcome-Knotbook-3.png",
-          "/images/Outcome-Knotbook-4.png",
-          "/images/Outcome-Knotbook-5.png",
-          "/images/Outcome-Knotbook-6.png"
+          "/images/Outcome-Knotbook-1.webp",
+          "/images/Outcome-Knotbook-2.webp",
+          "/images/Outcome-Knotbook-3.webp",
+          "/images/Outcome-Knotbook-4.webp",
+          "/images/Outcome-Knotbook-5.webp",
+          "/images/Outcome-Knotbook-6.webp"
         ]
       }
     },
@@ -479,7 +479,7 @@
       "title": "Corpo Karma",
       "date": "2022",
       "tag": "website",
-      "image": "/articles/WebsiteCorpoKarma.png",
+      "image": "/articles/WebsiteCorpoKarma.webp",
       "hasCaseStudy": false,
       "isSelected": false
     },
@@ -487,7 +487,7 @@
       "title": "La Mare à Toto",
       "date": "2022",
       "tag": "website",
-      "image": "/articles/WebsiteLMAT.png",
+      "image": "/articles/WebsiteLMAT.webp",
       "link": "https://lamareatoto.fr/",
       "hasCaseStudy": false,
       "isSelected": false
@@ -496,7 +496,7 @@
       "title": "Bookipe",
       "date": "2022",
       "tag": "mobileApp",
-      "image": "/articles/AppBookipe.png",
+      "image": "/articles/AppBookipe.webp",
       "hasCaseStudy": false,
       "isSelected": false,
       "projectURL": "bookipe"
@@ -505,7 +505,7 @@
       "title": "Valensi Patrimoine",
       "date": "2021",
       "tag": "website",
-      "image": "/articles/WebsiteValensi.png",
+      "image": "/articles/WebsiteValensi.webp",
       "link": "https://valensi-patrimoine.fr/",
       "hasCaseStudy": false,
       "isSelected": false
@@ -514,7 +514,7 @@
       "title": "Valensi Patrimoine",
       "date": "2021",
       "tag": "graphics",
-      "image": "/articles/GraphicValensi.png",
+      "image": "/articles/GraphicValensi.webp",
       "hasCaseStudy": false,
       "isSelected": false
     },
@@ -522,7 +522,7 @@
       "title": "Valensi Patrimoine",
       "date": "2021",
       "tag": "logo",
-      "image": "/articles/LogoValensi.png",
+      "image": "/articles/LogoValensi.webp",
       "isSelected": false,
       "hasCaseStudy": false
     },
@@ -530,7 +530,7 @@
       "title": "Contacts App",
       "date": "2021",
       "tag": "webApp",
-      "image": "/articles/AppContacts.png",
+      "image": "/articles/AppContacts.webp",
       "hasCaseStudy": false,
       "isSelected": false,
       "projectURL": "contacts"
@@ -539,7 +539,7 @@
       "title": "ODB Rénovation",
       "date": "2020",
       "tag": "graphics",
-      "image": "/articles/GraphicODB.png",
+      "image": "/articles/GraphicODB.webp",
       "isSelected": false,
       "hasCaseStudy": false
     }

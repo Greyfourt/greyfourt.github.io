@@ -81,7 +81,7 @@ Two locales: `en` (default) and `fr`. English routes have no prefix (`/`, `/proj
 
 ## Adding a Project
 
-1. Add a thumbnail image to `public/articles/` (naming: `{Tag}{Name}.png`, e.g. `WebsiteMyProject.png`)
+1. Add a thumbnail image to `public/articles/` (naming: `{Tag}{Name}.webp`, e.g. `WebsiteMyProject.webp`)
 2. Add a new entry to the `projectslist` array in **both** `messages/en.json` and `messages/fr.json`
 3. If the project has a case study, set `hasCaseStudy: true`, add a `projectURL` slug, include the `projectCaseStudy` object, and add case study images to `public/images/`
 4. For case studies, also update the `projectsWithCaseStudy` array in `src/app/sitemap.ts`
@@ -128,6 +128,7 @@ For the CI check to be enforced, enable branch protection on `main` in **Setting
 | `npm run lint`      | Run ESLint                               |
 | `npm run clean`     | Clear `.next` cache                      |
 | `npm run dev:clean` | Clear cache and start dev server         |
+| `node scripts/convert-to-webp.mjs` | Convert PNGs to WebP (requires sharp) |
 
 ## Roadmap
 
@@ -139,11 +140,19 @@ For the CI check to be enforced, enable branch protection on `main` in **Setting
 - [x] FOHT (Flash of Wrong Theme) prevention
 - [x] CSS mask-image for theme-aware SVG icons in About section
 - [x] Use Next.js `<Link>` for internal navigation (client-side transitions)
+- [x] Hydration-safe theme system (SCSS mixins + CSS `@media prefers-color-scheme`, no `data-theme` in SSR)
+- [x] Unified layout system (`$layout-max`, `$layout-pad` shared across nav, menu, content, footer)
+- [x] WebP image conversion (all PNGs → WebP, ~68% size reduction)
+- [x] Lazy loading on all images (`loading="lazy"`)
+- [x] Replaced `react-websitecarbon-badge` + `styled-components` with static HTML/CSS badge (~86KB saved)
+- [x] Removed unused `@lottiefiles/dotlottie-react` dependency
 
 ### Short-term
+- [ ] Reduce HTML inline payload (next-intl embeds all messages JSON into every page, ~110KB)
+- [ ] Consolidate Nunito font weights (currently loading 6 weights, only 2-3 are used)
+- [ ] Add explicit `width`/`height` attributes to images (prevents layout shift, improves CLS)
 - [ ] Fix Matomo duplicate tracker registration (`setTrackerUrl`/`setSiteId` registered twice in `_paq`)
 - [ ] Add more case studies (Corpo Karma, Vita Alma, DGV Consulting)
-- [ ] Use Next.js `<Image>` for lazy loading and layout shift prevention
 - [ ] Derive sitemap case study slugs from data instead of hardcoding
 - [ ] Add dedicated OG image for better social media previews
 
@@ -151,7 +160,7 @@ For the CI check to be enforced, enable branch protection on `main` in **Setting
 - [ ] Add lightweight project detail view for non-case-study projects (modal or page with screenshots + description)
 - [ ] Add scroll animations (fade-in on scroll for project cards and sections)
 - [ ] Richer JSON-LD structured data (sameAs, CreativeWork collection)
-- [ ] Improve image optimization (compress thumbnails, add WebP variants)
+- [ ] Consider green hosting provider for better carbon score
 
 ### Long-term
 - [ ] Upgrade to Next.js 15

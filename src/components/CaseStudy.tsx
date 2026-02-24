@@ -21,7 +21,7 @@ const CaseStudy = ({ caseStudy, locale, projectName }: CaseStudyProps) => {
         <div className="casestudyContentRow problem">
           <div className="image">
             <img
-              src={`/images/Problem-${projectName.charAt(0).toUpperCase()}${projectName.slice(1)}.png`}
+              src={`/images/Problem-${projectName.charAt(0).toUpperCase()}${projectName.slice(1)}.webp`}
               alt="Problem illustration"
               loading="lazy"
             />

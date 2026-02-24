@@ -57,7 +57,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       type: 'website',
       images: [
         {
-          url: `${baseUrl}/illustration.png`,
+          url: `${baseUrl}/illustration.webp`,
           alt: "Nazlı Özçubukçuoğlu - Creative Designer & Developer",
         },
       ],
@@ -66,7 +66,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       card: 'summary_large_image',
       title,
       description,
-      images: [`${baseUrl}/illustration.png`],
+      images: [`${baseUrl}/illustration.webp`],
     },
   };
 }

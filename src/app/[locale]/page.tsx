@@ -39,7 +39,7 @@ export default function Home({ params: { locale, aboutMe, aboutWork, sections } 
 
       <div className="header">
         <div className="illustration">
-          <img src="/illustration.png" alt="Nazli illustration" />
+          <img src="/illustration.webp" alt="Nazli illustration" />
         </div>
         <div className="titleSection">
           <h1>Nazlı Özçubukçuoğlu</h1>
