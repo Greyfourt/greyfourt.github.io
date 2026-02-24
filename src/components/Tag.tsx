@@ -13,6 +13,7 @@ const Tag = ({ tag, selected, onSelect }: TagProps) => {
   return (
     <button
       className={`tag ${tag === selected ? 'active' : ''}`}
+      data-tag={tag}
       aria-pressed={tag === selected}
       onClick={() => onSelect(tag === selected ? null : tag)}
     >
