@@ -27,26 +27,21 @@
             overflow: hidden;
             cursor: pointer;
             text-decoration: none;
-            transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            opacity: 0;
+            transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+            &.visible {
+                animation: fadeInUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+                animation-delay: var(--delay, 0s);
+            }
 
             &:hover {
                 transform: translateY(-4px);
+                box-shadow: 0 8px 24px var(--shadow-md);
 
                 .imageWrapper img {
                     transform: scale(1.05);
-                }
-
-                .projectInfo {
-                    margin-top: -3.5rem;
-                    padding-top: 3rem;
-
-                    &::before {
-                        opacity: 0;
-                    }
-
-                    &::after {
-                        opacity: 1;
-                    }
                 }
 
                 .projectAction {
@@ -81,30 +76,7 @@
                 position: relative;
                 z-index: 2;
                 padding: 0.75rem 1rem;
-                transition: margin-top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                            padding 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    inset: 0;
-                    background: var(--bg-elevated);
-                    z-index: -1;
-                    transition: opacity 0.4s ease;
-                }
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: -2rem;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background: linear-gradient(transparent, var(--shadow-overlay));
-                    z-index: -1;
-                    opacity: 0;
-                    transition: opacity 0.4s ease;
-                }
+                background: var(--bg-elevated);
 
                 .projectMeta {
                     @include flex(column, flex-start, flex-start);
@@ -246,5 +218,24 @@
     // "all" tag hover
     &[data-tag="all"] {
         background-color: var(--bg-hover);
+    }
+}
+
+// Scroll entrance animation
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .projectItem {
+        opacity: 1 !important;
+        animation: none !important;
     }
 }

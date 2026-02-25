@@ -1,7 +1,7 @@
 "use client"
 
 import Icon from "./Icons";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Filters from "./Filters";
 import Tag from "./Tag";
 import { useMessages, useTranslations } from "next-intl";
@@ -18,12 +18,15 @@ const ProjectCard = ({
   selected,
   setSelected,
   t,
+  index,
 }: {
   project: Project;
   selected: TagType | null;
   setSelected: (tag: TagType | null) => void;
   t: (key: string) => string;
+  index: number;
 }) => {
+  const delay = { '--delay': `${index * 0.08}s` } as React.CSSProperties;
   const cardContent = (
     <>
       <div className="imageWrapper">
@@ -63,6 +66,7 @@ const ProjectCard = ({
         className={`projectItem ${project.tag.replace(/\s+/g, '')}`}
         href={`/projects/${project.projectURL}`}
         aria-label={`${t("global.caseStudy")} - ${project.title}`}
+        style={delay}
       >
         {cardContent}
       </Link>
@@ -78,6 +82,7 @@ const ProjectCard = ({
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`${t("global.visit")} ${project.title}`}
+        style={delay}
       >
         {cardContent}
       </a>
@@ -88,6 +93,7 @@ const ProjectCard = ({
     <div
       key={`${project.title}-${project.tag}`}
       className={`projectItem ${project.tag.replace(/\s+/g, '')}`}
+      style={delay}
     >
       {cardContent}
     </div>
@@ -97,6 +103,7 @@ const ProjectCard = ({
 const Projects = ({ isProject, locale }: ProjectsProps) => {
   const t = useTranslations();
   const messages = useMessages();
+  const tilesRef = useRef<HTMLDivElement>(null);
 
   const [selected, setSelected] = useState<TagType | null>(null);
 
@@ -111,6 +118,28 @@ const Projects = ({ isProject, locale }: ProjectsProps) => {
       selected === null || project.tag === selected
     );
 
+  useEffect(() => {
+    const container = tilesRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const cards = container.querySelectorAll('.projectItem');
+    cards.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, [selected, filteredProjects.length]);
+
   return (
     <section className="projectsWrapper">
       <div className="projectsTitle">
@@ -124,14 +153,15 @@ const Projects = ({ isProject, locale }: ProjectsProps) => {
         <Filters selected={selected} onSelect={setSelected} />
       ) : null}
 
-      <div className="tiles">
-        {filterByTag(filteredProjects).map((project) => (
+      <div className="tiles" ref={tilesRef}>
+        {filterByTag(filteredProjects).map((project, index) => (
           <ProjectCard
             key={`${project.title}-${project.tag}`}
             project={project}
             selected={selected}
             setSelected={setSelected}
             t={t}
+            index={index}
           />
         ))}
       </div>
