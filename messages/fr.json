@@ -236,6 +236,14 @@
       "isSelected": true
     },
     {
+      "title": "Vita Alma",
+      "date": "2026",
+      "tag": "graphics",
+      "image": "/articles/GraphicVitaAlma.webp",
+      "hasCaseStudy": false,
+      "isSelected": false
+    },
+    {
       "title": "Ecco-eco",
       "date": "2025",
       "tag": "website",
@@ -259,6 +267,31 @@
       "tag": "website",
       "image": "/articles/WebsiteBertone.webp",
       "link": "https://gruppobertone.com",
+      "hasCaseStudy": false,
+      "isSelected": false
+    },
+    {
+      "title": "Les Paniers de Yann",
+      "date": "2025",
+      "tag": "website",
+      "image": "/articles/WebsiteLPDY.webp",
+      "link": "https://lespaniersdeyann.fr",
+      "hasCaseStudy": false,
+      "isSelected": false
+    },
+    {
+      "title": "Les Paniers de Yann",
+      "date": "2025",
+      "tag": "logo",
+      "image": "/articles/LogoLPdY.webp",
+      "hasCaseStudy": false,
+      "isSelected": false
+    },
+    {
+      "title": "Les Paniers de Yann",
+      "date": "2025",
+      "tag": "graphics",
+      "image": "/articles/GraphicLPDY.webp",
       "hasCaseStudy": false,
       "isSelected": false
     },
@@ -302,7 +335,7 @@
       "title": "Harfang Therapeutics",
       "date": "2023",
       "tag": "logo",
-      "image": "/articles/LogoHT.webp",
+      "image": "/articles/LogoHarfang.webp",
       "hasCaseStudy": false,
       "isSelected": false
     },
@@ -525,6 +558,30 @@
       "image": "/articles/LogoValensi.webp",
       "isSelected": false,
       "hasCaseStudy": false
+    },
+    {
+      "title": "Lbi-3d",
+      "date": "2021",
+      "tag": "website",
+      "image": "/articles/WebsiteLBI3D.webp",
+      "hasCaseStudy": false,
+      "isSelected": false
+    },
+    {
+      "title": "Lbi-3d",
+      "date": "2021",
+      "tag": "logo",
+      "image": "/articles/LogoLBI.webp",
+      "hasCaseStudy": false,
+      "isSelected": false
+    },
+    {
+      "title": "TNA & Partners",
+      "date": "2021",
+      "tag": "website",
+      "image": "/articles/WebsiteTNA.webp",
+      "hasCaseStudy": false,
+      "isSelected": false
     },
     {
       "title": "Contacts App",

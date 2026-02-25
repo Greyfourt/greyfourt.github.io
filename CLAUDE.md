@@ -211,7 +211,7 @@ Case study images go in `public/images/` with naming:
 
 ## Image Naming Conventions
 - **Format:** All images use WebP (converted from PNG for ~68% size reduction)
-- Thumbnails: `public/articles/{Tag}{Name}.webp` (e.g., `WebsiteEST.webp`, `AppFloof.webp`, `LogoHT.webp`)
+- Thumbnails: `public/articles/{Tag}{Name}.webp` (e.g., `WebsiteEST.webp`, `AppFloof.webp`, `LogoHarfang.webp`)
 - Case study: `public/images/{Section}-{Name}.webp`
 - All `<img>` tags use `loading="lazy"` for deferred offscreen loading
 
