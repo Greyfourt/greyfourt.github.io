@@ -1,7 +1,8 @@
 {
   "nav": {
     "home": "Accueil",
-    "projects": "Projets"
+    "projects": "Projets",
+    "cv": "CV"
   },
   "global": {
     "visit": "Venez voir",
@@ -224,6 +225,146 @@
     "cnilTitle": "Droit de réclamation",
     "cnilText": "Si vous estimez que vos droits en matière de protection des données ont été violés, vous avez le droit de déposer une plainte auprès de la CNIL (Commission Nationale de l'Informatique et des Libertés), l'autorité française de protection des données :",
     "cnilWebsite": "https://www.cnil.fr"
+  },
+  "cv": {
+    "meta": {
+      "downloadLabel": "Télécharger le PDF"
+    },
+    "header": {
+      "name": "Nazlı Özçubukçuoğlu",
+      "title": "Designer Créative & Développeuse — Lyon",
+      "tagline": "Esprit d'ingénieure, œil de designer. Je conçois et développe des sites web, des identités visuelles et des expériences digitales.",
+      "availability": "Disponible · Lyon ou remote · CDI / CDD / temps partiel",
+      "contacts": {
+        "phone": "+33 7 85 63 23 86",
+        "email": "nazliozcubukcuoglu@gmail.com",
+        "website": "greyfourt.github.io",
+        "linkedin": "linkedin.com/in/nazli-oz",
+        "github": "github.com/Greyfourt"
+      }
+    },
+    "experience": {
+      "title": "Expériences professionnelles",
+      "items": [
+        {
+          "role": "Designer & Développeuse Créative",
+          "company": "dewwwe",
+          "location": "Lyon, France",
+          "period": "depuis 2020",
+          "bullets": [
+            "15+ sites livrés et brandings pour clients en Europe (DGV Consulting, TEB Health, Vita Alma, Ecco-Eco)",
+            "Sites multilingues FR/EN/IT/PT, de A à Z — design, développement (WordPress, Elementor, HTML/CSS), DNS & hébergement ; clients autonomes pour gérer leur contenu après livraison",
+            "Conseil digital : SEO, performance web, analytics (Matomo, Google Analytics), email marketing (MailPoet, SendGrid, Brevo)",
+            "Branding complet : identités visuelles, chartes graphiques, illustrations, cartes de visite"
+          ]
+        },
+        {
+          "role": "UI/UX Designer",
+          "company": "Codenotary Inc.",
+          "location": "Remote, Texas (États-Unis)",
+          "period": "mars 2022 – juil. 2023",
+          "bullets": [
+            "UI/UX d'un produit SaaS B2B (sécurité supply chain) : user research, wireframes, prototypes — Figma, FigJam, Miro",
+            "Refonte du site corporate WordPress : design, SEO, monitoring de performances",
+            "Identité visuelle : logos, infographies produit, illustrations, icônes — Adobe Suite, Figma"
+          ]
+        }
+      ]
+    },
+    "projects": {
+      "title": "Projets personnels",
+      "moreLink": "→ Plus de projets et études de cas sur greyfourt.github.io",
+      "items": [
+        {
+          "name": "Floof App",
+          "year": "2023",
+          "description": "Application PWA mobile de gestion de soins pour animaux et plantes — UX research, branding, UI design (Figma)"
+        },
+        {
+          "name": "Knotbook App",
+          "year": "2023",
+          "description": "Application mobile compagnon pour le crochet : référence de points et suivi de patterns — UX research, branding, UI design (Figma)"
+        }
+      ]
+    },
+    "education": {
+      "title": "Études",
+      "items": [
+        {
+          "school": "Politecnico di Torino",
+          "degree": "Bachelor en Computer Engineering",
+          "location": "Turin, Italie",
+          "period": "2019–2023"
+        },
+        {
+          "school": "ECAM LaSalle",
+          "degree": "Cycle ingénieur (3 ans, formation en anglais)",
+          "location": "Lyon, France",
+          "period": "2016–2019"
+        }
+      ]
+    },
+    "other": {
+      "title": "Autres expériences",
+      "items": [
+        {
+          "title": "Stage — Mini World Lyon",
+          "detail": "Raspberry Pi, Python · Lyon, France · juin–août 2019"
+        },
+        {
+          "title": "Stage — Eneko",
+          "detail": "Python · Izmir, Turquie · août 2017"
+        },
+        {
+          "title": "Student Ambassador — Reply.it",
+          "detail": "Vue.js, Python, GraphQL · Turin, Italie · 2020–2022"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Compétences techniques",
+      "groups": [
+        {
+          "name": "Design",
+          "items": ["Figma", "FigJam", "Adobe Suite", "Design Systems", "UX Research", "Prototypage", "Wireframing"]
+        },
+        {
+          "name": "Développement",
+          "items": ["React", "TypeScript", "Next.js", "HTML5", "CSS / SCSS", "JavaScript", "WordPress", "Elementor", "Lottie", "Git", "Responsive Design", "Accessibilité (WCAG)"]
+        },
+        {
+          "name": "Outils & Infra",
+          "items": ["Matomo", "Google Analytics", "SEO", "WPML", "PrestaShop", "OVH", "DNS"]
+        }
+      ]
+    },
+    "languages": {
+      "title": "Langues",
+      "items": [
+        { "name": "Français", "level": "Bilingue" },
+        { "name": "Anglais", "level": "Bilingue" },
+        { "name": "Italien", "level": "Débutant" },
+        { "name": "Turc", "level": "Langue maternelle" }
+      ]
+    },
+    "softSkills": {
+      "title": "Soft skills",
+      "items": [
+        "Rigueur & autonomie",
+        "Travail en équipe",
+        "Curiosité technique",
+        "Adaptabilité",
+        "Relation client"
+      ]
+    },
+    "interests": {
+      "title": "Intérêts",
+      "items": [
+        "Design digital & typographie",
+        "Crochet & craft",
+        "Environnement"
+      ]
+    }
   },
   "projectslist": [
     {

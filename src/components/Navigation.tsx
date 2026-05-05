@@ -9,20 +9,16 @@ import { Link, usePathname } from "@/i18n/routing";
 
 const Footer = () => {
   const t = useTranslations();
-  const pathname = usePathname();
-  const locale = pathname.startsWith('/fr') ? 'fr' : 'en';
 
   return (
     <footer>
       <div className="contactIcons">
-        <a
-          href={locale === 'fr' ? '/CV_2026_Nazli_FR.pdf' : '/CV_2026_Nazli_EN.pdf'}
-          target="_blank"
-          rel="nofollow"
-          aria-label="Download CV"
+        <Link
+          href="/cv"
+          aria-label={t('nav.cv')}
         >
           <Icon name="doc" />
-        </a>
+        </Link>
         <a href="tel:+33785632386" aria-label="Call phone">
           <Icon name="phone" />
         </a>
@@ -52,7 +48,6 @@ export const Menu = ({ locale }: { locale: string }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const otherLocale = locale === 'en' ? 'fr' : 'en';
-  const cvHref = locale === 'fr' ? '/CV_2026_Nazli_FR.pdf' : '/CV_2026_Nazli_EN.pdf';
 
   const closeMenu = () => setIsOpen(false);
 
@@ -89,9 +84,9 @@ export const Menu = ({ locale }: { locale: string }) => {
           <Link href="/projects" onClick={closeMenu}>
             {t('nav.projects')}
           </Link>
-          <a href={cvHref} target="_blank" rel="nofollow" onClick={closeMenu}>
-            CV
-          </a>
+          <Link href="/cv" onClick={closeMenu}>
+            {t('nav.cv')}
+          </Link>
           <a href="mailto:nazliozcubukcuoglu@gmail.com" onClick={closeMenu}>
             Contact
           </a>

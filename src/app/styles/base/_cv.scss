@@ -1,0 +1,662 @@
+// CV — print-safe palette (used in @media print, fixed regardless of theme)
+$cv-print-accent: #AE471A;
+$cv-print-bg: #ffffff;
+$cv-print-sidebar: #f3f0ec;
+$cv-print-text: #1a1a1a;
+$cv-print-muted: #444444;
+$cv-print-light: #888888;
+$cv-print-rule: #e0dbd6;
+
+// ==========================================================================
+// SCREEN STYLES — theme-aware, integrates with portfolio
+// ==========================================================================
+
+.cvPage {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 48px 1.5rem 96px;
+  box-sizing: border-box;
+
+  @media (max-width: 480px) {
+    padding: 24px 1rem 64px;
+  }
+}
+
+.cvActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+
+  .cvDownloadButton {
+    cursor: pointer;
+  }
+}
+
+.cvSheet {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  grid-template-rows: auto 1fr;
+  gap: 32px;
+  box-shadow: 0 4px 24px var(--shadow-sm);
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    padding: 28px;
+    gap: 24px;
+  }
+}
+
+// HEADER
+.cvHeader {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--pop);
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+.cvPhoto {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--pop);
+  background: var(--bg);
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 65% 40%;
+    display: block;
+  }
+}
+
+.cvHeaderText {
+  flex: 1;
+  min-width: 0;
+}
+
+.cvName {
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+}
+
+.cvTitle {
+  margin-top: 4px;
+  color: var(--pop);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cvTagline {
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-style: italic;
+  max-width: 480px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.cvAvailability {
+  margin-top: 8px;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.cvContacts {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  list-style: none;
+  padding: 0;
+
+  & li {
+    font-size: 0.8rem;
+  }
+
+  & a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--pop);
+    }
+  }
+
+  @media (max-width: 480px) {
+    justify-content: center;
+  }
+}
+
+// MAIN CONTENT
+.cvMain {
+  grid-column: 1;
+  grid-row: 2;
+
+  @media (max-width: 800px) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+.cvSection {
+  margin-bottom: 28px;
+
+  & h2 {
+    color: var(--pop);
+    font-size: 1.05rem;
+    margin: 0 0 12px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+  }
+}
+
+.cvJob {
+  margin-bottom: 18px;
+}
+
+.cvJobHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cvJobRole {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.cvJobMeta {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.cvJobCompany {
+  color: var(--pop);
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin: 2px 0 6px;
+}
+
+.cvBullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  & li {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 4px;
+    line-height: 1.5;
+
+    &::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--pop);
+    }
+  }
+}
+
+.cvProject {
+  margin-bottom: 12px;
+}
+
+.cvProjectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.cvProjectName {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.cvProjectYear {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.cvProjectDesc {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-top: 2px;
+  line-height: 1.5;
+}
+
+// Hidden on screen (redundant — visitor is already on greyfourt), shown only in print
+.cvProjectsMore {
+  display: none;
+  color: var(--pop);
+  font-style: italic;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.cvEdu, .cvOther {
+  margin-bottom: 10px;
+}
+
+.cvEduHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cvEduSchool {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.cvEduMeta {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.cvEduDegree {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.cvOtherTitle {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--text);
+}
+
+.cvOtherDetail {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+// SIDEBAR
+.cvSidebar {
+  grid-column: 2;
+  grid-row: 2;
+  background: var(--bg);
+  padding: 24px;
+  border-radius: 12px;
+  align-self: start;
+
+  @media (max-width: 800px) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+.cvSide {
+  margin-bottom: 22px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  & h3 {
+    color: var(--pop);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+  }
+}
+
+.cvSkillGroup {
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  & .cvSkillGroupName {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+}
+
+.cvSkillTags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+
+  & li {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+}
+
+.cvLang {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.8rem;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.cvLangName {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.cvLangLevel {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.cvSoftList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  & li {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+// ==========================================================================
+// PRINT STYLES — fixed orange branding, ATS-friendly A4 layout
+// ==========================================================================
+
+@media print {
+
+  // Hide everything except the CV
+  nav,
+  footer,
+  .cvActions,
+  .cookieBanner,
+  .skip-link {
+    display: none !important;
+  }
+
+  // Force light, print-safe rendering
+  html,
+  body {
+    background: $cv-print-bg !important;
+    color: $cv-print-text !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 9.5pt !important;
+    line-height: 1.55 !important;
+  }
+
+  body {
+    display: block !important;
+  }
+
+  // Force colors to print (Chrome, Safari, Edge)
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .cvPage {
+    width: 210mm !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: $cv-print-bg !important;
+  }
+
+  .cvSheet {
+    background: $cv-print-bg !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    grid-template-columns: 1fr 62mm !important;
+    grid-template-rows: auto 1fr !important;
+    gap: 0 !important;
+  }
+
+  // Header (full width)
+  .cvHeader {
+    grid-column: 1 / -1 !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding: 24px 24px 18px !important;
+    border-bottom: 2px solid $cv-print-accent !important;
+    gap: 22px !important;
+  }
+
+  .cvPhoto {
+    width: 92px !important;
+    height: 92px !important;
+    border: 2.5px solid $cv-print-accent !important;
+    background: $cv-print-sidebar !important;
+  }
+
+  .cvName {
+    font-size: 22pt !important;
+    color: $cv-print-text !important;
+    letter-spacing: -0.3px !important;
+    line-height: 1.05 !important;
+  }
+
+  .cvTitle {
+    font-size: 9pt !important;
+    color: $cv-print-accent !important;
+    margin-top: 4px !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  .cvTagline {
+    font-size: 8.5pt !important;
+    color: $cv-print-muted !important;
+    margin-top: 5px !important;
+    max-width: 380px !important;
+    font-weight: 300 !important;
+    font-style: italic !important;
+    line-height: 1.4 !important;
+  }
+
+  .cvAvailability {
+    font-size: 8.5pt !important;
+    color: $cv-print-text !important;
+    margin-top: 6px !important;
+    font-weight: 600 !important;
+  }
+
+  .cvContacts {
+    margin-top: 10px !important;
+    gap: 4px 16px !important;
+    justify-content: flex-start !important;
+
+    & li { font-size: 8.5pt !important; }
+
+    & a {
+      color: $cv-print-muted !important;
+      text-decoration: none !important;
+    }
+  }
+
+  // Main (left column)
+  .cvMain {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    padding: 20px 22px 24px 24px !important;
+    background: $cv-print-bg !important;
+  }
+
+  // Sidebar (right column)
+  .cvSidebar {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    background: $cv-print-sidebar !important;
+    padding: 20px 16px 24px !important;
+    border-left: 1px solid $cv-print-rule !important;
+    border-radius: 0 !important;
+    align-self: stretch !important;
+  }
+
+  // Sections
+  .cvSection { margin-bottom: 18px !important; }
+
+  .cvSection h2 {
+    font-size: 12pt !important;
+    color: $cv-print-accent !important;
+    margin: 0 0 10px !important;
+    padding-bottom: 4px !important;
+    border-bottom: 1px solid $cv-print-rule !important;
+    font-weight: 600 !important;
+  }
+
+  .cvJob { margin-bottom: 12px !important; }
+  .cvJobRole { font-size: 9.5pt !important; color: $cv-print-text !important; }
+  .cvJobMeta { font-size: 8pt !important; color: $cv-print-light !important; }
+  .cvJobCompany {
+    font-size: 8.5pt !important;
+    color: $cv-print-accent !important;
+    margin-bottom: 4px !important;
+  }
+
+  .cvBullets li {
+    font-size: 8.5pt !important;
+    color: $cv-print-muted !important;
+    margin-bottom: 3px !important;
+    padding-left: 12px !important;
+    line-height: 1.45 !important;
+
+    &::before { color: $cv-print-accent !important; }
+  }
+
+  .cvProject { margin-bottom: 9px !important; }
+  .cvProjectName { font-size: 9pt !important; color: $cv-print-text !important; }
+  .cvProjectYear { font-size: 8pt !important; color: $cv-print-light !important; }
+  .cvProjectDesc {
+    font-size: 8.5pt !important;
+    color: $cv-print-muted !important;
+    line-height: 1.45 !important;
+  }
+
+  .cvProjectsMore {
+    font-size: 8pt !important;
+    color: $cv-print-accent !important;
+    margin-top: 5px !important;
+  }
+
+  .cvEdu { margin-bottom: 9px !important; }
+  .cvEduSchool { font-size: 9pt !important; color: $cv-print-text !important; }
+  .cvEduMeta { font-size: 8pt !important; color: $cv-print-light !important; }
+  .cvEduDegree { font-size: 8.5pt !important; color: $cv-print-muted !important; }
+
+  .cvOther { margin-bottom: 4px !important; }
+  .cvOtherTitle { font-size: 8.5pt !important; color: $cv-print-text !important; font-weight: 500 !important; }
+  .cvOtherDetail { font-size: 8pt !important; color: $cv-print-light !important; }
+
+  // Sidebar
+  .cvSide { margin-bottom: 16px !important; }
+
+  .cvSide h3 {
+    font-size: 8pt !important;
+    color: $cv-print-accent !important;
+    margin: 0 0 7px !important;
+    padding-bottom: 3px !important;
+    border-bottom: 1px solid $cv-print-rule !important;
+    font-weight: 600 !important;
+  }
+
+  .cvSkillGroup { margin-bottom: 9px !important; }
+  .cvSkillGroupName {
+    font-size: 8pt !important;
+    color: $cv-print-text !important;
+    margin-bottom: 4px !important;
+  }
+
+  .cvSkillTags li {
+    background: $cv-print-bg !important;
+    border: 1px solid $cv-print-rule !important;
+    color: $cv-print-muted !important;
+    font-size: 7.5pt !important;
+    padding: 2px 6px !important;
+    border-radius: 2px !important;
+  }
+
+  .cvLang {
+    font-size: 8.5pt !important;
+    padding: 3px 0 !important;
+    border-bottom: 1px solid $cv-print-rule !important;
+  }
+  .cvLangName { color: $cv-print-text !important; font-weight: 500 !important; }
+  .cvLangLevel { color: $cv-print-light !important; font-size: 8pt !important; }
+
+  // Show the "more projects" link in print (CV recipient needs the URL)
+  .cvProjectsMore { display: inline-block !important; }
+
+  .cvSoftList li {
+    font-size: 8.5pt !important;
+    color: $cv-print-muted !important;
+    border-bottom: 1px solid $cv-print-rule !important;
+    padding: 2px 0 !important;
+  }
+
+  // Page setup
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}

@@ -1,7 +1,8 @@
 {
   "nav": {
     "home": "Home",
-    "projects": "Projects"
+    "projects": "Projects",
+    "cv": "Resume"
   },
   "global": {
     "visit": "Swing by",
@@ -224,6 +225,146 @@
     "cnilTitle": "Right to File a Complaint",
     "cnilText": "If you believe your data protection rights have been violated, you have the right to file a complaint with the CNIL (Commission Nationale de l'Informatique et des Libertés), the French data protection authority:",
     "cnilWebsite": "https://www.cnil.fr"
+  },
+  "cv": {
+    "meta": {
+      "downloadLabel": "Download PDF"
+    },
+    "header": {
+      "name": "Nazlı Özçubukçuoğlu",
+      "title": "Creative Designer & Developer — Lyon",
+      "tagline": "Engineering mindset, designer's eye. I design and build websites, brand identities, and digital experiences.",
+      "availability": "Available · Lyon or remote · Full-time / part-time / contract",
+      "contacts": {
+        "phone": "+33 7 85 63 23 86",
+        "email": "nazliozcubukcuoglu@gmail.com",
+        "website": "greyfourt.github.io",
+        "linkedin": "linkedin.com/in/nazli-oz",
+        "github": "github.com/Greyfourt"
+      }
+    },
+    "experience": {
+      "title": "Experience",
+      "items": [
+        {
+          "role": "Creative Designer & Developer",
+          "company": "dewwwe",
+          "location": "Lyon, France",
+          "period": "since 2020",
+          "bullets": [
+            "15+ websites and brandings delivered for clients across Europe (DGV Consulting, TEB Health, Vita Alma, Ecco-Eco)",
+            "Multilingual sites FR/EN/IT/PT, end-to-end — design, development (WordPress, Elementor, HTML/CSS), DNS & hosting; clients self-manage content after delivery",
+            "Digital advisory: SEO, web performance, analytics (Matomo, Google Analytics), email marketing (MailPoet, SendGrid, Brevo)",
+            "Full branding: visual identities, brand guidelines, illustrations, business cards"
+          ]
+        },
+        {
+          "role": "UI/UX Designer",
+          "company": "Codenotary Inc.",
+          "location": "Remote, Texas (USA)",
+          "period": "Mar 2022 – Jul 2023",
+          "bullets": [
+            "UI/UX for a B2B SaaS product (supply chain security): user research, wireframes, prototypes — Figma, FigJam, Miro",
+            "Corporate WordPress site redesign: design, SEO, performance monitoring",
+            "Visual identity: logos, product infographics, illustrations, icons — Adobe Suite, Figma"
+          ]
+        }
+      ]
+    },
+    "projects": {
+      "title": "Personal Projects",
+      "moreLink": "→ More projects and case studies on greyfourt.github.io",
+      "items": [
+        {
+          "name": "Floof App",
+          "year": "2023",
+          "description": "Mobile PWA for managing pet and plant care — UX research, branding, UI design (Figma)"
+        },
+        {
+          "name": "Knotbook App",
+          "year": "2023",
+          "description": "Companion mobile app for crocheters: stitch reference and pattern tracking — UX research, branding, UI design (Figma)"
+        }
+      ]
+    },
+    "education": {
+      "title": "Education",
+      "items": [
+        {
+          "school": "Politecnico di Torino",
+          "degree": "Bachelor in Computer Engineering",
+          "location": "Turin, Italy",
+          "period": "2019–2023"
+        },
+        {
+          "school": "ECAM LaSalle",
+          "degree": "Engineering cycle (3 years, English program)",
+          "location": "Lyon, France",
+          "period": "2016–2019"
+        }
+      ]
+    },
+    "other": {
+      "title": "Other Experience",
+      "items": [
+        {
+          "title": "Internship — Mini World Lyon",
+          "detail": "Raspberry Pi, Python · Lyon, France · Jun–Aug 2019"
+        },
+        {
+          "title": "Internship — Eneko",
+          "detail": "Python · Izmir, Turkey · Aug 2017"
+        },
+        {
+          "title": "Student Ambassador — Reply.it",
+          "detail": "Vue.js, Python, GraphQL · Turin, Italy · 2020–2022"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Technical Skills",
+      "groups": [
+        {
+          "name": "Design",
+          "items": ["Figma", "FigJam", "Adobe Suite", "Design Systems", "UX Research", "Prototyping", "Wireframing"]
+        },
+        {
+          "name": "Development",
+          "items": ["React", "TypeScript", "Next.js", "HTML5", "CSS / SCSS", "JavaScript", "WordPress", "Elementor", "Lottie", "Git", "Responsive Design", "Accessibility (WCAG)"]
+        },
+        {
+          "name": "Tools & Infra",
+          "items": ["Matomo", "Google Analytics", "SEO", "WPML", "PrestaShop", "OVH", "DNS"]
+        }
+      ]
+    },
+    "languages": {
+      "title": "Languages",
+      "items": [
+        { "name": "French", "level": "Bilingual" },
+        { "name": "English", "level": "Bilingual" },
+        { "name": "Italian", "level": "Beginner" },
+        { "name": "Turkish", "level": "Native" }
+      ]
+    },
+    "softSkills": {
+      "title": "Soft Skills",
+      "items": [
+        "Rigor & autonomy",
+        "Team collaboration",
+        "Technical curiosity",
+        "Adaptability",
+        "Client relations"
+      ]
+    },
+    "interests": {
+      "title": "Interests",
+      "items": [
+        "Digital design & typography",
+        "Crochet & craft",
+        "Environment"
+      ]
+    }
   },
   "projectslist": [
     {

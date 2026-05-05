@@ -32,14 +32,12 @@ const AboutCard = ({ keyName, t, locale, type }: AboutProps) => {
         )}
       </div>
       {keyName === 'experiences' && (
-        <a
-          href={locale === 'fr' ? '/CV_2026_Nazli_FR.pdf' : '/CV_2026_Nazli_EN.pdf'}
-          target="_blank"
-          rel="nofollow"
+        <Link
+          href="/cv"
           className="cta"
         >
           {t(`${type}.sections.${keyName}.cta`)}
-        </a>
+        </Link>
       )}
     </div>
   );
