@@ -73,7 +73,7 @@ const CV = ({ locale }: { locale: Locale }) => {
       <article className="cvSheet">
         <header className="cvHeader">
           <div className="cvPhoto">
-            <img src="/photo_nazli.jpg" alt="" loading="lazy" />
+            <img src="/photo_nazli.png" alt="" loading="lazy" />
           </div>
           <div className="cvHeaderText">
             <h1 className="cvName">{t('header.name')}</h1>
