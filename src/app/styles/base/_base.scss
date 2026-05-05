@@ -332,13 +332,13 @@ svg {
 
   &.Primary {
     background: var(--accent);
-    color: #ffffff;
+    color: var(--bg);
 
     & a,
     & button,
     & svg {
-      color: #ffffff;
-      fill: #ffffff;
+      color: var(--bg);
+      fill: var(--bg);
     }
 
     &:hover {
