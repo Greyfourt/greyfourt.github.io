@@ -10,6 +10,11 @@ export default function ThemeToggle() {
     const stored = localStorage.getItem('theme');
     if (stored === 'light' || stored === 'dark') {
       setTheme(stored);
+      // Re-apply the attribute in case a client-side navigation (e.g. locale switch)
+      // re-rendered <html> and dropped the imperatively-set data-theme.
+      if (document.documentElement.getAttribute('data-theme') !== stored) {
+        document.documentElement.setAttribute('data-theme', stored);
+      }
     } else {
       // No stored preference — CSS @media handles it, just sync the toggle display
       const preferLight = window.matchMedia('(prefers-color-scheme: light)').matches;

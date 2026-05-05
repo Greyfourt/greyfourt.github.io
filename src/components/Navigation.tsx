@@ -66,14 +66,20 @@ export const Menu = ({ locale }: { locale: string }) => {
         <Link href="/" className="navBrand" onClick={closeMenu}>
           greyfourt
         </Link>
-        <button
-          className={"navHamburger" + (isOpen ? " open" : "")}
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={isOpen}
-        >
-          <span />
-        </button>
+        <div className="navActions">
+          <ThemeToggle />
+          <Link href={pathname} locale={otherLocale} className="navMenuLang" onClick={closeMenu}>
+            {locale === 'en' ? 'fr' : 'en'}
+          </Link>
+          <button
+            className={"navHamburger" + (isOpen ? " open" : "")}
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={isOpen}
+          >
+            <span />
+          </button>
+        </div>
       </nav>
 
       <div className={"navMenu" + (isOpen ? " open" : "")}>
@@ -103,12 +109,6 @@ export const Menu = ({ locale }: { locale: string }) => {
             <a href="https://github.com/greyfourt/greyfourt.github.io" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
               <Icon name="github" />
             </a>
-          </div>
-          <div className="navMenuUtils">
-            <ThemeToggle />
-            <Link href={pathname} locale={otherLocale} className="navMenuLang" onClick={closeMenu}>
-              {locale === 'en' ? 'fr' : 'en'}
-            </Link>
           </div>
         </div>
       </div>
